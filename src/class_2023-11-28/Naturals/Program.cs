@@ -1,4 +1,7 @@
-﻿using System;
+﻿/*  Пользователь вводит натуральное число. Посчитать сумму чисел от 1 до этого числа.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

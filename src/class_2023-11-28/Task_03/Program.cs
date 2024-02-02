@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*  Перевернуть натуральное число, введенное пользователем.
+ *  На выходе тоже должно получиться число!
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

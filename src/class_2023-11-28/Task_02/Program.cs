@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*  Посчитать количество чисел кратных 7 и 13 в диапазоне от -1000 до 1000.
+ *  Если таких чисел нет, вывести соответветствующее сообщение.
+ *  Вывести на экран числа и их количество.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
