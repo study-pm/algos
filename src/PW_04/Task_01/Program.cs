@@ -1,4 +1,7 @@
-﻿namespace Task_01
+﻿/*Вывести все целые числа из диапазона от А до В, кратные трем (А<=В ).
+ */
+
+namespace Task_01
 {
     public class AliquotOf3
     {
