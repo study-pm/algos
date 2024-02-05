@@ -4,34 +4,41 @@
 
 namespace Task_05
 {
-    internal class Program
+    public class Utils
     {
-        static bool CheckIfNotNegativeInt(string input, out int n)
+        public static int[] GetRandomIntArray(int length, int rangeFrom = -100, int rangeTo = 100)
+        {
+            Random random = new Random();
+
+            int[] array = new int[length];
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = random.Next(rangeFrom, rangeTo);
+            }
+            return array;
+        }
+        public static bool CheckIfNotNegativeInt(string input, out int n)
         {
             bool isInt = int.TryParse(input, out int number);
             isInt = isInt && number >= 0;
             n = number;
             return isInt;
         }
+    }
+    internal class Program
+    {
         static void Main(string[] args)
         {
             try
             {
                 // Input
-                Console.Write("Enter an integer not negative number: ");
+                Console.Write("Enter an integer non-negative number: ");
                 string input = Console.ReadLine();
                 int n;
-                if (!CheckIfNotNegativeInt(input, out n)) throw new Exception("Invalid input");
+                if (!Utils.CheckIfNotNegativeInt(input, out n)) throw new Exception("Invalid input");
 
-                Random random = new Random();
-
-                int[] array = new int[2 * n];
-
-                for (int i = 0; i < array.Length; i++)
-                {
-                    array[i] = random.Next(-100, 100);
-                }
-
+                int[] array = Utils.GetRandomIntArray(2 * n);
+                
                 int sumFirstN = 0;
 
                 for (int i = 0; i < n; i++)
