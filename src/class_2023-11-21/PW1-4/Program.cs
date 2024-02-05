@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* Дана длина ребра куба. Найти площадь грани, площадь полной поверхности и объем этого куба.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

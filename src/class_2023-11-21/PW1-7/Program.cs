@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* Дано целое четырехзначное число. Найти сумму его цифр.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
