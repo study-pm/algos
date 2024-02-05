@@ -1,4 +1,7 @@
-﻿namespace Task_04
+﻿/* Составить программу вычисления квадратного уравнения ax^2+bx+c. Коэффициенты a,b,c вводятся с клавиатуры.
+ */
+
+namespace Task_04
 {
     internal class Program
     {

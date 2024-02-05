@@ -1,4 +1,7 @@
-﻿namespace Task_01
+﻿/* Составьте программу, которая определяет, принадлежит ли точка А(x0, y0) графику функции y=2x-3.
+ */
+
+namespace Task_01
 {
     internal class Program
     {
