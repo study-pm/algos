@@ -32,7 +32,7 @@ namespace Task_03
             Console.WriteLine($"Min value is {min} with index {minIndex}");
             
             (array[0], array[minIndex]) = (array[minIndex], array[0]);
-            Console.WriteLine("Processed array items: " + String.Join(' ', array));
+            Console.WriteLine("Result array items: " + String.Join(' ', array));
         }
     }
 }
