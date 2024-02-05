@@ -12,7 +12,7 @@ namespace Task_02
             int[] array = new int[10];
             for (int i = 0; i < 10; i++)
             {
-                array[i] = random.Next(-10, 50);
+                array[i] = random.Next(10, 50);
             }
 
             int max = array[0];
