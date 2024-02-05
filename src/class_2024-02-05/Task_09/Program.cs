@@ -19,7 +19,7 @@ namespace Task_09
                 }
             }
 
-            return new int[] {value, index };
+            return new int[] { value, index };
         }
     }
     internal class Program
