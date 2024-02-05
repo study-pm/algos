@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* Ввести ФИО и вывести на экран: «Практическая работу №1 выполнил: ФИО»
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

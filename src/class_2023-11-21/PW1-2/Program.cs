@@ -1,4 +1,7 @@
-﻿using System;
+﻿/* По данным сторонам прямоугольника вычислить его периметр, площадь и длину диагонали.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
