@@ -19,8 +19,8 @@
             for (int i = 0; i < array.Length; i++)
                 {
                     if (array[i] <= 0) continue;
-            sumOfPositives += array[i];
-            itemCount++;
+                    sumOfPositives += array[i];
+                    itemCount++;
                 }
             double mean = (double)sumOfPositives / itemCount;
 
