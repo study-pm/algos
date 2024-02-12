@@ -86,3 +86,8 @@ https://www.c-sharpcorner.com/UploadFile/mahesh/how-to-get-index-of-an-item-in-a
 https://stackoverflow.com/questions/10018957/how-to-remove-item-from-list-in-c | How to remove item from list in C#? |  |  | 2024-02-01
 https://www.c-sharpcorner.com/article/convert-an-array-to-a-list-in-c-sharp/ | How to Convert an Array to a List in C#? |  |  | 2024-02-01
 https://habr.com/ru/articles/26077/ | C#: требования и рекомендации по написанию кода |  |  | 2024-02-01
+https://stackoverflow.com/questions/6482331/how-to-add-different-types-of-objects-in-a-single-array-in-c | How to add different types of objects in a single array in C#? | | | 2024-02-12
+https://stackoverflow.com/questions/10443461/c-sharp-array-findallindexof-which-findall-indexof | c# Array.FindAllIndexOf which FindAll IndexOf | | | 2024-02-12
+https://stackoverflow.com/questions/8727146/how-do-i-initialize-an-empty-array-in-c | How do I initialize an empty array in C#? | | | 2024-02-12
+https://stackoverflow.com/questions/7867377/checking-if-a-string-array-contains-a-value-and-if-so-getting-its-position | Checking if a string array contains a value, and if so, getting its position | | | 2024-02-12
+https://stackoverflow.com/questions/4840802/change-array-size | change array size | | | 2024-02-12
