@@ -3,5 +3,6 @@
 bin/
 obj/
 .csproj.user
+.docx
 .suo
 .vs
