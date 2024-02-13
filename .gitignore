@@ -3,7 +3,7 @@
 bin/
 obj/
 .csproj.user
-.docx
 .suo
 .vs
-.xlsx
+*.docx
+*.xlsx
