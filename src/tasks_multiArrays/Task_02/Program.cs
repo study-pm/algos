@@ -39,7 +39,7 @@ namespace Task_02
             }
 
             Console.WriteLine("Source 2D random integers array");
-            int itemWidth = Task_01.Utils.Print2DArray(ints, "|");
+            Task_01.Utils.Print2DArray(ints, "|");
             Console.WriteLine("\nMin values for each row");
             Console.WriteLine(String.Join(" ", minOfRows_int));
             Console.WriteLine();
