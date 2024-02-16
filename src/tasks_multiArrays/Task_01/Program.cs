@@ -100,7 +100,7 @@ namespace Task_01
         /// <param name="divider">Column separators (defaults to none)</param>
         /// <param name="paddingSpaces">Space count each cell is padded (left and right)</param>
         /// <param name="roundDigits">Quantity of decimal digits to round to</param>
-        public static int Print2DArray(dynamic arr, string divider = "", int paddingSpaces = 1, int? roundDigits = null)
+        public static int Print2DArray(dynamic arr, string divider = "", int paddingSpaces = 1, int? roundDigits = null, bool isLastColDividerDub = false)
         {
             int GetMaxDigitCount(dynamic arr)
             {
@@ -126,6 +126,7 @@ namespace Task_01
                     Console.Write(padding);
                     Console.Write(Utils.GetFillingToMaxWidth(roundDigits == null ? arr[i, j] : arr[i,j].ToString("N" + (int)roundDigits), cellInnerWidth));
                     Console.Write(padding + (j != arr.GetLength(1) - 1 ? divider : ""));
+                    if (isLastColDividerDub && j == arr.GetLength(1)-2) Console.Write(divider);
                 }
                 Console.WriteLine();
             }
@@ -156,10 +157,10 @@ namespace Task_01
 
             Console.WriteLine("Source 2D random integers array");
             int itemWidth = Utils.Print2DArray(ints, "|");
-            Console.WriteLine("Max value for each column");
+            Console.WriteLine("\nMax values for each column");
             Utils.PrintFormattedArray(maxOfColumns_int, "|", cellWidth: itemWidth);
 
-            Console.WriteLine(Environment.NewLine);
+            Console.WriteLine(Environment.NewLine + "\n");
 
             // For doubles
             double[,] doubles = Utils.GetRandom2DArray(M, N, -128.0);
@@ -178,7 +179,7 @@ namespace Task_01
             Console.WriteLine("Source 2D random doubles array");
             int roundDigits = 2;
             int itemWidthDouble = Utils.Print2DArray(doubles, "|", roundDigits: roundDigits);
-            Console.WriteLine("Max value for each column");
+            Console.WriteLine("\nMax values for each column");
             Utils.PrintFormattedArray(maxOfColumns_double, "|", roundDigits: roundDigits, cellWidth: itemWidthDouble);
         }
     }
