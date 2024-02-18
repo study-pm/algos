@@ -210,7 +210,9 @@ namespace Task_03
                 ['g'] = indices_ints,
             };
 
-            Console.Write("Auto-generated matrix of int values: first max values for each column are ");
+            string targetValues = "first (top to bottom) max values";
+
+            Console.Write($"Auto-generated matrix of int values: {targetValues} for each column are ");
             ConsoleExtension.SetColor('g');
             Console.Write("green");
             Console.ResetColor();
@@ -220,8 +222,8 @@ namespace Task_03
             matrix_ints.Print("|", marked: highlight_ints);
 
             Console.WriteLine();
-            Console.WriteLine("Matrix max values for each column: " + String.Join(" ", values_ints));
-            Console.WriteLine("Matrix first (top to bottom) max values indices for each column: " + String.Join(" ", indices_ints));
+            Console.WriteLine($"Matrix {targetValues} for each column: " + String.Join(" ", values_ints));
+            Console.WriteLine($"Matrix {targetValues} indices for each column: " + String.Join(" ", indices_ints));
 
             Console.WriteLine(Environment.NewLine);
 
@@ -254,7 +256,7 @@ namespace Task_03
                 ['g'] = indices_doubles,
             };
 
-            Console.Write("Auto-generated matrix of double values: first max values for each column are ");
+            Console.Write($"Auto-generated matrix of double values: {targetValues} for each column are ");
             ConsoleExtension.SetColor('g');
             Console.Write("green");
             Console.ResetColor();
@@ -265,10 +267,10 @@ namespace Task_03
             matrix_doubles.Print("|", roundDigits: roundingDigits, marked: highlight_doubles);
 
             Console.WriteLine();
-            Console.Write("Matrix max values for each column:");
+            Console.Write($"Matrix {targetValues} for each column:");
             foreach (double val in values_doubles) Console.Write(" " + val.ToString("N" + roundingDigits));
             Console.WriteLine();
-            Console.WriteLine("Matrix first (top to bottom) max values indices for each column: " + String.Join(" ", indices_doubles));
+            Console.WriteLine($"Matrix {targetValues} indices for each column: " + String.Join(" ", indices_doubles));
 
         }
     }
