@@ -210,7 +210,7 @@ namespace Task_03
                 ['g'] = indices_ints,
             };
 
-            Console.Write("Auto-generated matrix of double values: first max values for each column are ");
+            Console.Write("Auto-generated matrix of int values: first max values for each column are ");
             ConsoleExtension.SetColor('g');
             Console.Write("green");
             Console.ResetColor();
@@ -254,7 +254,7 @@ namespace Task_03
                 ['g'] = indices_doubles,
             };
 
-            Console.Write("Auto-generated matrix of int values: first max values for each column are ");
+            Console.Write("Auto-generated matrix of double values: first max values for each column are ");
             ConsoleExtension.SetColor('g');
             Console.Write("green");
             Console.ResetColor();
