@@ -248,7 +248,7 @@ namespace Task_03
             Console.ResetColor();
             Console.Write(".\n\n");
 
-            Matrix matrix_ints = new Matrix(ints);
+            Matrix matrix_ints = new(ints);
             matrix_ints.Print("|", marked: highlight_ints);
 
             Console.WriteLine();
@@ -265,7 +265,7 @@ namespace Task_03
 
             ((int row, int col)[] indices_doubles, dynamic[] values_doubles) = matrix_doubles.GetFirstMaxOfColumns();
 
-            Dictionary<char, (int, int)[]> highlight_doubles = new Dictionary<char, (int, int)[]>()
+            Dictionary<char, (int, int)[]> highlight_doubles = new()
             {
                 ['g'] = indices_doubles,
             };
