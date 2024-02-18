@@ -37,11 +37,11 @@ namespace Task_03
     }
     public class Matrix
     {
-        public dynamic value { get; set; }
-        public int rowCount { get { return value.GetLength(0); } }
-        public int colCount { get { return value.GetLength(1); } }
+        public dynamic Value { get; set; }
+        public int RowCount { get { return Value.GetLength(0); } }
+        public int ColCount { get { return Value.GetLength(1); } }
         public Matrix(dynamic input) {
-            value = input;
+            Value = input;
         }
         /// <summary>
         /// Produce random value with the specified range
@@ -121,23 +121,23 @@ namespace Task_03
         /// <returns>Indices and values</returns>
         public ((int, int)[], dynamic[]) GetFirstMaxOfColumns()
         {
-            (int row, int col)[] indices = new (int, int)[colCount];
-            dynamic[] values = new dynamic[colCount];
+            (int row, int col)[] indices = new (int, int)[ColCount];
+            dynamic[] values = new dynamic[ColCount];
 
-            for (int j = 0; j < colCount; j++)
+            for (int j = 0; j < ColCount; j++)
             {
                 indices[j] = (0, j);
-                values[j] = value[0, j];
+                values[j] = Value[0, j];
             }
 
-            for (int j = 0; j < colCount; j++)
+            for (int j = 0; j < ColCount; j++)
             {
-                for (int i = 0; i < rowCount; i++)
+                for (int i = 0; i < RowCount; i++)
                 {
-                    if (value[i, j] > values[j])
+                    if (Value[i, j] > values[j])
                     {
                         indices[j] = (i, j);
-                        values[j] = value[i, j];
+                        values[j] = Value[i, j];
                     }
                 }
             }
@@ -177,12 +177,12 @@ namespace Task_03
                 return maxCount;
             }
 
-            int cellInnerWidth = GetMaxDigitCount(value);
+            int cellInnerWidth = GetMaxDigitCount(Value);
             string padding = new string(' ', paddingSpaces);
 
-            for (int i = 0; i < value.GetLength(0); i++)
+            for (int i = 0; i < Value.GetLength(0); i++)
             {
-                for (int j = 0; j < value.GetLength(1); j++)
+                for (int j = 0; j < Value.GetLength(1); j++)
                 {
                     Console.Write(padding);
                     char colorCode = 'w';
@@ -194,10 +194,10 @@ namespace Task_03
                         }
                     }
                     ConsoleExtension.SetColor(colorCode);
-                    Console.Write(GetFillingToMaxWidth(roundDigits == null ? value[i, j] : value[i, j].ToString("N" + (int)roundDigits), cellInnerWidth));
+                    Console.Write(GetFillingToMaxWidth(roundDigits == null ? Value[i, j] : Value[i, j].ToString("N" + (int)roundDigits), cellInnerWidth));
                     Console.ResetColor();
                     ConsoleExtension.SetColor('d');
-                    Console.Write(padding + (j != value.GetLength(1) - 1 ? divider : ""));
+                    Console.Write(padding + (j != Value.GetLength(1) - 1 ? divider : ""));
                     Console.ResetColor();
                 }
                 Console.WriteLine();
