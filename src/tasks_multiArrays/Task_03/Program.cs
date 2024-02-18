@@ -37,7 +37,7 @@ namespace Task_03
     }
     public class Matrix
     {
-        public dynamic value;
+        public dynamic value { get; set; }
         public Matrix(dynamic input) {
             value = input;
         }
