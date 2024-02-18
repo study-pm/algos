@@ -2,9 +2,6 @@
  * Найти максимальный элемент массива, минимальный и среднее арифметическое
  */
 
-using System.ComponentModel.DataAnnotations;
-using Task_03;
-
 namespace Task_05
 {
     public class Matrix : Task_04.Matrix
