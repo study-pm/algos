@@ -221,7 +221,7 @@ namespace Task_03
 
             Console.WriteLine();
             Console.WriteLine("Matrix max values for each column: " + String.Join(" ", values_ints));
-            Console.WriteLine("Matrix first max values indices (top to bottom) for each column: " + String.Join(" ", indices_ints));
+            Console.WriteLine("Matrix first (top to bottom) max values indices for each column: " + String.Join(" ", indices_ints));
 
             Console.WriteLine(Environment.NewLine);
 
@@ -261,11 +261,14 @@ namespace Task_03
             Console.Write(".\n\n");
 
             Matrix matrix_doubles = new Matrix(doubles);
-            matrix_doubles.Print("|", roundDigits: 2, marked: highlight_doubles);
+            int roundingDigits = 2;
+            matrix_doubles.Print("|", roundDigits: roundingDigits, marked: highlight_doubles);
 
             Console.WriteLine();
-            Console.WriteLine("Matrix max values for each column: " + String.Join(" ", values_doubles));
-            Console.WriteLine("Matrix first max values indices (top to bottom) for each column: " + String.Join(" ", indices_doubles));
+            Console.Write("Matrix max values for each column:");
+            foreach (double val in values_doubles) Console.Write(" " + val.ToString("N" + roundingDigits));
+            Console.WriteLine();
+            Console.WriteLine("Matrix first (top to bottom) max values indices for each column: " + String.Join(" ", indices_doubles));
 
         }
     }
