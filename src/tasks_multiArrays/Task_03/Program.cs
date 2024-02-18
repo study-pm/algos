@@ -2,9 +2,6 @@
  * Сформировать одномерный массив, в который занести первые (сверху вниз) максимальные элементы каждого столбца матрицы.
  */
 
-using System;
-using System.CodeDom.Compiler;
-
 namespace Task_03
 {
     public class ConsoleExtension
