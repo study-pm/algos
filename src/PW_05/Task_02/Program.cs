@@ -4,8 +4,6 @@
  * Вывести массив и результаты/
  */
 
-using Task_01;
-
 namespace Task_02
 {
     internal class Program
@@ -43,7 +41,7 @@ namespace Task_02
                 int[] range = ParseRangeStr(Console.ReadLine());
                 int a = range[0], b = range[1];
 
-                int[] result = Utils.GetRandomsArray(N, new int[] { a, b });
+                int[] result = Task_01.Utils.GetRandomsArray(N, new int[] { a, b });
 
                 int max = result[0];
                 int min = result[0];
@@ -66,7 +64,7 @@ namespace Task_02
 
                 Console.WriteLine();
                 Console.WriteLine($"nAuto generated array of {N} items within the range between {a} and {b}: ");
-                Utils.PrintArray(result);
+                Task_01.Utils.PrintArray(result);
 
                 Console.WriteLine();
                 Console.WriteLine($"Array max value is {max}, min is {min}, mean is {mean.ToString("N2")}");
