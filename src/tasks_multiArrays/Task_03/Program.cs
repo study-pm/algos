@@ -38,8 +38,8 @@ namespace Task_03
     public class Matrix
     {
         public dynamic value { get; set; }
-        public int RowCount { get { return value.GetLength(0); } }
-        public int ColCount { get { return value.GetLength(1); } }
+        public int rowCount { get { return value.GetLength(0); } }
+        public int colCount { get { return value.GetLength(1); } }
         public Matrix(dynamic input) {
             value = input;
         }
@@ -114,6 +114,34 @@ namespace Task_03
             }
 
             return result;
+        }
+        /// <summary>
+        /// Get first (top to bottom) max values for each column
+        /// </summary>
+        /// <returns>Indices and values</returns>
+        public ((int, int)[], dynamic[]) GetFirstMaxOfColumns()
+        {
+            (int row, int col)[] indices = new (int, int)[colCount];
+            dynamic[] values = new dynamic[colCount];
+
+            for (int j = 0; j < colCount; j++)
+            {
+                indices[j] = (0, j);
+                values[j] = value[0, j];
+            }
+
+            for (int j = 0; j < colCount; j++)
+            {
+                for (int i = 0; i < rowCount; i++)
+                {
+                    if (value[i, j] > values[j])
+                    {
+                        indices[j] = (i, j);
+                        values[j] = value[i, j];
+                    }
+                }
+            }
+            return (indices, values);
         }
         /// <summary>
         /// Prints matrix value in pretty format
@@ -232,26 +260,10 @@ namespace Task_03
             // For doubles
             double[,] doubles = Matrix.Generate(new int[] { M, N }, new double[] { -256.0, 256.0 }, dupesUpperBound: 6);
 
-            (int row, int col)[] indices_doubles = new (int, int)[N];
-            double[] values_doubles = new double[N];
+            Matrix matrix_doubles = new Matrix(doubles);
+            int roundingDigits = 2;
 
-            for (int j = 0; j < doubles.GetLength(1); j++)
-            {
-                indices_doubles[j] = (0, j);
-                values_doubles[j] = doubles[0, j];
-            }
-
-            for (int j = 0; j < doubles.GetLength(1); j++)
-            {
-                for (int i = 0; i < doubles.GetLength(0); i++)
-                {
-                    if (doubles[i, j] > values_doubles[j])
-                    {
-                        indices_doubles[j] = (i, j);
-                        values_doubles[j] = doubles[i, j];
-                    }
-                }
-            }
+            ((int row, int col)[] indices_doubles, dynamic[] values_doubles) = matrix_doubles.GetFirstMaxOfColumns();
 
             Dictionary<char, (int, int)[]> highlight_doubles = new Dictionary<char, (int, int)[]>()
             {
@@ -264,8 +276,6 @@ namespace Task_03
             Console.ResetColor();
             Console.Write(".\n\n");
 
-            Matrix matrix_doubles = new Matrix(doubles);
-            int roundingDigits = 2;
             matrix_doubles.Print("|", roundDigits: roundingDigits, marked: highlight_doubles);
 
             Console.WriteLine();
