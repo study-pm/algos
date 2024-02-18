@@ -9,6 +9,9 @@ namespace Task_05
 {
     public class Matrix : Task_04.Matrix
     {
+        public Matrix(double[,] input) : base(input) { }
+        public Matrix(int[,] input) : base(input) { }
+
         private (dynamic value, (int, int)[] indices)? Max = null;
         private dynamic Mean = null;
         private (dynamic value, (int, int)[] indices)? Min = null;
@@ -43,9 +46,6 @@ namespace Task_05
             }
             return (double)sum / (RowCount * ColCount);
         }
-        public Matrix(double[,] input) : base(input) { }
-        public Matrix(int[,] input) : base(input) { }
-
         public (dynamic value, (int, int)[] indices) GetMin()
         {
             dynamic min = Value[0, 0];
