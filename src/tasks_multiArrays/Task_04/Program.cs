@@ -1,9 +1,6 @@
 ﻿/* Дана прямоугольная матрица размерности MxN.
  * Сформировать одномерный массив, в который занести последние (сверху вниз ) минимальные элементы каждого столбца матрицы.
  */
-
-using Task_03;
-
 namespace Task_04
 {
     public class Matrix : Task_03.Matrix
@@ -106,7 +103,7 @@ namespace Task_04
             };
 
             Console.Write($"Auto-generated matrix of double values: {targetValues} for each column are ");
-            ConsoleExtension.SetColor('r');
+            Task_03.ConsoleExtension.SetColor('r');
             Console.Write("red");
             Console.ResetColor();
             Console.Write(".\n\n");
