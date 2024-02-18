@@ -50,12 +50,12 @@ namespace Task_03
         /// <returns>Random value with the specified range</returns>
         private static int GetRandomValue(int[] range)
         {
-            Random random = new Random();
+            Random random = new();
             return random.Next(range[0], range[1]);
         }
         private static double GetRandomValue(double[] range)
         {
-            Random random = new Random();
+            Random random = new();
             return random.NextDouble() * (range[1] - range[0]) + range[0];
         }
         /// <summary>
@@ -260,7 +260,7 @@ namespace Task_03
             // For doubles
             double[,] doubles = Matrix.Generate(new int[] { M, N }, new double[] { -256.0, 256.0 }, dupesUpperBound: 6);
 
-            Matrix matrix_doubles = new Matrix(doubles);
+            Matrix matrix_doubles = new(doubles);
             int roundingDigits = 2;
 
             ((int row, int col)[] indices_doubles, dynamic[] values_doubles) = matrix_doubles.GetFirstMaxOfColumns();
