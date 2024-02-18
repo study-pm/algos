@@ -271,7 +271,6 @@ namespace Task_03
             foreach (double val in values_doubles) Console.Write(" " + val.ToString("N" + roundingDigits));
             Console.WriteLine();
             Console.WriteLine($"Matrix {targetValues} indices for each column: " + String.Join(" ", indices_doubles));
-
         }
     }
 }
