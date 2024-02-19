@@ -60,8 +60,11 @@
             newby.Print();
 
             Array.Resize(ref applicants, applicants.Length + 1);
+            applicants[applicants.Length - 1] = newby;
 
-            double meanGrade = 5;
+            Console.WriteLine(Environment.NewLine);
+
+            double meanGrade = 5.0;
 
             Console.WriteLine("Applicants with mean grade " + meanGrade);
             Applicant[] applicantsByMeanGrade = GetApplicantsByMeanGrade(applicants, meanGrade);
