@@ -1,8 +1,9 @@
 /archived
-/assets
 /res
 bin/
 obj/
 .csproj.user
 .suo
 .vs
+*.docx
+*.xlsx
