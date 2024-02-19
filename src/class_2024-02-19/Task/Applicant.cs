@@ -19,14 +19,14 @@ namespace Task
         public string FirstName {
             get { return firstName; }
             set {
-                if (string.IsNullOrWhiteSpace(value)) throw new ArgumentNullException("value");
+                if (string.IsNullOrWhiteSpace(value) || string.IsNullOrEmpty(value)) throw new ArgumentNullException("value");
                 firstName = value;
             }
         }
         public string LastName {
             get { return lastName; }
             set {
-                if (string.IsNullOrWhiteSpace(value)) throw new ArgumentNullException("value");
+                if (string.IsNullOrWhiteSpace(value) || string.IsNullOrEmpty(value)) throw new ArgumentNullException("value");
                 lastName = value;
             }
         }
