@@ -41,45 +41,55 @@
         public static void PrintApplicants(Applicant[] items)
         {
             foreach (Applicant item in items) item.Print();
+            if (items.Length == 0) Console.WriteLine("No applicants by the given criteria have been found.");
         }
         static void Main(string[] args)
         {
-            Applicant[] applicants = new Applicant[]
+            try
             {
-                new Applicant(),
-                new Applicant("Julius", "Kerby", 1999, 4.65),
-                new Applicant("Mark", "Haynes", 2015, 3.28),
-                new Applicant("Kathy", "Harris", 2022, 5),
-                new Applicant("Mia", "Wilson", 2019, 4.8),
-                new Applicant("Raymond", "Flores", 1975, 4.12),
-            };
+                Applicant[] applicants = new Applicant[]
+                {
+                    new Applicant(),
+                    new Applicant("Julius", "Kerby", 1999, 4.65),
+                    new Applicant("Mark", "Haynes", 2015, 3.28),
+                    new Applicant("Kathy", "Harris", 2022, 4.5),
+                    new Applicant("Mia", "Wilson", 2019, 4.8),
+                    new Applicant("Raymond", "Flores", 1975, 4.12),
+                };
 
-            Console.WriteLine("Adding new applicant.");
-            Applicant newby = Applicant.Add();
-            Console.WriteLine("Successfully added new applicant.");
-            newby.Print();
+                Console.WriteLine("Adding new applicant.");
+                Applicant newby = Applicant.Add();
+                Console.WriteLine("Successfully added new applicant.");
+                newby.Print();
 
-            Array.Resize(ref applicants, applicants.Length + 1);
-            applicants[applicants.Length - 1] = newby;
+                Array.Resize(ref applicants, applicants.Length + 1);
+                applicants[applicants.Length - 1] = newby;
 
-            Console.WriteLine(Environment.NewLine);
+                Console.WriteLine(Environment.NewLine);
 
-            double meanGrade = 5.0;
+                double meanGrade = 5.0;
 
-            Console.WriteLine("Applicants with mean grade " + meanGrade);
-            Applicant[] applicantsByMeanGrade = GetApplicantsByMeanGrade(applicants, meanGrade);
-            PrintApplicants(applicantsByMeanGrade);
+                Console.WriteLine("Applicants with mean grade " + meanGrade);
+                Applicant[] applicantsByMeanGrade = GetApplicantsByMeanGrade(applicants, meanGrade);
+                PrintApplicants(applicantsByMeanGrade);
 
-            Console.WriteLine(Environment.NewLine);
+                Console.WriteLine(Environment.NewLine);
 
-            meanGrade = 4.2;
-            Console.WriteLine("Applicants with mean grade not less than " + meanGrade);
-            PrintApplicants(GetApplicantsByMeanGradeNotLessThan(applicants, meanGrade));
+                Console.Write("Enter mean grade: ");
+                meanGrade = double.Parse(Console.ReadLine());
 
-            Console.WriteLine(Environment.NewLine);
+                Console.WriteLine("Applicants with mean grade not less than " + meanGrade);
+                PrintApplicants(GetApplicantsByMeanGradeNotLessThan(applicants, meanGrade));
 
-            Console.WriteLine("Applicants with highest mean grade");
-            PrintApplicants(GetApplicantsByHighestGrade(applicants));
+                Console.WriteLine(Environment.NewLine);
+
+                Console.WriteLine("Applicants with highest mean grade");
+                PrintApplicants(GetApplicantsByHighestGrade(applicants));
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid user input.");
+            }
         }
     }
 }
