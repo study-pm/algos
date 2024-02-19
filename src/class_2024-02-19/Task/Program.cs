@@ -44,7 +44,6 @@
         }
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
             Applicant[] applicants = new Applicant[]
             {
                 new Applicant(),
@@ -54,6 +53,13 @@
                 new Applicant("Mia", "Wilson", 2019, 4.8),
                 new Applicant("Raymond", "Flores", 1975, 4.12),
             };
+
+            Console.WriteLine("Adding new applicant.");
+            Applicant newby = Applicant.Add();
+            Console.WriteLine("Successfully added new applicant.");
+            newby.Print();
+
+            Array.Resize(ref applicants, applicants.Length + 1);
 
             double meanGrade = 5;
 

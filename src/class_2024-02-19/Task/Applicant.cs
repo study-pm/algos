@@ -41,24 +41,35 @@ namespace Task
         public double MeanGrade {
             get { return meanGrade; }
             set {
-
                 if (value < Applicant.gradeRange[0] || value > Applicant.gradeRange[1]) throw new ArgumentOutOfRangeException("value");
                 meanGrade = value;
             }
         }
         public Applicant()
         {
-            string firstName = "Anonymous";
-            string lastName = "Anonymous";
-            int graduationYear = DateTime.Now.Year;
-            double meanGrade = 0;
+            FirstName = "Anonymous";
+            LastName = "Anonymous";
+            GraduationYear = DateTime.Now.Year;
+            MeanGrade = 0;
         }
         public Applicant(string firstName, string lastName, int graduationYear, double meanGrade)
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.graduationYear = graduationYear;
-            this.meanGrade = meanGrade;
+            FirstName = firstName;
+            LastName = lastName;
+            GraduationYear = graduationYear;
+            MeanGrade = meanGrade;
+        }
+        public static Applicant Add()
+        {
+            Console.Write("Enter first name: ");
+            string firstName = Console.ReadLine();
+            Console.Write("Enter last name: ");
+            string lastName = Console.ReadLine();
+            Console.Write("Enter graduation year: ");
+            int graduationYear = int.Parse(Console.ReadLine());
+            Console.Write("Enter mean grade: ");
+            double meanGrade = double.Parse(Console.ReadLine());
+            return new Applicant(firstName, lastName, graduationYear, meanGrade);
         }
         public void Print()
         {
