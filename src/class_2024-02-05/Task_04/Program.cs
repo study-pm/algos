@@ -11,10 +11,10 @@ namespace Task_04
             try
             {
                 Random random = new Random();
-                int[] array = new int[20];
+                int[] A = new int[20];
                 for (int i = 0; i < 20; i++)
                 {
-                    array[i] = random.Next(-100, 100);
+                    A[i] = random.Next(-100, 100);
                 }
 
                 Console.Write("Enter first array index: ");
@@ -24,15 +24,15 @@ namespace Task_04
 
                 if (k < n) (n, k) = (k, n);
 
-                int min = array[n];
+                int min = A[n];
 
-                for (int i = n; i < k + 1; i++)
+                for (int i = n-1; i < k; i++)
                 {
-                    if (array[i] < min) min = array[i];
+                    if (A[i] < min) min = A[i];
                 }
 
                 // Output
-                Console.WriteLine("Source array items: " + String.Join(' ', array));
+                Console.WriteLine("Source array items: " + String.Join(' ', A));
                 Console.WriteLine($"Min value from range between indices {n} and {k}: {min}");
             }
             catch (Exception)
