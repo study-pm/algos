@@ -53,10 +53,13 @@ namespace Task_05
                     sumLastN += array[i];
                 }
 
+                int d = sumFirstN - sumLastN;
+
                 // Output
                 Console.WriteLine("Source array items: " + String.Join(' ', array));
                 Console.WriteLine($"Frist {n} sum: {sumFirstN}");
                 Console.WriteLine($"Last {n} sum: {sumLastN}");
+                Console.WriteLine($"Sum difference: {d}");
             }
             catch (Exception e)
             {
