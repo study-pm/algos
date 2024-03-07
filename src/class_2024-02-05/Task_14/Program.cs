@@ -52,7 +52,7 @@ namespace Task_14
             // Output
             Console.WriteLine("Array A: " + String.Join(' ', A));
             Console.WriteLine("Array B: " + String.Join(' ', B));
-            Console.WriteLine("Common items of A and B and occurences count tuples: " + String.Join(' ', arrayIntersection));
+            Console.WriteLine("Common items of A and B (value, occurences count): " + String.Join(' ', arrayIntersection));
         }
     }
 }
