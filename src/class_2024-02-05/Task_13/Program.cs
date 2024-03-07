@@ -40,7 +40,8 @@ namespace Task_13
             // Output
             Console.WriteLine("Array A: " + String.Join(' ', A));
             Console.WriteLine("Array B: " + String.Join(' ', B));
-            Console.WriteLine("Intersection of A and B (w/o doubles): " + String.Join(' ', I));
+            if (I.Length == 0) Console.WriteLine("No common items for A and B");
+            else Console.WriteLine("Intersection of A and B (w/o doubles): " + String.Join(' ', I));
         }
     }
 }
