@@ -57,8 +57,8 @@ namespace Task_05
 
                 // Output
                 Console.WriteLine("Source array items: " + String.Join(' ', array));
-                Console.WriteLine($"Frist {n} sum: {sumFirstN}");
-                Console.WriteLine($"Last {n} sum: {sumLastN}");
+                Console.WriteLine($"First {n} items sum: {sumFirstN}");
+                Console.WriteLine($"Last {n} items sum: {sumLastN}");
                 Console.WriteLine($"Sum difference: {d}");
             }
             catch (Exception e)
