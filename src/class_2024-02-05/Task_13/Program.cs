@@ -35,12 +35,12 @@ namespace Task_13
             string[] B = new string[] { "99", "3a3b", "val_2", "p1", "val2", "16", "s", "2.18", "7", "rep" };
 
             // Calculation
-            string[] arrayIntersection = GetArrayIntersection(A, B);
+            string[] I = GetArrayIntersection(A, B);
 
             // Output
             Console.WriteLine("Array A: " + String.Join(' ', A));
             Console.WriteLine("Array B: " + String.Join(' ', B));
-            Console.WriteLine("Intersection of A and B (w/o doubles): " + String.Join(' ', arrayIntersection));
+            Console.WriteLine("Intersection of A and B (w/o doubles): " + String.Join(' ', I));
         }
     }
 }
