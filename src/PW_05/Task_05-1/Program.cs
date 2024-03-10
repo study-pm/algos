@@ -76,13 +76,19 @@ namespace Task_05_1
         }
         static void Main()
         {
-            int i = 8;
-
-            for (int n = 0; n < i; n++)
+            try
             {
+                Console.Write("Enter a non-negative integer: ");
+                int n = int.Parse(Console.ReadLine());
+
+                if (n < 0) throw new Exception("invalid input");
+
                 int[,] matrix = GetFilledWithNaturals(n);
-                Task_01.Utils.PrintArray(matrix, "|");
-                Console.WriteLine();
+                Task_01.Utils.PrintArray(matrix);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid input: must be a non-negative integer.");
             }
         }
     }
