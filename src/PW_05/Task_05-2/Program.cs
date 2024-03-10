@@ -2,6 +2,8 @@
  * Напишите программу, которая формирует новую матрицу, переставляя блоки исходной матрицы согласно приведенной схеме.
  */
 
+using System.Drawing;
+
 namespace Task_05_2
 {
     internal class Program
@@ -64,11 +66,14 @@ namespace Task_05_2
         }
         static void Main(string[] args)
         {
-            for (int n = 1; n < 5; n++)
+            try
             {
-                int size = n * 2;
+                Console.Write("Enter a positive integer number: ");
+                int n = int.Parse(Console.ReadLine());
 
-                string[,] src = GetFilledWithIndices(size);
+                if (n < 0) throw new Exception("invalid input");
+
+                string[,] src = GetFilledWithIndices(2 * n);
                 Console.WriteLine("Source matrix");
                 Task_01.Utils.PrintArray(src, "|");
                 Console.WriteLine();
@@ -77,8 +82,10 @@ namespace Task_05_2
                 Console.WriteLine("Shifted matrix");
                 Task_01.Utils.PrintArray(shifted, "|");
                 Console.WriteLine();
-
-                Console.WriteLine(Environment.NewLine);
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Invalid input: must be a non-negative integer.");
             }
         }
     }
