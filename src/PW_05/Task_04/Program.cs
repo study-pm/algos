@@ -129,8 +129,8 @@ namespace Task_04
                 Console.Write("Enter matrix size, must be 1 (for one-dimensional) or 2 (for two-dimensional) integers separated by a space: ");
                 int[] size = Matrix.ParseSizeString(Console.ReadLine());
 
-                Matrix matrix_1 = new(Matrix.FillIn(size));
-                matrix_1.Print("|");
+                Matrix matrix = new(Matrix.FillIn(size));
+                matrix.Print("|");
             }
             catch (Exception e)
             {
