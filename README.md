@@ -5,5 +5,6 @@ https://e-learn.petrocollege.ru/course/view.php?id=6229
 
 | | |
 -- | --
+**URL** | https://e-learn.petrocollege.ru/course/view.php?id=6229
 **Author** | Спиридонова Татьяна Сергеевна
 **Publishers** | Петровский колледж
