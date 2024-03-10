@@ -63,7 +63,7 @@ namespace Task_02
                 double mean = (double)sum / arr.Length;
 
                 Console.WriteLine();
-                Console.WriteLine($"nAuto generated array of {N} items within the range between {a} and {b}: ");
+                Console.WriteLine($"Auto generated array of {N} items within the range between {a} and {b}: ");
                 Task_01.Utils.PrintArray(arr);
 
                 Console.WriteLine();
