@@ -126,7 +126,7 @@ namespace Task_04
         {
             try
             {
-                Console.Write("Enter matrix size (must be 1 or 2 integers separated by a space): ");
+                Console.Write("Enter matrix size, must be 1 (for one-dimensional) or 2 (for two-dimensional) integers separated by a space: ");
                 int[] size = Matrix.ParseSizeString(Console.ReadLine());
 
                 Matrix matrix_1 = new(Matrix.FillIn(size));
