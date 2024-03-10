@@ -41,30 +41,30 @@ namespace Task_02
                 int[] range = ParseRangeStr(Console.ReadLine());
                 int a = range[0], b = range[1];
 
-                int[] result = Task_01.Utils.GetRandomsArray(N, new int[] { a, b });
+                int[] arr = Task_01.Utils.GetRandomsArray(N, new int[] { a, b });
 
-                int max = result[0];
-                int min = result[0];
+                int max = arr[0];
+                int min = arr[0];
                 int sum = 0;
 
-                for (int i = 0; i < result.Length; i++)
+                for (int i = 0; i < arr.Length; i++)
                 {
-                    if (result[i] > max)
+                    if (arr[i] > max)
                     {
-                        max = result[i];
+                        max = arr[i];
                     }
-                    if (result[i] < min)
+                    if (arr[i] < min)
                     {
-                        min = result[i];
+                        min = arr[i];
                     }
-                    sum += result[i];
+                    sum += arr[i];
                 }
 
-                double mean = (double)sum / result.Length;
+                double mean = (double)sum / arr.Length;
 
                 Console.WriteLine();
                 Console.WriteLine($"nAuto generated array of {N} items within the range between {a} and {b}: ");
-                Task_01.Utils.PrintArray(result);
+                Task_01.Utils.PrintArray(arr);
 
                 Console.WriteLine();
                 Console.WriteLine($"Array max value is {max}, min is {min}, mean is {mean.ToString("N2")}");
