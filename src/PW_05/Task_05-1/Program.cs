@@ -78,17 +78,17 @@ namespace Task_05_1
         {
             try
             {
-                Console.Write("Enter a non-negative integer: ");
+                Console.Write("Enter a natural number: ");
                 int n = int.Parse(Console.ReadLine());
 
-                if (n < 0) throw new Exception("invalid input");
+                if (n < 1) throw new Exception("invalid input");
 
                 int[,] matrix = GetFilledWithNaturals(n);
                 Task_01.Utils.PrintArray(matrix);
             }
             catch (Exception)
             {
-                Console.WriteLine("Invalid input: must be a non-negative integer.");
+                Console.WriteLine("Invalid input: must be a positive integer.");
             }
         }
     }
