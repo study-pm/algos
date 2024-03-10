@@ -83,6 +83,10 @@ namespace Task_02
                 Console.ForegroundColor = ConsoleColor.Blue;
                 Console.Write(mean.ToString("N2"));
                 Console.ResetColor();
+                Console.Write(", items sum is ");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.Write(sum);
+                Console.ResetColor();
                 Console.Write(".");
             }
             catch (Exception e)
