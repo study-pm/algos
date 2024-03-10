@@ -75,12 +75,12 @@ namespace Task_05_2
 
                 string[,] src = GetFilledWithIndices(2 * n);
                 Console.WriteLine("Source matrix");
-                Task_01.Utils.PrintArray(src, "|");
+                Task_01.Utils.PrintArray(src, "");
                 Console.WriteLine();
 
                 string[,] shifted = GetShiftedMatrix(src);
                 Console.WriteLine("Shifted matrix");
-                Task_01.Utils.PrintArray(shifted, "|");
+                Task_01.Utils.PrintArray(shifted, "");
                 Console.WriteLine();
             }
             catch (Exception)
