@@ -71,7 +71,19 @@ namespace Task_02
                 Task_01.Utils.PrintArray(arr);
 
                 Console.WriteLine();
-                Console.WriteLine($"Array max value is {max}, min is {min}, mean is {mean.ToString("N2")}");
+                Console.Write("Array max value is ");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write(max);
+                Console.ResetColor();
+                Console.Write(", min is ");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write(min);
+                Console.ResetColor();
+                Console.Write(", mean is ");
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.Write(mean.ToString("N2"));
+                Console.ResetColor();
+                Console.Write(".");
             }
             catch (Exception e)
             {
