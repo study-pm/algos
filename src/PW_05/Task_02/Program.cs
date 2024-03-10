@@ -21,12 +21,16 @@ namespace Task_02
                 string[] rangeStr = input.Split(" ");
                 int[] range = new int[2];
                 for (int i = 0; i < 2; i++) range[i] = int.Parse(rangeStr[i]);
-                if (range[0] > range[1]) (range[0], range[1]) = (range[1], range[0]);
                 return range;
             }
             catch (Exception) {
                 throw new Exception("range");
             }
+        }
+        static int[] NormalizeRange(int[] range)
+        {
+            if (range[0] > range[1]) (range[0], range[1]) = (range[1], range[0]);
+            return range;
         }
         static void Main()
         {
@@ -38,7 +42,7 @@ namespace Task_02
                 if (!isN) throw new Exception("length");
 
                 Console.Write("Enter array min and max values, separated by a space: ");
-                int[] range = ParseRangeStr(Console.ReadLine());
+                int[] range = NormalizeRange(ParseRangeStr(Console.ReadLine()));
                 int a = range[0], b = range[1];
 
                 int[] arr = Task_01.Utils.GetRandomsArray(N, new int[] { a, b });
