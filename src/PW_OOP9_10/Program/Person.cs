@@ -58,7 +58,7 @@ namespace Program
         /// <returns>Formatted data string</returns>
         public override string ToString()
         {
-            return String.Format("First name: {0}\nLast name: {1}\nDate of birth: {2}:", _name, _surname, _birth.ToShortDateString());
+            return String.Format("First name: {0}\nLast name: {1}\nDate of birth: {2}", _name, _surname, _birth.ToShortDateString());
         }
         /// <summary>
         /// Virtual method of string.ToShortString() to get string containing first and last names only
