@@ -37,6 +37,28 @@
             pers2.Year = 1925;
             Console.WriteLine("\nProperties of pers2 object changed:");
             Console.WriteLine(pers2.ToString());
+
+            Console.WriteLine();
+
+            // Student instance declaration
+            Student student1;
+            try
+            {
+                Console.Write("Enter student's contact data: ");
+                string contact = Console.ReadLine();
+                Console.Write("Enter education start date: ");
+                DateTime startDate = DateTime.Parse(Console.ReadLine());
+                student1 = new(pers2, contact, startDate);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error while reading your data: {0}", ex.Message);
+                student1 = new();
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Student data based on pers2");
+            Console.WriteLine(student1.ToString());
         }
     }
 }
