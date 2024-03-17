@@ -27,7 +27,7 @@ namespace Program
         }
         public override string ToString()
         {
-            return base.ToString() + Environment.NewLine + String.Format("Contact data: " + ContactData + "\nEducation start date: " + EdStartDate.ToShortDateString());
+            return PersonalData.ToString() + Environment.NewLine + String.Format("Contact data: " + ContactData + "\nEducation start date: " + EdStartDate.ToShortDateString());
         }
     }
 }
