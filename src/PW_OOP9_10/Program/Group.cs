@@ -61,7 +61,7 @@ namespace Program
         {
             string[] studentList = new string[Students.Length];
             for (int i = 0; i < Students.Length; i++) studentList[i] = i+1 + ". " + Students[i].ToShortString();
-            return $"Group name: {_name}, year of formation: {_formationYear}.\nList of students:\n{(String.Join("\n", studentList))}";
+            return $"Group name: {_name}, year of formation: {_formationYear}.\nList of students:\n{(_studentList.Length == 0 ? "(empty)" : String.Join("\n", studentList))}";
         }
         public virtual string ToShortString()
         {
