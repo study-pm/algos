@@ -18,7 +18,7 @@ namespace Program
         }
         public Group()
         {
-            _name = "DefaulGroup";
+            _name = "DefaultGroup";
             _formationYear = DateTime.Now.Year;
         }
         public string Name
