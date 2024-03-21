@@ -7,7 +7,7 @@ using System.Xml.Linq;
 
 namespace Program
 {
-    public class Student : Person
+    public class Student
     {
         public Person PersonalData { get; set; }
         public string ContactData { get; set; }
@@ -28,6 +28,10 @@ namespace Program
         public override string ToString()
         {
             return PersonalData.ToString() + Environment.NewLine + String.Format("Contact data: " + ContactData + "\nEducation start date: " + EdStartDate.ToShortDateString());
+        }
+        public string ToShortString()
+        {
+            return PersonalData.Surname + " " + PersonalData.Name;
         }
     }
 }
