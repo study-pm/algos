@@ -94,3 +94,5 @@ https://stackoverflow.com/questions/4840802/change-array-size | change array siz
 https://stackoverflow.com/questions/4840802/change-array-size | change array size | | | 2024-03-16
 https://learn.microsoft.com/ru-ru/dotnet/api/system.console.foregroundcolor?view=net-8.0 | Console.ForegroundColor Свойство | | | 2024-03-16
 https://www.codeproject.com/Questions/343565/multiple-output-data-type-for-method-in-Csharp | multiple output data type for method in C# | | | 2024-03-16
+https://learn.microsoft.com/ru-ru/dotnet/csharp/programming-guide/classes-and-structs/auto-implemented-properties | Автоматически реализуемые свойства (Руководство по программированию на C#) | | | 2024-03-22
+https://stackoverflow.com/questions/1152925/override-an-overridden-method-c | Override an overridden method (C#) | | | 2024-03-22
