@@ -4,16 +4,20 @@
     {
         static void Main(string[] args)
         {
+            // Working with people
+            Console.WriteLine("Working with people");
+            Console.WriteLine("*******************");
+
             // Class instance declaration and default constructor call
             Person pers1 = new Person();
-            Console.WriteLine("Class instance with fields filled with default values");
+            Console.WriteLine("Class instance with the fields filled with default values");
             Console.WriteLine(pers1.ToString());
             Console.WriteLine(pers1.ToShortString());
 
             // Class instance declaration
             Person pers2;
             Console.WriteLine();
-            Console.WriteLine("Enter first name, last name and date of birth, press Enter after each value");
+            Console.WriteLine("Enter the first name, the last name and the date of birth, press Enter after the each value");
 
             // Constructor call reading user input
             try
@@ -27,6 +31,7 @@
             catch (Exception ex)
             {
                 Console.WriteLine("Error while reading your data: {0}", ex.Message);
+                Console.WriteLine("Creating a default person intance");
                 pers2 = new Person();
             }
             Console.WriteLine("\nFilling result: \n{0}", pers2.ToString());
@@ -35,7 +40,7 @@
             pers2.Name = "Полиграф";
             pers2.Surname = "Шариков";
             pers2.Year = 1925;
-            Console.WriteLine("\nProperties of pers2 object changed:");
+            Console.WriteLine("\nThe Properties of the pers2 object changed:");
             Console.WriteLine(pers2.ToString());
 
             Console.WriteLine();
