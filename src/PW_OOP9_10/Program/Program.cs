@@ -66,12 +66,12 @@
 
             Console.WriteLine();
 
-            Console.WriteLine("Adding the students to the group");
+            Console.WriteLine("Adding the students to the group and showing group value");
             group.AddStudents(new Student[] { student1, student2, student3 });
-            Console.WriteLine(group.ToString());
+            Console.WriteLine(group); // Equivalent to group.ToString()
             Console.WriteLine();
-            Console.WriteLine("Finding the youngest student in the group");
-            Console.WriteLine(group.YoungestStudent.PersonalData.ToString());
+            Console.WriteLine("Showing YoungestStudent prop value");
+            Console.WriteLine(group.YoungestStudent); // Equivalent to group.YoungestStudent.ToString()
         }
     }
 }
