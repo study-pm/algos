@@ -46,7 +46,7 @@ namespace Program
                         youngestStudent = student;
                     }
                 }
-                return _studentList[0];
+                return youngestStudent;
             }
         }
         public void AddStudents(Student[] students) {
