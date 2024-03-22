@@ -41,7 +41,7 @@ namespace Program
                 Student youngestStudent = _studentList[0];
                 foreach(Student student in _studentList)
                 {
-                    if (DateTime.Compare(student.PersonalData.Birth, youngestStudent.PersonalData.Birth) < 0)
+                    if (DateTime.Compare(student.PersonalData.Birth, youngestStudent.PersonalData.Birth) > 0)
                     {
                         youngestStudent = student;
                     }
