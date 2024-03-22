@@ -40,25 +40,30 @@
 
             Console.WriteLine();
 
-            // Student instance declaration
-            Student student1;
-            try
-            {
-                Console.Write("Enter student's contact data: ");
-                string contact = Console.ReadLine();
-                Console.Write("Enter education start date: ");
-                DateTime startDate = DateTime.Parse(Console.ReadLine());
-                student1 = new(pers2, contact, startDate);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Error while reading your data: {0}", ex.Message);
-                student1 = new();
-            }
+            // Filling in students
+            Student student1 = new();
+            Student student2 = new(pers1, "ул. Ленина, д. 40, г. Майкоп, Республика Адыгея, 385000", new DateTime(2022, 02, 23));
+            Student student3 = new(pers2, "пр-т Калинина, д. 8, г. Барнаул, Алтайский край, 656002", new DateTime(2021, 03, 08));
+
+            // Working with group
+            Console.WriteLine("Working with a group");
+            Console.WriteLine("********************");
+            Group group = new Group();
+            Console.WriteLine("Creating a new group");
+            Console.WriteLine(group.ToShortString());
 
             Console.WriteLine();
-            Console.WriteLine("Student data based on pers2");
-            Console.WriteLine(student1.ToString());
+
+            Console.WriteLine("Programmatically set the group's properties.");
+            group.Name = "53-02в";
+            group.Year = 2023;
+            Console.WriteLine(group.ToString());
+
+            Console.WriteLine();
+
+            Console.WriteLine("Adding the students to the group");
+            group.AddStudents(new Student[] { student1, student2, student3 });
+            Console.WriteLine(group.ToString());
         }
     }
 }
