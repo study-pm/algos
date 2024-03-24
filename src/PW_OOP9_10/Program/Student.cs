@@ -17,7 +17,7 @@ namespace Program
         public DateTime EdStartDate { get; set; }
 
         /// <summary>
-        /// Constructor with params for initializing all relevant class fields with user provided data
+        /// Params constructor for initializing all relevant class fields with user provided data
         /// </summary>
         /// <param name="personalData">Personal data (first and last name, date of birth)</param>
         /// <param name="contactData">Contact data (such as address, mail, phone, etc.)</param>
