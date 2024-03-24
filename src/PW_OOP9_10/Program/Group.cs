@@ -15,7 +15,7 @@ namespace Program
         private int _formationYear;
         private Student[] _studentList = Array.Empty<Student>();
         /// <summary>
-        /// Constructor with params for initializing all relevant class fields with user provided data
+        /// Params constructor for initializing all relevant class fields with user provided data
         /// </summary>
         /// <param name="name"></param>
         /// <param name="formationYear"></param>
