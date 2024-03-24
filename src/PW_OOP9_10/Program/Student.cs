@@ -38,7 +38,7 @@ namespace Program
             EdStartDate = DateTime.Now;
         }
         /// <summary>
-        /// Overriden version of string.ToString() to get string representation of all class data
+        /// Get string representation of all class data
         /// </summary>
         /// <returns>Formatted data string</returns>
         public override string ToString()
@@ -48,7 +48,7 @@ namespace Program
         /// <summary>
         /// Get single string containing first and last names only
         /// </summary>
-        /// <returns>Single data string</returns>
+        /// <returns>Short data string</returns>
         public string ToShortString()
         {
             return PersonalData.Surname + " " + PersonalData.Name;

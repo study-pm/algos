@@ -53,7 +53,7 @@ namespace Program
             }
         }
         /// <summary>
-        /// Overriden version of string.ToString() to get string representation of all class data
+        /// Get string representation of all class data
         /// </summary>
         /// <returns>Formatted data string</returns>
         public override string ToString()
@@ -61,7 +61,7 @@ namespace Program
             return String.Format("First name: {0}\nLast name: {1}\nDate of birth: {2}", _name, _surname, _birth.ToShortDateString());
         }
         /// <summary>
-        /// Virtual method string.ToShortString() to get string containing first and last names only
+        /// Get string containing first and last names only
         /// </summary>
         /// <returns>Formatted data string</returns>
         public virtual string ToShortString()
