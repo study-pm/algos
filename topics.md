@@ -120,3 +120,43 @@ https://learn.microsoft.com/en-us/dotnet/api/system.char.toupper?view=net-8.0 | 
 https://learn.microsoft.com/ru-ru/dotnet/api/system.string.trim?view=net-8.0 | String.Trim Метод | | | 2024-03-24
 https://www.c-sharpcorner.com/article/how-to-join-two-arrays-in-c-sharp/ | How To Join Two Arrays In C# | | | 2024-03-24
 https://stackoverflow.com/questions/4493858/elegant-way-to-combine-multiple-collections-of-elements | Elegant way to combine multiple collections of elements? | | | 2024-03-24
+https://learn.microsoft.com/en-us/dotnet/api/system.reflection.propertyinfo.getvalue?view=net-8.0 | PropertyInfo.GetValue Method | | | 2024-03-31
+https://stackoverflow.com/questions/411752/best-way-to-repeat-a-character-in-c-sharp | | Best way to repeat a character in C# | | | 2024-03-31
+https://stackoverflow.com/questions/31996519/listen-on-esc-while-reading-console-line | Listen on ESC while reading Console line | | | 2024-03-31
+https://learn.microsoft.com/ru-ru/dotnet/api/system.console.readkey?view=net-8.0 | Console.ReadKey Метод | | | 2024-03-31
+https://www.codeproject.com/Questions/243026/csharp-reading-a-key-without-displaying-it | c# reading a key without displaying it | | | 2024-03-31
+https://www.c-sharpcorner.com/article/explain-about-spread-operator-in-c-sharp-12/ | Spread operator in C# 12 | | | 2024-03-31
+https://stackoverflow.com/questions/12644473/c-sharp-check-if-consolekeyinfo-keychar-is-a-number | C# Check if ConsoleKeyInfo.KeyChar is a number | | | 2024-03-31
+https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-tuples | Tuple types (C# reference) | | | 2024-03-31
+https://stackoverflow.com/questions/47815660/does-c-sharp-7-have-array-enumerable-destructuring | Does C# 7 have array/enumerable destructuring? | | | 2024-03-31
+https://stackoverflow.com/questions/43021/how-do-you-get-the-index-of-the-current-iteration-of-a-foreach-loop | How do you get the index of the current iteration of a foreach loop? | | | 2024-03-31
+https://stackoverflow.com/questions/42352990/c-sharp-console-readline-after-readkey-waits-for-input-two-times | C# Console.ReadLine after ReadKey waits for input two times | | | 2024-03-31
+https://learn.microsoft.com/en-us/dotnet/api/system.console.readkey?view=net-8.0 | Console.ReadKey Method | | | 2024-03-31
+https://stackoverflow.com/questions/289792/int-to-char-in-c-sharp | Int to Char in C# | | | 2024-03-31
+https://stackoverflow.com/questions/9270023/how-to-determine-if-an-exception-is-of-a-particular-type | How to determine if an exception is of a particular type | | | 2024-03-31
+https://www.w3schools.com/cs/cs_arrays_multi.php | C# Multidimensional Arrays | | | 2024-03-31
+https://stackoverflow.com/questions/141088/how-to-iterate-over-a-dictionary | How to iterate over a dictionary? | | | 2024-03-31
+https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/private | private (C# Reference) | | | 2024-03-31
+https://stackoverflow.com/questions/62977464/how-to-pass-color-as-parameter-in-c | How to pass color as parameter in c#? | | | 2024-03-31
+https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/value-tuples | Tuple types (C# reference) | | | 2024-03-31
+https://stackoverflow.com/questions/12607146/method-parameter-array-default-value | Method parameter array default value [duplicate] | | | 2024-03-31
+https://stackoverflow.com/questions/23143184/how-do-i-check-type-of-dynamic-datatype-at-runtime | How do I check type of dynamic datatype at runtime? | | | 2024-03-31
+https://csharp.webdelphi.ru/slovar-dictionary-v-c/ | Словарь Dictionary в C# | | | 2024-03-31
+https://stackoverflow.com/questions/7867377/checking-if-a-string-array-contains-a-value-and-if-so-getting-its-position | Checking if a string array contains a value, and if so, getting its position | | | 2024-03-31
+https://stackoverflow.com/questions/16324654/need-for-loop-to-check-2-conditions-before-continuing | Need for loop to check 2 conditions before continuing | | | 2024-03-31
+https://stackoverflow.com/questions/7202515/difference-between-array-getlength0-and-array-getupperbound0 | Difference between array.GetLength(0) and array.GetUpperBound(0) | | | 2024-03-31
+https://ru.stackoverflow.com/questions/59861/%D0%A6%D0%B2%D0%B5%D1%82-%D1%82%D0%B5%D0%BA%D1%81%D1%82%D0%B0-%D0%B2-%D0%BA%D0%BE%D0%BD%D1%81%D0%BE%D0%BB%D0%B8-c | Цвет текста в консоли C# | | | 2024-03-31
+https://stackoverflow.com/questions/2743260/is-it-possible-to-write-to-the-console-in-colour-in-net | Is it possible to write to the console in colour in .NET? | | | 2024-03-31
+https://stackoverflow.com/questions/6539571/how-to-resize-multidimensional-2d-array-in-c | How to resize multidimensional (2D) array in C#? | | | 2024-03-31
+https://stackoverflow.com/questions/15602655/enum-property-inconsistent-accessibility | enum property inconsistent accessibility | | | 2024-03-31
+https://stackoverflow.com/questions/16722362/c-sharp-overload-return-type-recommended-approach | C# Overload return type - recommended approach | | | 2024-03-31
+https://stackoverflow.com/questions/20886811/check-inside-method-whether-some-optional-argument-was-passed | Check inside method whether some optional argument was passed | | | 2024-03-31
+https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/named-and-optional-arguments | Named and Optional Arguments (C# Programming Guide) | | | 2024-03-31
+https://stackoverflow.com/questions/27427527/how-to-get-a-complete-row-or-column-from-2d-array-in-c-sharp | How to get a complete row or column from 2D array in C# | | | 2024-03-31
+https://stackoverflow.com/questions/411752/best-way-to-repeat-a-character-in-c-sharp | Best way to repeat a character in C# | | | 2024-03-31
+https://stackoverflow.com/questions/4483886/how-can-i-get-a-count-of-the-total-number-of-digits-in-a-number | How can I get a count of the total number of digits in a number? | | | 2024-03-31
+https://labs-org.ru/c-sharp10/ | Урок 10. Двумерные массивы | | | 2024-03-31
+https://professorweb.ru/my/csharp/charp_theory/level4/4_3.php | Ступенчатые (зубчатые) массивы | | | 2024-03-31
+https://stackoverflow.com/questions/8986975/c-sharp-return-different-types | C# Return different types? | | | 2024-03-31
+https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0057 | Use range operator (IDE0057) | | | 2024-03-31
+https://www.geeksforgeeks.org/c-sharp-method-overriding/ | C# | Method Overriding | | | 2024-03-31
