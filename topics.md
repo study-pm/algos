@@ -62,7 +62,7 @@ https://stackoverflow.com/questions/11081549/how-to-convert-string-to-string | H
 https://www.tutorialsteacher.com/articles/get-comma-separated-string-from-array-in-csharp | How to get a comma separated string from an array in C#? |  |  | 2024-01-09
 https://stackoverflow.com/questions/4840802/change-array-size | change array size |  |  | 2024-01-09
 https://code-maze.com/csharp-array-maximum-value/ | How to Find the Maximum Value of an Array in C# |  |  | 2024-01-09
-https://www.geeksforgeeks.org/c-sharp-string-indexof-method-set-1/ | C# String.IndexOf( ) Method | Set – 1 |  |  | 2024-01-09
+https://www.geeksforgeeks.org/c-sharp-string-indexof-method-set-1/ | C# String.IndexOf( ) Method Set – 1 |  |  | 2024-01-09
 https://stackoverflow.com/questions/15535750/find-a-char-in-a-list-of-strings | Find a char in a List of Strings [closed] |  |  | 2024-01-09
 https://learn.microsoft.com/ru-ru/dotnet/api/system.collections.generic.list-1.clear?view=net-8.0 | List<T>.Clear Метод |  |  | 2024-01-09
 https://programm.top/c-sharp/tutorial/enum/ | Перечисления enum |  |  | 2024-01-09
