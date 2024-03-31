@@ -62,7 +62,7 @@ https://stackoverflow.com/questions/11081549/how-to-convert-string-to-string | H
 https://www.tutorialsteacher.com/articles/get-comma-separated-string-from-array-in-csharp | How to get a comma separated string from an array in C#? |  |  | 2024-01-09
 https://stackoverflow.com/questions/4840802/change-array-size | change array size |  |  | 2024-01-09
 https://code-maze.com/csharp-array-maximum-value/ | How to Find the Maximum Value of an Array in C# |  |  | 2024-01-09
-https://www.geeksforgeeks.org/c-sharp-string-indexof-method-set-1/ | C# | String.IndexOf( ) Method | Set – 1 |  |  | 2024-01-09
+https://www.geeksforgeeks.org/c-sharp-string-indexof-method-set-1/ | C# String.IndexOf( ) Method | Set – 1 |  |  | 2024-01-09
 https://stackoverflow.com/questions/15535750/find-a-char-in-a-list-of-strings | Find a char in a List of Strings [closed] |  |  | 2024-01-09
 https://learn.microsoft.com/ru-ru/dotnet/api/system.collections.generic.list-1.clear?view=net-8.0 | List<T>.Clear Метод |  |  | 2024-01-09
 https://programm.top/c-sharp/tutorial/enum/ | Перечисления enum |  |  | 2024-01-09
@@ -102,13 +102,13 @@ https://stackoverflow.com/questions/4840802/change-array-size | change array siz
 https://learn.microsoft.com/ru-ru/dotnet/api/system.datetime.compare?view=net-8.0 | DateTime.Compare(DateTime, DateTime) Метод | | | 2024-03-24
 https://learn.microsoft.com/ru-ru/dotnet/api/system.datetime.-ctor?view=net-8.0 | DateTime Конструкторы | | | 2024-03-24
 https://stackoverflow.com/questions/3573284/trim-last-character-from-a-string | Trim last character from a string | | | 2024-03-24
-https://www.geeksforgeeks.org/c-sharp-method-overriding/ | C# | Method Overriding | | | 2024-03-24
+https://www.geeksforgeeks.org/c-sharp-method-overriding/ | C# Method Overriding | | | 2024-03-24
 https://stackoverflow.com/questions/1802597/identifying-exception-type-in-a-handler-catch-block | Identifying Exception Type in a handler Catch Block | | | 2024-03-24
 https://stackoverflow.com/questions/5075150/using-c-sharp-foreach-tuple | Using C# foreach tuple | | | 2024-03-24
 https://stackoverflow.com/questions/6709072/c-getter-setter | c#: getter/setter | | | 2024-03-24
 https://stackoverflow.com/questions/28000501/what-is-the-exact-use-of-auto-implemented-properties | what is the exact use of auto implemented properties [duplicate] | | | 2024-03-24
 https://www.programiz.com/csharp-programming/inheritance | C# Inheritance | | | 2024-03-24
-https://www.geeksforgeeks.org/c-sharp-inheritance-in-constructors/ | C# | Inheritance in Constructors | | | 2024-03-24
+https://www.geeksforgeeks.org/c-sharp-inheritance-in-constructors/ | C# Inheritance in Constructors | | | 2024-03-24
 https://stackoverflow.com/questions/8098981/why-do-i-get-this-compile-error-trying-to-call-a-base-constructor-method-that-ta | Why do I get this compile error trying to call a base constructor/method that takes a dynamic argument? | | | 2024-03-24
 https://www.tutorialsteacher.com/csharp/valuetuple | C# - ValueTuple | | | 2024-03-24
 https://stackoverflow.com/questions/47815660/does-c-sharp-7-have-array-enumerable-destructuring | Does C# 7 have array/enumerable destructuring? | | | 2024-03-24
@@ -159,4 +159,4 @@ https://labs-org.ru/c-sharp10/ | Урок 10. Двумерные массивы 
 https://professorweb.ru/my/csharp/charp_theory/level4/4_3.php | Ступенчатые (зубчатые) массивы | | | 2024-03-31
 https://stackoverflow.com/questions/8986975/c-sharp-return-different-types | C# Return different types? | | | 2024-03-31
 https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0057 | Use range operator (IDE0057) | | | 2024-03-31
-https://www.geeksforgeeks.org/c-sharp-method-overriding/ | C# | Method Overriding | | | 2024-03-31
+https://www.geeksforgeeks.org/c-sharp-method-overriding/ | C# Method Overriding | | | 2024-03-31
