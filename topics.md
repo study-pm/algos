@@ -96,3 +96,27 @@ https://learn.microsoft.com/ru-ru/dotnet/api/system.console.foregroundcolor?view
 https://www.codeproject.com/Questions/343565/multiple-output-data-type-for-method-in-Csharp | multiple output data type for method in C# | | | 2024-03-16
 https://learn.microsoft.com/ru-ru/dotnet/csharp/programming-guide/classes-and-structs/auto-implemented-properties | Автоматически реализуемые свойства (Руководство по программированию на C#) | | | 2024-03-22
 https://stackoverflow.com/questions/1152925/override-an-overridden-method-c | Override an overridden method (C#) | | | 2024-03-22
+https://www.c-sharpcorner.com/blogs/date-and-time-format-in-c-sharp-programming1 | C# DateTime Format | | | 2024-03-24
+https://stackoverflow.com/questions/1547252/how-do-i-concatenate-two-arrays-in-c | How do I concatenate two arrays in C#? | | | 2024-03-24
+https://stackoverflow.com/questions/4840802/change-array-size | change array size | | | 2024-03-24
+https://learn.microsoft.com/ru-ru/dotnet/api/system.datetime.compare?view=net-8.0 | DateTime.Compare(DateTime, DateTime) Метод | | | 2024-03-24
+https://learn.microsoft.com/ru-ru/dotnet/api/system.datetime.-ctor?view=net-8.0 | DateTime Конструкторы | | | 2024-03-24
+https://stackoverflow.com/questions/3573284/trim-last-character-from-a-string | Trim last character from a string | | | 2024-03-24
+https://www.geeksforgeeks.org/c-sharp-method-overriding/ | C# | Method Overriding | | | 2024-03-24
+https://stackoverflow.com/questions/1802597/identifying-exception-type-in-a-handler-catch-block | Identifying Exception Type in a handler Catch Block | | | 2024-03-24
+https://stackoverflow.com/questions/5075150/using-c-sharp-foreach-tuple | Using C# foreach tuple | | | 2024-03-24
+https://stackoverflow.com/questions/6709072/c-getter-setter | c#: getter/setter | | | 2024-03-24
+https://stackoverflow.com/questions/28000501/what-is-the-exact-use-of-auto-implemented-properties | what is the exact use of auto implemented properties [duplicate] | | | 2024-03-24
+https://www.programiz.com/csharp-programming/inheritance | C# Inheritance | | | 2024-03-24
+https://www.geeksforgeeks.org/c-sharp-inheritance-in-constructors/ | C# | Inheritance in Constructors | | | 2024-03-24
+https://stackoverflow.com/questions/8098981/why-do-i-get-this-compile-error-trying-to-call-a-base-constructor-method-that-ta | Why do I get this compile error trying to call a base constructor/method that takes a dynamic argument? | | | 2024-03-24
+https://www.tutorialsteacher.com/csharp/valuetuple | C# - ValueTuple | | | 2024-03-24
+https://stackoverflow.com/questions/47815660/does-c-sharp-7-have-array-enumerable-destructuring | Does C# 7 have array/enumerable destructuring? | | | 2024-03-24
+https://www.codecademy.com/resources/docs/c-sharp/arrays/reverse | .Reverse() | | | 2024-03-24
+https://stackoverflow.com/questions/228038/best-way-to-reverse-a-string | Best way to reverse a string | | | 2024-03-24
+https://www.educative.io/answers/how-to-capitalize-the-first-letter-of-a-string-in-c-sharp | How to capitalize the first letter of a string in C# | | | 2024-03-24
+https://learn.microsoft.com/ru-ru/dotnet/api/system.string.split?view=net-8.0 | String.Split Метод | | | 2024-03-24
+https://learn.microsoft.com/en-us/dotnet/api/system.char.toupper?view=net-8.0 | Char.ToUpper Method | | | 2024-03-24
+https://learn.microsoft.com/ru-ru/dotnet/api/system.string.trim?view=net-8.0 | String.Trim Метод | | | 2024-03-24
+https://www.c-sharpcorner.com/article/how-to-join-two-arrays-in-c-sharp/ | How To Join Two Arrays In C# | | | 2024-03-24
+https://stackoverflow.com/questions/4493858/elegant-way-to-combine-multiple-collections-of-elements | Elegant way to combine multiple collections of elements? | | | 2024-03-24
