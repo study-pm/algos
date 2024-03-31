@@ -8,7 +8,7 @@
             Console.WriteLine(title1);
             Console.WriteLine(new string('*', title1.Length));
             Person player1 = new Player();
-            Console.WriteLine("Player properties.");
+            Console.WriteLine("Listing default player properties");
             Console.WriteLine(player1.ToString());
 
             Console.WriteLine(Environment.NewLine);
@@ -36,7 +36,7 @@
                 player2 = new Person();
             }
 
-            Console.WriteLine("Player properties.");
+            Console.WriteLine("Listing user specified player properties");
             Console.WriteLine(player2.ToString());
         }
     }
