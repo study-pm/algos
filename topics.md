@@ -121,7 +121,7 @@ https://learn.microsoft.com/ru-ru/dotnet/api/system.string.trim?view=net-8.0 | S
 https://www.c-sharpcorner.com/article/how-to-join-two-arrays-in-c-sharp/ | How To Join Two Arrays In C# | | | 2024-03-24
 https://stackoverflow.com/questions/4493858/elegant-way-to-combine-multiple-collections-of-elements | Elegant way to combine multiple collections of elements? | | | 2024-03-24
 https://learn.microsoft.com/en-us/dotnet/api/system.reflection.propertyinfo.getvalue?view=net-8.0 | PropertyInfo.GetValue Method | | | 2024-03-31
-https://stackoverflow.com/questions/411752/best-way-to-repeat-a-character-in-c-sharp | | Best way to repeat a character in C# | | | 2024-03-31
+https://stackoverflow.com/questions/411752/best-way-to-repeat-a-character-in-c-sharp | Best way to repeat a character in C# | | | 2024-03-31
 https://stackoverflow.com/questions/31996519/listen-on-esc-while-reading-console-line | Listen on ESC while reading Console line | | | 2024-03-31
 https://learn.microsoft.com/ru-ru/dotnet/api/system.console.readkey?view=net-8.0 | Console.ReadKey Метод | | | 2024-03-31
 https://www.codeproject.com/Questions/243026/csharp-reading-a-key-without-displaying-it | c# reading a key without displaying it | | | 2024-03-31
