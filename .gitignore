@@ -2,6 +2,7 @@
 /res
 bin/
 obj/
+/src/**/Resources
 .csproj.user
 .suo
 .vs
