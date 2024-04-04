@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EC8ED00D-67F8-495B-9597-4F8B5C39DC6E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ClothesChangeGame</RootNamespace>
+    <AssemblyName>ClothesChangeGame</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blackPants.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bluePants.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\blueShorts.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bluetshirt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brownPants.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clouds.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crocs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\darktshirt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gloves.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greenPants.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\greentshirt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gumshoes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\happy face.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\happyDark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\happyDarkGlasses.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\happyDarkGlassesHat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\happyDarkHat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\happyPink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\happyPinkGlasses.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\happyPinkGlassesHat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\happyPinkHat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\happyWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\happyWhiteGlasses.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\happyWhiteGlassesHat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\happyWhiteHat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\head.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\justLegs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redtshirt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redtshirttwo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sad face.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sadDark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sadDarkGlasses.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sadDarkGlassesHat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sadDarkHat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sadPink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sadPinkGlasses.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sadPinkGlassesHat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sadPinkHat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sadWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sadWhiteGlasses.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sadWhiteGlassesHat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sadWhiteHat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\slippers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smile face.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smileDark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smileDarkGlasses.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smileDarkGlassesHat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smileDarkHat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smilePink.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smilePinkGlasses.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smilePinkGlassesHat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smilePinkHat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smileWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smileWhiteGlasses.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smileWhiteGlassesHat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\smileWhiteHat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sneakers.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sunglasses.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\table.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
