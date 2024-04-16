@@ -138,9 +138,20 @@ namespace ClothesChangeGame
             _person.Mood = (Mood)random.Next(Enum.GetNames(typeof(Mood)).Length);
             HandleHeadChange();
         }
+        private void setBottomImage(Bottom bottom)
+        {
+            Bitmap resource = (Bitmap)Resources.ResourceManager.GetObject(bottom.ToString());
+            pictureBox_Bottom.Image = resource;
+        }
         private void setTopImage()
         {
             pictureBox_Top.Image = _topMap[_appearance.Top];
+        }
+        private void button_RandomBottom_Click(object sender, EventArgs e)
+        {
+            Random random = new Random();
+            _appearance.Bottom = (Bottom)random.Next(Enum.GetNames(typeof(Bottom)).Length);
+            setBottomImage(_appearance.Bottom);
         }
         private void button_RandomTop_Click(object sender, EventArgs e)
         {
@@ -181,7 +192,31 @@ namespace ClothesChangeGame
 
         private void button_GreenPreset_Click(object sender, EventArgs e)
         {
+            _appearance.Bottom = ClothesChangeGame.Bottom.greenPants;
             _appearance.Top = ClothesChangeGame.Top.greenTShirt;
+            setBottomImage(_appearance.Bottom);
+            setTopImage();
+        }
+
+        private void button_BluePreset_Click(object sender, EventArgs e)
+        {
+            if (
+                _appearance.Bottom == ClothesChangeGame.Bottom.bluePants ||
+                _appearance.Bottom == ClothesChangeGame.Bottom.brownPants ||
+                _appearance.Bottom == ClothesChangeGame.Bottom.greenPants
+                )
+            {
+                _appearance.Bottom = ClothesChangeGame.Bottom.bluePants;
+            }
+            else if (
+                _appearance.Bottom == ClothesChangeGame.Bottom.blackPants ||
+                _appearance.Bottom == ClothesChangeGame.Bottom.blueShorts
+                )
+            {
+                _appearance.Bottom = ClothesChangeGame.Bottom.blueShorts;
+            }
+            _appearance.Top = ClothesChangeGame.Top.blueShirt;
+            setBottomImage(_appearance.Bottom);
             setTopImage();
         }
     }

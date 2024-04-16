@@ -6,6 +6,14 @@ using System.Threading.Tasks;
 
 namespace ClothesChangeGame
 {
+    enum Bottom
+    {
+        blackPants,
+        bluePants,
+        blueShorts,
+        brownPants,
+        greenPants,
+    }
     enum Top
     {
         blueShirt,
@@ -19,10 +27,12 @@ namespace ClothesChangeGame
         public bool HasGlassesOn {  get; set; }
         public bool HasGlovesOn { get; set; }
         public bool HasHatOn {  get; set; }
+        public Bottom Bottom { get; set; }
         public Top Top { get; set; }
         public Appearance()
         {
             HasHatOn = true;
+            Bottom = Bottom.blackPants;
             Top = Top.redShirt;
         }
     }

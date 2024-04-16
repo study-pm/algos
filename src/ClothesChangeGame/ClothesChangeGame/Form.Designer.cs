@@ -53,7 +53,7 @@
             this.checkBox_Hat = new System.Windows.Forms.CheckBox();
             this.checkBox_Glasses = new System.Windows.Forms.CheckBox();
             this.groupBox_ClothesPreset = new System.Windows.Forms.GroupBox();
-            this.button_BlueColor = new System.Windows.Forms.Button();
+            this.button_BluePreset = new System.Windows.Forms.Button();
             this.button_GreenPreset = new System.Windows.Forms.Button();
             this.groupBox_ClothesElements = new System.Windows.Forms.GroupBox();
             this.groupBox_Shoes = new System.Windows.Forms.GroupBox();
@@ -83,7 +83,7 @@
             this.pictureBox_Head = new System.Windows.Forms.PictureBox();
             this.label_Motto = new System.Windows.Forms.Label();
             this.pictureBox_Top = new System.Windows.Forms.PictureBox();
-            this.pictureBox_Pants = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Bottom = new System.Windows.Forms.PictureBox();
             this.pictureBox_Shoes = new System.Windows.Forms.PictureBox();
             this.pictureBox_GloveLeft = new System.Windows.Forms.PictureBox();
             this.pictureBox_GloveRight = new System.Windows.Forms.PictureBox();
@@ -105,7 +105,7 @@
             this.groupBox_CharacterProps.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Head)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Top)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Pants)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Bottom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Shoes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_GloveLeft)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_GloveRight)).BeginInit();
@@ -249,6 +249,7 @@
             this.button_RandomBottom.TabIndex = 2;
             this.button_RandomBottom.Text = "Случайный низ";
             this.button_RandomBottom.UseVisualStyleBackColor = true;
+            this.button_RandomBottom.Click += new System.EventHandler(this.button_RandomBottom_Click);
             // 
             // button_RandomTop
             // 
@@ -363,7 +364,7 @@
             // 
             // groupBox_ClothesPreset
             // 
-            this.groupBox_ClothesPreset.Controls.Add(this.button_BlueColor);
+            this.groupBox_ClothesPreset.Controls.Add(this.button_BluePreset);
             this.groupBox_ClothesPreset.Controls.Add(this.button_GreenPreset);
             this.groupBox_ClothesPreset.Location = new System.Drawing.Point(568, 13);
             this.groupBox_ClothesPreset.Name = "groupBox_ClothesPreset";
@@ -372,14 +373,15 @@
             this.groupBox_ClothesPreset.TabStop = false;
             this.groupBox_ClothesPreset.Text = "Пресеты одежды";
             // 
-            // button_BlueColor
+            // button_BluePreset
             // 
-            this.button_BlueColor.Location = new System.Drawing.Point(7, 49);
-            this.button_BlueColor.Name = "button_BlueColor";
-            this.button_BlueColor.Size = new System.Drawing.Size(207, 23);
-            this.button_BlueColor.TabIndex = 1;
-            this.button_BlueColor.Text = "Синий цвет";
-            this.button_BlueColor.UseVisualStyleBackColor = true;
+            this.button_BluePreset.Location = new System.Drawing.Point(7, 49);
+            this.button_BluePreset.Name = "button_BluePreset";
+            this.button_BluePreset.Size = new System.Drawing.Size(207, 23);
+            this.button_BluePreset.TabIndex = 1;
+            this.button_BluePreset.Text = "Синий цвет";
+            this.button_BluePreset.UseVisualStyleBackColor = true;
+            this.button_BluePreset.Click += new System.EventHandler(this.button_BluePreset_Click);
             // 
             // button_GreenPreset
             // 
@@ -703,22 +705,22 @@
             this.pictureBox_Top.TabIndex = 10;
             this.pictureBox_Top.TabStop = false;
             // 
-            // pictureBox_Pants
+            // pictureBox_Bottom
             // 
-            this.pictureBox_Pants.Image = global::ClothesChangeGame.Properties.Resources.blackPants;
-            this.pictureBox_Pants.Location = new System.Drawing.Point(265, 198);
-            this.pictureBox_Pants.Name = "pictureBox_Pants";
-            this.pictureBox_Pants.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox_Pants.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox_Pants.TabIndex = 11;
-            this.pictureBox_Pants.TabStop = false;
+            this.pictureBox_Bottom.Image = global::ClothesChangeGame.Properties.Resources.blackPants;
+            this.pictureBox_Bottom.Location = new System.Drawing.Point(265, 198);
+            this.pictureBox_Bottom.Name = "pictureBox_Bottom";
+            this.pictureBox_Bottom.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox_Bottom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox_Bottom.TabIndex = 11;
+            this.pictureBox_Bottom.TabStop = false;
             // 
             // pictureBox_Shoes
             // 
             this.pictureBox_Shoes.Image = global::ClothesChangeGame.Properties.Resources.slippers;
-            this.pictureBox_Shoes.Location = new System.Drawing.Point(265, 238);
+            this.pictureBox_Shoes.Location = new System.Drawing.Point(265, 236);
             this.pictureBox_Shoes.Name = "pictureBox_Shoes";
-            this.pictureBox_Shoes.Size = new System.Drawing.Size(100, 19);
+            this.pictureBox_Shoes.Size = new System.Drawing.Size(100, 21);
             this.pictureBox_Shoes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_Shoes.TabIndex = 12;
             this.pictureBox_Shoes.TabStop = false;
@@ -747,7 +749,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 482);
             this.Controls.Add(this.pictureBox_Shoes);
-            this.Controls.Add(this.pictureBox_Pants);
+            this.Controls.Add(this.pictureBox_Bottom);
             this.Controls.Add(this.pictureBox_Top);
             this.Controls.Add(this.label_Motto);
             this.Controls.Add(this.pictureBox_Head);
@@ -790,7 +792,7 @@
             this.groupBox_CharacterProps.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Head)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Top)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Pants)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Bottom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Shoes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_GloveLeft)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_GloveRight)).EndInit();
@@ -826,7 +828,7 @@
         private System.Windows.Forms.CheckBox checkBox_Hat;
         private System.Windows.Forms.CheckBox checkBox_Glasses;
         private System.Windows.Forms.GroupBox groupBox_ClothesPreset;
-        private System.Windows.Forms.Button button_BlueColor;
+        private System.Windows.Forms.Button button_BluePreset;
         private System.Windows.Forms.Button button_GreenPreset;
         private System.Windows.Forms.GroupBox groupBox_ClothesElements;
         private System.Windows.Forms.GroupBox groupBox_Top;
@@ -856,7 +858,7 @@
         private System.Windows.Forms.PictureBox pictureBox_Head;
         private System.Windows.Forms.Label label_Motto;
         private System.Windows.Forms.PictureBox pictureBox_Top;
-        private System.Windows.Forms.PictureBox pictureBox_Pants;
+        private System.Windows.Forms.PictureBox pictureBox_Bottom;
         private System.Windows.Forms.PictureBox pictureBox_Shoes;
         private System.Windows.Forms.PictureBox pictureBox_GloveLeft;
         private System.Windows.Forms.PictureBox pictureBox_GloveRight;
