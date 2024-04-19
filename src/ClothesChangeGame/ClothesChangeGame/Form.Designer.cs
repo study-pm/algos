@@ -59,9 +59,9 @@
             this.groupBox_Shoes = new System.Windows.Forms.GroupBox();
             this.radioButton_NoShoes = new System.Windows.Forms.RadioButton();
             this.radioButton_Crocs = new System.Windows.Forms.RadioButton();
-            this.radioButton_Trainers = new System.Windows.Forms.RadioButton();
             this.radioButton_Sneakers = new System.Windows.Forms.RadioButton();
-            this.radioButton_Flops = new System.Windows.Forms.RadioButton();
+            this.radioButton_Gumshoes = new System.Windows.Forms.RadioButton();
+            this.radioButton_Slippers = new System.Windows.Forms.RadioButton();
             this.groupBox_Bottom = new System.Windows.Forms.GroupBox();
             this.radioButton_Jeans = new System.Windows.Forms.RadioButton();
             this.radioButton_GreenBreeches = new System.Windows.Forms.RadioButton();
@@ -409,9 +409,9 @@
             // 
             this.groupBox_Shoes.Controls.Add(this.radioButton_NoShoes);
             this.groupBox_Shoes.Controls.Add(this.radioButton_Crocs);
-            this.groupBox_Shoes.Controls.Add(this.radioButton_Trainers);
             this.groupBox_Shoes.Controls.Add(this.radioButton_Sneakers);
-            this.groupBox_Shoes.Controls.Add(this.radioButton_Flops);
+            this.groupBox_Shoes.Controls.Add(this.radioButton_Gumshoes);
+            this.groupBox_Shoes.Controls.Add(this.radioButton_Slippers);
             this.groupBox_Shoes.Location = new System.Drawing.Point(270, 20);
             this.groupBox_Shoes.Name = "groupBox_Shoes";
             this.groupBox_Shoes.Size = new System.Drawing.Size(101, 138);
@@ -429,6 +429,7 @@
             this.radioButton_NoShoes.TabStop = true;
             this.radioButton_NoShoes.Text = "Без обуви";
             this.radioButton_NoShoes.UseVisualStyleBackColor = true;
+            this.radioButton_NoShoes.Click += new System.EventHandler(this.radioButton_NoShoes_Click);
             // 
             // radioButton_Crocs
             // 
@@ -440,39 +441,43 @@
             this.radioButton_Crocs.TabStop = true;
             this.radioButton_Crocs.Text = "Кроксы";
             this.radioButton_Crocs.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_Trainers
-            // 
-            this.radioButton_Trainers.AutoSize = true;
-            this.radioButton_Trainers.Location = new System.Drawing.Point(7, 66);
-            this.radioButton_Trainers.Name = "radioButton_Trainers";
-            this.radioButton_Trainers.Size = new System.Drawing.Size(80, 17);
-            this.radioButton_Trainers.TabIndex = 2;
-            this.radioButton_Trainers.TabStop = true;
-            this.radioButton_Trainers.Text = "Кроссовки";
-            this.radioButton_Trainers.UseVisualStyleBackColor = true;
+            this.radioButton_Crocs.Click += new System.EventHandler(this.radioButton_Crocs_Click);
             // 
             // radioButton_Sneakers
             // 
             this.radioButton_Sneakers.AutoSize = true;
-            this.radioButton_Sneakers.Location = new System.Drawing.Point(7, 43);
+            this.radioButton_Sneakers.Location = new System.Drawing.Point(7, 66);
             this.radioButton_Sneakers.Name = "radioButton_Sneakers";
-            this.radioButton_Sneakers.Size = new System.Drawing.Size(52, 17);
-            this.radioButton_Sneakers.TabIndex = 1;
+            this.radioButton_Sneakers.Size = new System.Drawing.Size(80, 17);
+            this.radioButton_Sneakers.TabIndex = 2;
             this.radioButton_Sneakers.TabStop = true;
-            this.radioButton_Sneakers.Text = "Кеды";
+            this.radioButton_Sneakers.Text = "Кроссовки";
             this.radioButton_Sneakers.UseVisualStyleBackColor = true;
+            this.radioButton_Sneakers.Click += new System.EventHandler(this.radioButton_Sneakers_Click);
             // 
-            // radioButton_Flops
+            // radioButton_Gumshoes
             // 
-            this.radioButton_Flops.AutoSize = true;
-            this.radioButton_Flops.Location = new System.Drawing.Point(7, 20);
-            this.radioButton_Flops.Name = "radioButton_Flops";
-            this.radioButton_Flops.Size = new System.Drawing.Size(64, 17);
-            this.radioButton_Flops.TabIndex = 0;
-            this.radioButton_Flops.TabStop = true;
-            this.radioButton_Flops.Text = "Шлёпки";
-            this.radioButton_Flops.UseVisualStyleBackColor = true;
+            this.radioButton_Gumshoes.AutoSize = true;
+            this.radioButton_Gumshoes.Location = new System.Drawing.Point(7, 43);
+            this.radioButton_Gumshoes.Name = "radioButton_Gumshoes";
+            this.radioButton_Gumshoes.Size = new System.Drawing.Size(52, 17);
+            this.radioButton_Gumshoes.TabIndex = 1;
+            this.radioButton_Gumshoes.TabStop = true;
+            this.radioButton_Gumshoes.Text = "Кеды";
+            this.radioButton_Gumshoes.UseVisualStyleBackColor = true;
+            this.radioButton_Gumshoes.CheckedChanged += new System.EventHandler(this.radioButton_Gumshoes_CheckedChanged);
+            // 
+            // radioButton_Slippers
+            // 
+            this.radioButton_Slippers.AutoSize = true;
+            this.radioButton_Slippers.Location = new System.Drawing.Point(7, 20);
+            this.radioButton_Slippers.Name = "radioButton_Slippers";
+            this.radioButton_Slippers.Size = new System.Drawing.Size(64, 17);
+            this.radioButton_Slippers.TabIndex = 0;
+            this.radioButton_Slippers.TabStop = true;
+            this.radioButton_Slippers.Text = "Шлёпки";
+            this.radioButton_Slippers.UseVisualStyleBackColor = true;
+            this.radioButton_Slippers.Click += new System.EventHandler(this.radioButton_Slippers_Click);
             // 
             // groupBox_Bottom
             // 
@@ -851,9 +856,9 @@
         private System.Windows.Forms.GroupBox groupBox_Shoes;
         private System.Windows.Forms.RadioButton radioButton_NoShoes;
         private System.Windows.Forms.RadioButton radioButton_Crocs;
-        private System.Windows.Forms.RadioButton radioButton_Trainers;
         private System.Windows.Forms.RadioButton radioButton_Sneakers;
-        private System.Windows.Forms.RadioButton radioButton_Flops;
+        private System.Windows.Forms.RadioButton radioButton_Gumshoes;
+        private System.Windows.Forms.RadioButton radioButton_Slippers;
         private System.Windows.Forms.GroupBox groupBox_TextDescription;
         private System.Windows.Forms.GroupBox groupBox_CharacterProps;
         private System.Windows.Forms.Label label_CharacterProps;

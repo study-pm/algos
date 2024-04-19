@@ -14,6 +14,14 @@ namespace ClothesChangeGame
         brownPants,
         greenPants,
     }
+    enum Shoes
+    {
+        none,
+        crocs,
+        gumshoes,
+        slippers,
+        sneakers,
+    }
     enum Top
     {
         blueShirt,
@@ -29,11 +37,13 @@ namespace ClothesChangeGame
         public bool HasHatOn {  get; set; }
         public Bottom Bottom { get; set; }
         public Top Top { get; set; }
+        public Shoes Shoes { get; set; }
         public Appearance()
         {
             HasHatOn = true;
             Bottom = Bottom.blackPants;
             Top = Top.redShirt;
+            Shoes = ClothesChangeGame.Shoes.crocs;
         }
     }
 }

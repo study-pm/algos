@@ -21,6 +21,7 @@ namespace ClothesChangeGame
         Surrounding _surrounding = new Surrounding();
         Dictionary<Top, (RadioButton control, Bitmap image)> _topMap;
         Dictionary<Bottom, (RadioButton control, Bitmap image)> _bottomMap;
+        Dictionary<Shoes, (RadioButton control, Bitmap image)> _shoesMap;
         public FormMain()
         {
             InitializeComponent();
@@ -61,6 +62,16 @@ namespace ClothesChangeGame
                 { ClothesChangeGame.Bottom.bluePants, ( radioButton_Jeans, Resources.bluePants )},
             };
             SetBottom();
+
+            _shoesMap = new Dictionary<Shoes, (RadioButton, Bitmap)>()
+            {
+                { ClothesChangeGame.Shoes.crocs, ( radioButton_Crocs, Resources.crocs )},
+                { ClothesChangeGame.Shoes.gumshoes, ( radioButton_Gumshoes, Resources.gumshoes )},
+                { ClothesChangeGame.Shoes.slippers, ( radioButton_Slippers, Resources.slippers )},
+                { ClothesChangeGame.Shoes.sneakers, ( radioButton_Sneakers, Resources.sneakers )},
+                { ClothesChangeGame.Shoes.none, ( radioButton_Sneakers, Resources.justLegs )},
+            };
+            SetShoes();
         }
 
         private void checkBox_Clouds_CheckedChanged(object sender, EventArgs e)
@@ -181,6 +192,19 @@ namespace ClothesChangeGame
         {
             pictureBox_Bottom.Image = _bottomMap[_appearance.Bottom].image;
         }
+        private void SetShoes()
+        {
+            SetShoesControl();
+            SetShoesImage();
+        }
+        private void SetShoesControl()
+        {
+            _shoesMap[_appearance.Shoes].control.Checked = true;
+        }
+        private void SetShoesImage()
+        {
+            pictureBox_Shoes.Image = _shoesMap[_appearance.Shoes].image;
+        }
         private void button_RandomBottom_Click(object sender, EventArgs e)
         {
             Random random = new Random();
@@ -279,6 +303,36 @@ namespace ClothesChangeGame
         {
             _appearance.Bottom = ClothesChangeGame.Bottom.bluePants;
             SetBottomImage();
+        }
+
+        private void radioButton_Crocs_Click(object sender, EventArgs e)
+        {
+            _appearance.Shoes = ClothesChangeGame.Shoes.crocs;
+            SetShoesImage();
+        }
+
+        private void radioButton_Slippers_Click(object sender, EventArgs e)
+        {
+            _appearance.Shoes = ClothesChangeGame.Shoes.slippers;
+            SetShoesImage();
+        }
+
+        private void radioButton_Gumshoes_CheckedChanged(object sender, EventArgs e)
+        {
+            _appearance.Shoes = ClothesChangeGame.Shoes.gumshoes;
+            SetShoesImage();
+        }
+
+        private void radioButton_Sneakers_Click(object sender, EventArgs e)
+        {
+            _appearance.Shoes = ClothesChangeGame.Shoes.sneakers;
+            SetShoesImage();
+        }
+
+        private void radioButton_NoShoes_Click(object sender, EventArgs e)
+        {
+            _appearance.Shoes = ClothesChangeGame.Shoes.none;
+            SetShoesImage();
         }
     }
 }
