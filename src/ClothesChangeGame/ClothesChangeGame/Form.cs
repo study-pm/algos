@@ -54,7 +54,7 @@ namespace ClothesChangeGame
 
         private void checkBox_Clouds_CheckedChanged(object sender, EventArgs e)
         {
-            pictureBox_Clouds.Image = checkBox_Clouds.Checked ? Resources.clouds : null;
+            HandleCloudsTable();
         }
 
         private void textBox_Name_TextChanged(object sender, EventArgs e)
@@ -81,7 +81,13 @@ namespace ClothesChangeGame
 
         private void checkBox_Table_CheckedChanged(object sender, EventArgs e)
         {
-            pictureBox_Clouds.Image = checkBox_Table.Checked ? Resources.table : null;
+            HandleCloudsTable();
+        }
+        private void HandleCloudsTable()
+        {
+            if (checkBox_Table.Checked) pictureBox_Clouds.Image = Resources.table;
+            else if (checkBox_Clouds.Checked) pictureBox_Clouds.Image = Resources.clouds;
+            else if (!checkBox_Clouds.Checked && !checkBox_Table.Checked) pictureBox_Clouds.Image = null;
         }
         private void HandleHeadChange()
         {
