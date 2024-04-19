@@ -20,6 +20,7 @@ namespace ClothesChangeGame
         Appearance _appearance = new Appearance();
         Surrounding _surrounding = new Surrounding();
         Dictionary<Top, (RadioButton control, Bitmap image)> _topMap;
+        Dictionary<Bottom, (RadioButton control, Bitmap image)> _bottomMap;
         public FormMain()
         {
             InitializeComponent();
@@ -51,6 +52,15 @@ namespace ClothesChangeGame
             };
             SetTop();
 
+            _bottomMap = new Dictionary<Bottom, (RadioButton, Bitmap)>()
+            {
+                { ClothesChangeGame.Bottom.blackPants, ( radioButton_BlackShorts, Resources.blackPants )},
+                { ClothesChangeGame.Bottom.blueShorts, ( radioButton_BlueShorts, Resources.blueShorts )},
+                { ClothesChangeGame.Bottom.brownPants, ( radioButton_RedBreeches, Resources.brownPants )},
+                { ClothesChangeGame.Bottom.greenPants, ( radioButton_GreenBreeches, Resources.greenPants )},
+                { ClothesChangeGame.Bottom.bluePants, ( radioButton_Jeans, Resources.bluePants )},
+            };
+            SetBottom();
         }
 
         private void checkBox_Clouds_CheckedChanged(object sender, EventArgs e)
@@ -158,16 +168,24 @@ namespace ClothesChangeGame
         {
             pictureBox_Top.Image = _topMap[_appearance.Top].image;
         }
-        private void setBottomImage(Bottom bottom)
+        private void SetBottom()
         {
-            Bitmap resource = (Bitmap)Resources.ResourceManager.GetObject(bottom.ToString());
-            pictureBox_Bottom.Image = resource;
+            SetBottomControl();
+            SetBottomImage();
+        }
+        private void SetBottomControl()
+        {
+            _bottomMap[_appearance.Bottom].control.Checked = true;
+        }
+        private void SetBottomImage()
+        {
+            pictureBox_Bottom.Image = _bottomMap[_appearance.Bottom].image;
         }
         private void button_RandomBottom_Click(object sender, EventArgs e)
         {
             Random random = new Random();
             _appearance.Bottom = (Bottom)random.Next(Enum.GetNames(typeof(Bottom)).Length);
-            setBottomImage(_appearance.Bottom);
+            SetBottom();
         }
         private void button_RandomTop_Click(object sender, EventArgs e)
         {
@@ -210,7 +228,7 @@ namespace ClothesChangeGame
         {
             _appearance.Bottom = ClothesChangeGame.Bottom.greenPants;
             _appearance.Top = ClothesChangeGame.Top.greenTShirt;
-            setBottomImage(_appearance.Bottom);
+            SetBottom();
             SetTop();
         }
 
@@ -232,8 +250,35 @@ namespace ClothesChangeGame
                 _appearance.Bottom = ClothesChangeGame.Bottom.blueShorts;
             }
             _appearance.Top = ClothesChangeGame.Top.blueShirt;
-            setBottomImage(_appearance.Bottom);
+            SetBottom();
             SetTop();
+        }
+
+        private void radioButton_BlackShorts_Click(object sender, EventArgs e)
+        {
+            _appearance.Bottom = ClothesChangeGame.Bottom.blackPants;
+            SetBottomImage();
+        }
+
+        private void radioButton_BlueShorts_Click(object sender, EventArgs e)
+        {
+            _appearance.Bottom = ClothesChangeGame.Bottom.blueShorts;
+            SetBottomImage();
+        }
+        private void radioButton_RedBreeches_Click(object sender, EventArgs e)
+        {
+            _appearance.Bottom = ClothesChangeGame.Bottom.brownPants;
+            SetBottomImage();
+        }
+        private void radioButton_GreenBreeches_Click(object sender, EventArgs e)
+        {
+            _appearance.Bottom = ClothesChangeGame.Bottom.greenPants;
+            SetBottomImage();
+        }
+        private void radioButton_Jeans_Click(object sender, EventArgs e)
+        {
+            _appearance.Bottom = ClothesChangeGame.Bottom.bluePants;
+            SetBottomImage();
         }
     }
 }

@@ -66,8 +66,8 @@
             this.radioButton_Jeans = new System.Windows.Forms.RadioButton();
             this.radioButton_GreenBreeches = new System.Windows.Forms.RadioButton();
             this.radioButton_RedBreeches = new System.Windows.Forms.RadioButton();
-            this.radioButton_BlueShirts = new System.Windows.Forms.RadioButton();
-            this.radioButton_BlackShirts = new System.Windows.Forms.RadioButton();
+            this.radioButton_BlueShorts = new System.Windows.Forms.RadioButton();
+            this.radioButton_BlackShorts = new System.Windows.Forms.RadioButton();
             this.groupBox_Top = new System.Windows.Forms.GroupBox();
             this.radioButton_LeatherJacket = new System.Windows.Forms.RadioButton();
             this.radioButton_BlueShirt = new System.Windows.Forms.RadioButton();
@@ -479,8 +479,8 @@
             this.groupBox_Bottom.Controls.Add(this.radioButton_Jeans);
             this.groupBox_Bottom.Controls.Add(this.radioButton_GreenBreeches);
             this.groupBox_Bottom.Controls.Add(this.radioButton_RedBreeches);
-            this.groupBox_Bottom.Controls.Add(this.radioButton_BlueShirts);
-            this.groupBox_Bottom.Controls.Add(this.radioButton_BlackShirts);
+            this.groupBox_Bottom.Controls.Add(this.radioButton_BlueShorts);
+            this.groupBox_Bottom.Controls.Add(this.radioButton_BlackShorts);
             this.groupBox_Bottom.Location = new System.Drawing.Point(146, 20);
             this.groupBox_Bottom.Name = "groupBox_Bottom";
             this.groupBox_Bottom.Size = new System.Drawing.Size(118, 138);
@@ -498,6 +498,7 @@
             this.radioButton_Jeans.TabStop = true;
             this.radioButton_Jeans.Text = "Джинсы";
             this.radioButton_Jeans.UseVisualStyleBackColor = true;
+            this.radioButton_Jeans.Click += new System.EventHandler(this.radioButton_Jeans_Click);
             // 
             // radioButton_GreenBreeches
             // 
@@ -509,6 +510,7 @@
             this.radioButton_GreenBreeches.TabStop = true;
             this.radioButton_GreenBreeches.Text = "Зелёные брюки";
             this.radioButton_GreenBreeches.UseVisualStyleBackColor = true;
+            this.radioButton_GreenBreeches.Click += new System.EventHandler(this.radioButton_GreenBreeches_Click);
             // 
             // radioButton_RedBreeches
             // 
@@ -520,28 +522,31 @@
             this.radioButton_RedBreeches.TabStop = true;
             this.radioButton_RedBreeches.Text = "Красные брюки";
             this.radioButton_RedBreeches.UseVisualStyleBackColor = true;
+            this.radioButton_RedBreeches.Click += new System.EventHandler(this.radioButton_RedBreeches_Click);
             // 
-            // radioButton_BlueShirts
+            // radioButton_BlueShorts
             // 
-            this.radioButton_BlueShirts.AutoSize = true;
-            this.radioButton_BlueShirts.Location = new System.Drawing.Point(7, 43);
-            this.radioButton_BlueShirts.Name = "radioButton_BlueShirts";
-            this.radioButton_BlueShirts.Size = new System.Drawing.Size(92, 17);
-            this.radioButton_BlueShirts.TabIndex = 1;
-            this.radioButton_BlueShirts.TabStop = true;
-            this.radioButton_BlueShirts.Text = "Синие шорты";
-            this.radioButton_BlueShirts.UseVisualStyleBackColor = true;
+            this.radioButton_BlueShorts.AutoSize = true;
+            this.radioButton_BlueShorts.Location = new System.Drawing.Point(7, 43);
+            this.radioButton_BlueShorts.Name = "radioButton_BlueShorts";
+            this.radioButton_BlueShorts.Size = new System.Drawing.Size(92, 17);
+            this.radioButton_BlueShorts.TabIndex = 1;
+            this.radioButton_BlueShorts.TabStop = true;
+            this.radioButton_BlueShorts.Text = "Синие шорты";
+            this.radioButton_BlueShorts.UseVisualStyleBackColor = true;
+            this.radioButton_BlueShorts.Click += new System.EventHandler(this.radioButton_BlueShorts_Click);
             // 
-            // radioButton_BlackShirts
+            // radioButton_BlackShorts
             // 
-            this.radioButton_BlackShirts.AutoSize = true;
-            this.radioButton_BlackShirts.Location = new System.Drawing.Point(7, 20);
-            this.radioButton_BlackShirts.Name = "radioButton_BlackShirts";
-            this.radioButton_BlackShirts.Size = new System.Drawing.Size(101, 17);
-            this.radioButton_BlackShirts.TabIndex = 0;
-            this.radioButton_BlackShirts.TabStop = true;
-            this.radioButton_BlackShirts.Text = "Чёрные шорты";
-            this.radioButton_BlackShirts.UseVisualStyleBackColor = true;
+            this.radioButton_BlackShorts.AutoSize = true;
+            this.radioButton_BlackShorts.Location = new System.Drawing.Point(7, 20);
+            this.radioButton_BlackShorts.Name = "radioButton_BlackShorts";
+            this.radioButton_BlackShorts.Size = new System.Drawing.Size(101, 17);
+            this.radioButton_BlackShorts.TabIndex = 0;
+            this.radioButton_BlackShorts.TabStop = true;
+            this.radioButton_BlackShorts.Text = "Чёрные шорты";
+            this.radioButton_BlackShorts.UseVisualStyleBackColor = true;
+            this.radioButton_BlackShorts.Click += new System.EventHandler(this.radioButton_BlackShorts_Click);
             // 
             // groupBox_Top
             // 
@@ -841,8 +846,8 @@
         private System.Windows.Forms.RadioButton radioButton_Jeans;
         private System.Windows.Forms.RadioButton radioButton_GreenBreeches;
         private System.Windows.Forms.RadioButton radioButton_RedBreeches;
-        private System.Windows.Forms.RadioButton radioButton_BlueShirts;
-        private System.Windows.Forms.RadioButton radioButton_BlackShirts;
+        private System.Windows.Forms.RadioButton radioButton_BlueShorts;
+        private System.Windows.Forms.RadioButton radioButton_BlackShorts;
         private System.Windows.Forms.GroupBox groupBox_Shoes;
         private System.Windows.Forms.RadioButton radioButton_NoShoes;
         private System.Windows.Forms.RadioButton radioButton_Crocs;
