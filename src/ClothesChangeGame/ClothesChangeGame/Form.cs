@@ -50,8 +50,7 @@ namespace ClothesChangeGame
                 { ClothesChangeGame.Top.redTShirt, (radioButton_RedTShirt, Resources.redtshirttwo ) },
             };
 
-            SetTopImage();
-            SetTopControl();
+            SetTop();
 
         }
 
