@@ -19,7 +19,7 @@ namespace ClothesChangeGame
         Person _person = new Person();
         Appearance _appearance = new Appearance();
         Surrounding _surrounding = new Surrounding();
-        Dictionary<Top, (RadioButton control, Bitmap image)> _topMap1;
+        Dictionary<Top, (RadioButton control, Bitmap image)> _topMap;
         public FormMain()
         {
             InitializeComponent();
@@ -41,7 +41,7 @@ namespace ClothesChangeGame
             checkBox_Glasses.DataBindings.Add("Checked", _appearance, "HasGlassesOn", false, DataSourceUpdateMode.OnPropertyChanged);
             checkBox_Hat.DataBindings.Add("Checked", _appearance, "HasHatOn", false, DataSourceUpdateMode.OnPropertyChanged);
 
-            _topMap1 = new Dictionary<Top, (RadioButton, Bitmap)>()
+            _topMap = new Dictionary<Top, (RadioButton, Bitmap)>()
             {
                 { ClothesChangeGame.Top.blueShirt, ( radioButton_BlueShirt, Resources.bluetshirt )},
                 { ClothesChangeGame.Top.leatherJacket, (radioButton_LeatherJacket , Resources.darktshirt ) },
@@ -49,7 +49,6 @@ namespace ClothesChangeGame
                 { ClothesChangeGame.Top.redShirt, (radioButton_RedShirt, Resources.redtshirt ) },
                 { ClothesChangeGame.Top.redTShirt, (radioButton_RedTShirt, Resources.redtshirttwo ) },
             };
-
             SetTop();
 
         }
@@ -153,11 +152,11 @@ namespace ClothesChangeGame
         }
         private void SetTopControl()
         {
-            _topMap1[_appearance.Top].control.Checked = true;
+            _topMap[_appearance.Top].control.Checked = true;
         }
         private void SetTopImage()
         {
-            pictureBox_Top.Image = _topMap1[_appearance.Top].image;
+            pictureBox_Top.Image = _topMap[_appearance.Top].image;
         }
         private void setBottomImage(Bottom bottom)
         {
