@@ -532,10 +532,22 @@ $$
 
 ```mermaid
 flowchart TD
-  START([Начало]) --> source[/a, b, c/]
-  source --> cond1{"(a ∈ Q) && (b ∈ Q) && (c ∈ Q)"}
-  cond1 --> cond2
-  cond1 --> data[/"неверный формат ввода"/]
+  START([Начало]) --> data1[/a, b, c/]
+  data1 --> solution1{"a+b>c и a+c>b<br> и b+c>a"}
+  solution1 --> process1
+  process1[P=a+b+c] --> process2
+  process2["S=√(P/2(P/2-a)(P/2-b)(P/2-c))"] --> solution2
+  solution2{"a<sup>2</sup>+b<sup>2</sup>=c<sup>2</sup><br>или a<sup>2</sup>+c<sup>2</sup>=b<sup>2</sup><br>или b<sup>2</sup>+c<sup>2</sup>=a<sup>2</sup>"} --> data2
+  solution2 --> solution3
+  data2[/P,S,Прямоугольный/] --> END
+  solution3{"a<sup>2</sup>+b<sup>2</sup>>c<sup>2</sup><br>и a<sup>2</sup>+c<sup>2</sup>>b<sup>2</sup><br>и b<sup>2</sup>+c<sup>2</sup>>a<sup>2</sup>"}
+  solution3 --> data3
+  solution3 --> data4
+  data3[/P,S,Остроугольный/] --> END
+  data4[/P,S,Тупоугольный/] --> END
+  solution1 --> data[/"не существует"/]
+  data --> END
+  END([Останов])
 ```
 
 ##### Программирование
