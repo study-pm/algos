@@ -240,6 +240,7 @@
             this.button_RandomShoes.TabIndex = 3;
             this.button_RandomShoes.Text = " Случайная обувь";
             this.button_RandomShoes.UseVisualStyleBackColor = true;
+            this.button_RandomShoes.Click += new System.EventHandler(this.button_RandomShoes_Click);
             // 
             // button_RandomBottom
             // 

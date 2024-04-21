@@ -65,11 +65,11 @@ namespace ClothesChangeGame
 
             _shoesMap = new Dictionary<Shoes, (RadioButton, Bitmap)>()
             {
+                { ClothesChangeGame.Shoes.none, ( radioButton_NoShoes, Resources.justLegs )},
                 { ClothesChangeGame.Shoes.crocs, ( radioButton_Crocs, Resources.crocs )},
                 { ClothesChangeGame.Shoes.gumshoes, ( radioButton_Gumshoes, Resources.gumshoes )},
                 { ClothesChangeGame.Shoes.slippers, ( radioButton_Slippers, Resources.slippers )},
                 { ClothesChangeGame.Shoes.sneakers, ( radioButton_Sneakers, Resources.sneakers )},
-                { ClothesChangeGame.Shoes.none, ( radioButton_Sneakers, Resources.justLegs )},
             };
             SetShoes();
         }
@@ -163,7 +163,13 @@ namespace ClothesChangeGame
         private void button_RandomMood_Click(object sender, EventArgs e)
         {
             Random random = new Random();
-            _person.Mood = (Mood)random.Next(Enum.GetNames(typeof(Mood)).Length);
+            Mood next = _person.Mood;
+            do
+            {
+                next = (Mood)random.Next(Enum.GetNames(typeof(Mood)).Length);
+            }
+            while (_person.Mood == next);
+            _person.Mood = next;
             HandleHeadChange();
         }
         private void SetTop()
@@ -208,13 +214,25 @@ namespace ClothesChangeGame
         private void button_RandomBottom_Click(object sender, EventArgs e)
         {
             Random random = new Random();
-            _appearance.Bottom = (Bottom)random.Next(Enum.GetNames(typeof(Bottom)).Length);
+            Bottom next = _appearance.Bottom;
+            do
+            {
+                next = (Bottom)random.Next(Enum.GetNames(typeof(Bottom)).Length);
+            }
+            while (_appearance.Bottom == next);
+            _appearance.Bottom = next;
             SetBottom();
         }
         private void button_RandomTop_Click(object sender, EventArgs e)
         {
             Random random = new Random();
-            _appearance.Top = (Top)random.Next(Enum.GetNames(typeof(Top)).Length);
+            Top next = _appearance.Top;
+            do
+            {
+                next = (Top)random.Next(Enum.GetNames(typeof(Top)).Length);
+            }
+            while (_appearance.Top == next);
+            _appearance.Top = next;
             SetTop();
         }
 
@@ -333,6 +351,18 @@ namespace ClothesChangeGame
         {
             _appearance.Shoes = ClothesChangeGame.Shoes.none;
             SetShoesImage();
+        }
+        private void button_RandomShoes_Click(object sender, EventArgs e)
+        {
+            Random random = new Random();
+            Shoes next = _appearance.Shoes;
+            do
+            {
+                next = (Shoes)random.Next(Enum.GetNames(typeof(Shoes)).Length);
+            }
+            while (_appearance.Shoes == next);
+            _appearance.Shoes = next;
+            SetShoes();
         }
     }
 }
