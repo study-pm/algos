@@ -235,7 +235,18 @@ namespace ClothesChangeGame
             _appearance.Top = next;
             SetTop();
         }
-
+        private void button_RandomShoes_Click(object sender, EventArgs e)
+        {
+            Random random = new Random();
+            Shoes next = _appearance.Shoes;
+            do
+            {
+                next = (Shoes)random.Next(Enum.GetNames(typeof(Shoes)).Length);
+            }
+            while (_appearance.Shoes == next);
+            _appearance.Shoes = next;
+            SetShoes();
+        }
         private void radioButton_RedTShirt_Click(object sender, EventArgs e)
         {
             _appearance.Top = ClothesChangeGame.Top.redTShirt;
@@ -351,18 +362,6 @@ namespace ClothesChangeGame
         {
             _appearance.Shoes = ClothesChangeGame.Shoes.none;
             SetShoesImage();
-        }
-        private void button_RandomShoes_Click(object sender, EventArgs e)
-        {
-            Random random = new Random();
-            Shoes next = _appearance.Shoes;
-            do
-            {
-                next = (Shoes)random.Next(Enum.GetNames(typeof(Shoes)).Length);
-            }
-            while (_appearance.Shoes == next);
-            _appearance.Shoes = next;
-            SetShoes();
         }
     }
 }
