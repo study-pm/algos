@@ -160,3 +160,22 @@ https://professorweb.ru/my/csharp/charp_theory/level4/4_3.php | Ступенча
 https://stackoverflow.com/questions/8986975/c-sharp-return-different-types | C# Return different types? | | | 2024-03-31
 https://learn.microsoft.com/en-us/dotnet/fundamentals/code-analysis/style-rules/ide0057 | Use range operator (IDE0057) | | | 2024-03-31
 https://www.geeksforgeeks.org/c-sharp-method-overriding/ | C# Method Overriding | | | 2024-03-31
+https://stackoverflow.com/questions/4337193/how-to-set-enum-to-null How to set enum to null | | | 2024-04-05
+https://stackoverflow.com/questions/14794267/how-to-check-the-last-character-of-a-string-in-c | How to check the last character of a string in C#? | | | 2024-04-05
+https://www.c-sharpcorner.com/article/c-sharp-8-0-new-feature-swtich-expression/ | C# 8.0 Switch Expression | | | 2024-04-05
+https://stackoverflow.com/questions/1554689/evaluate-expressions-in-switch-statements-in-c-sharp | Evaluate Expressions in Switch Statements in C# | | | 2024-04-05
+https://stackoverflow.com/questions/56676260/c-sharp-8-switch-expression-with-multiple-cases-with-same-result | C# 8 switch expression with multiple cases with same result | | | 2024-04-05
+https://stackoverflow.com/questions/10955579/passing-just-a-type-as-a-parameter-in-c-sharp | Passing just a type as a parameter in C# | | | 2024-04-05
+https://learn.microsoft.com/en-us/dotnet/api/system.object.gettype?view=net-8.0 | Object.GetType Method | | | 2024-04-05
+https://www.makeuseof.com/c-sharp-enums/ | How to Use Enums in C# | | | 2024-04-05
+https://stackoverflow.com/questions/856154/total-number-of-items-defined-in-an-enum | Total number of items defined in an enum | | | 2024-04-05
+https://www.bytehide.com/blog/random-elements-csharp Choosing Random Elements in C#: Tutorial | | | 2024-04-05
+https://stackoverflow.com/questions/16100/convert-a-string-to-an-enum-in-c-sharp | Convert a string to an enum in C# | | | 2024-04-05
+https://stackoverflow.com/questions/17828774/get-resources-with-string | Get Resources with string [closed] | | | 2024-04-05
+https://stackoverflow.com/questions/4422250/get-static-property-by-string | Get static property by string | | | 2024-04-05
+https://stackoverflow.com/questions/19276475/how-can-i-convert-string-value-to-object-property-name/19276588 | How can I convert string value to object property name [duplicate] | | | 2024-04-05
+https://supportcenter.devexpress.com/ticket/details/a755/how-to-access-the-property-of-a-class-by-its-name-in-c | How to access the property of a class by its name in C# | | | 2024-04-05
+https://stackoverflow.com/questions/2905187/accessing-object-property-as-string-and-setting-its-value | Accessing object property as string and setting its value | | | 2024-04-05
+https://stackoverflow.com/questions/19537083/c-sharp-enum-how-to-compare-value | C# Enum - How to Compare Value | | | 2024-04-05
+https://stackoverflow.com/questions/72468405/c-sharp-winforms-databinding-doesnt-update-my-textbox-text | c# WinForms DataBinding doesn't update my TextBox.text | | | 2024-04-05
+https://stackoverflow.com/questions/3184121/get-month-name-from-month-number | Get Month name from month number | | | 2024-04-05
