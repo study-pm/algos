@@ -218,6 +218,11 @@ namespace ClothesChangeGame
                 binding.Parse += new ConvertEventHandler(ParseShoes);
                 ctrl.DataBindings.Add(binding);
             }
+
+            RandomizeBottom();
+            RandomizeMood();
+            RandomizeTop();
+            RandomizeShoes();
         }
 
         private void checkBox_Clouds_CheckedChanged(object sender, EventArgs e)
