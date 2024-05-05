@@ -131,6 +131,51 @@ namespace ClothesChangeGame
             _appearance.Shoes = _ctrlMap[button.Name];
             SetShoesImage();
         }
+        private void RandomizeBottom()
+        {
+            Random random = new Random();
+            Bottom next = _appearance.Bottom;
+            do
+            {
+                next = (Bottom)random.Next(Enum.GetNames(typeof(Bottom)).Length);
+            }
+            while (_appearance.Bottom == next);
+            _appearance.Bottom = next;
+        }
+        private void RandomizeMood()
+        {
+            Random random = new Random();
+            Mood next = _person.Mood;
+            do
+            {
+                next = (Mood)random.Next(Enum.GetNames(typeof(Mood)).Length);
+            }
+            while (_person.Mood == next);
+            _person.Mood = next;
+            HandleHeadChange();
+        }
+        private void RandomizeTop()
+        {
+            Random random = new Random();
+            Top next = _appearance.Top;
+            do
+            {
+                next = (Top)random.Next(Enum.GetNames(typeof(Top)).Length);
+            }
+            while (_appearance.Top == next);
+            _appearance.Top = next;
+        }
+        private void RandomizeShoes()
+        {
+            Random random = new Random();
+            Shoes next = _appearance.Shoes;
+            do
+            {
+                next = (Shoes)random.Next(Enum.GetNames(typeof(Shoes)).Length);
+            }
+            while (_appearance.Shoes == next);
+            _appearance.Shoes = next;
+        }
         public FormMain()
         {
             InitializeComponent();
@@ -173,6 +218,11 @@ namespace ClothesChangeGame
                 binding.Parse += new ConvertEventHandler(ParseShoes);
                 ctrl.DataBindings.Add(binding);
             }
+
+            RandomizeBottom();
+            RandomizeMood();
+            RandomizeTop();
+            RandomizeShoes();
         }
 
         private void checkBox_Clouds_CheckedChanged(object sender, EventArgs e)
@@ -263,15 +313,7 @@ namespace ClothesChangeGame
 
         private void button_RandomMood_Click(object sender, EventArgs e)
         {
-            Random random = new Random();
-            Mood next = _person.Mood;
-            do
-            {
-                next = (Mood)random.Next(Enum.GetNames(typeof(Mood)).Length);
-            }
-            while (_person.Mood == next);
-            _person.Mood = next;
-            HandleHeadChange();
+            RandomizeMood();
         }
         private void SetTopImage()
         {
@@ -287,36 +329,15 @@ namespace ClothesChangeGame
         }
         private void button_RandomBottom_Click(object sender, EventArgs e)
         {
-            Random random = new Random();
-            Bottom next = _appearance.Bottom;
-            do
-            {
-                next = (Bottom)random.Next(Enum.GetNames(typeof(Bottom)).Length);
-            }
-            while (_appearance.Bottom == next);
-            _appearance.Bottom = next;
+            RandomizeBottom();
         }
         private void button_RandomTop_Click(object sender, EventArgs e)
         {
-            Random random = new Random();
-            Top next = _appearance.Top;
-            do
-            {
-                next = (Top)random.Next(Enum.GetNames(typeof(Top)).Length);
-            }
-            while (_appearance.Top == next);
-            _appearance.Top = next;
+            RandomizeTop();
         }
         private void button_RandomShoes_Click(object sender, EventArgs e)
         {
-            Random random = new Random();
-            Shoes next = _appearance.Shoes;
-            do
-            {
-                next = (Shoes)random.Next(Enum.GetNames(typeof(Shoes)).Length);
-            }
-            while (_appearance.Shoes == next);
-            _appearance.Shoes = next;
+            RandomizeShoes();
         }
         private void button_GreenPreset_Click(object sender, EventArgs e)
         {
