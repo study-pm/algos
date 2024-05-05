@@ -58,9 +58,6 @@ namespace ClothesChangeGame
                 { ClothesChangeGame.Shoes.slippers, Resources.slippers },
                 { ClothesChangeGame.Shoes.sneakers, Resources.sneakers },
             };
-        Dictionary<Top, (RadioButton control, Bitmap image)> _topMap;
-        Dictionary<Bottom, (RadioButton control, Bitmap image)> _bottomMap;
-        Dictionary<Shoes, (RadioButton control, Bitmap image)> _shoesMap;
 
         private Control GetFormatControl(object sender, ConvertEventArgs cevent)
         {
