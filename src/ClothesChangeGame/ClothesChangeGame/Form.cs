@@ -229,23 +229,8 @@ namespace ClothesChangeGame
         {
             HandleCloudsTable();
         }
-
-        private void textBox_Name_TextChanged(object sender, EventArgs e)
-        {
-            // label_CharacterName.Text = textBox_Name.Text;
-            // Implemented as binding in constructor call
-        }
-
-        private void textBox_Motto_TextChanged(object sender, EventArgs e)
-        {
-            // label_Motto.Text = textBox_Motto.Text;
-            // Implemented as binding in constructor call
-        }
-
         private void checkBox_Name_CheckedChanged(object sender, EventArgs e)
         {
-            // textBox_Name.Enabled = checkBox_Name.Checked;
-            // Implemented as binding in constructor call
             if (checkBox_Name.Checked == false)
             {
                 textBox_Name.Text = "";

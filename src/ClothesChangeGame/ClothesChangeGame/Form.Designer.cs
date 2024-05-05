@@ -199,7 +199,6 @@
             this.textBox_Motto.Name = "textBox_Motto";
             this.textBox_Motto.Size = new System.Drawing.Size(181, 20);
             this.textBox_Motto.TabIndex = 1;
-            this.textBox_Motto.TextChanged += new System.EventHandler(this.textBox_Motto_TextChanged);
             // 
             // groupBox_Name
             // 
@@ -217,7 +216,6 @@
             this.textBox_Name.Name = "textBox_Name";
             this.textBox_Name.Size = new System.Drawing.Size(182, 20);
             this.textBox_Name.TabIndex = 1;
-            this.textBox_Name.TextChanged += new System.EventHandler(this.textBox_Name_TextChanged);
             // 
             // groupBox_RandomCorner
             // 
