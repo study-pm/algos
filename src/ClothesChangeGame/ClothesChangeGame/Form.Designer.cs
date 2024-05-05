@@ -430,7 +430,6 @@
             this.radioButton_NoShoes.TabStop = true;
             this.radioButton_NoShoes.Text = "Без обуви";
             this.radioButton_NoShoes.UseVisualStyleBackColor = true;
-            this.radioButton_NoShoes.Click += new System.EventHandler(this.radioButton_NoShoes_Click);
             // 
             // radioButton_Crocs
             // 
@@ -442,7 +441,6 @@
             this.radioButton_Crocs.TabStop = true;
             this.radioButton_Crocs.Text = "Кроксы";
             this.radioButton_Crocs.UseVisualStyleBackColor = true;
-            this.radioButton_Crocs.Click += new System.EventHandler(this.radioButton_Crocs_Click);
             // 
             // radioButton_Sneakers
             // 
@@ -454,7 +452,6 @@
             this.radioButton_Sneakers.TabStop = true;
             this.radioButton_Sneakers.Text = "Кроссовки";
             this.radioButton_Sneakers.UseVisualStyleBackColor = true;
-            this.radioButton_Sneakers.Click += new System.EventHandler(this.radioButton_Sneakers_Click);
             // 
             // radioButton_Gumshoes
             // 
@@ -466,7 +463,6 @@
             this.radioButton_Gumshoes.TabStop = true;
             this.radioButton_Gumshoes.Text = "Кеды";
             this.radioButton_Gumshoes.UseVisualStyleBackColor = true;
-            this.radioButton_Gumshoes.CheckedChanged += new System.EventHandler(this.radioButton_Gumshoes_CheckedChanged);
             // 
             // radioButton_Slippers
             // 
@@ -478,7 +474,6 @@
             this.radioButton_Slippers.TabStop = true;
             this.radioButton_Slippers.Text = "Шлёпки";
             this.radioButton_Slippers.UseVisualStyleBackColor = true;
-            this.radioButton_Slippers.Click += new System.EventHandler(this.radioButton_Slippers_Click);
             // 
             // groupBox_Bottom
             // 
@@ -504,7 +499,6 @@
             this.radioButton_Jeans.TabStop = true;
             this.radioButton_Jeans.Text = "Джинсы";
             this.radioButton_Jeans.UseVisualStyleBackColor = true;
-            this.radioButton_Jeans.Click += new System.EventHandler(this.radioButton_Jeans_Click);
             // 
             // radioButton_GreenBreeches
             // 
@@ -516,7 +510,6 @@
             this.radioButton_GreenBreeches.TabStop = true;
             this.radioButton_GreenBreeches.Text = "Зелёные брюки";
             this.radioButton_GreenBreeches.UseVisualStyleBackColor = true;
-            this.radioButton_GreenBreeches.Click += new System.EventHandler(this.radioButton_GreenBreeches_Click);
             // 
             // radioButton_RedBreeches
             // 
@@ -528,7 +521,6 @@
             this.radioButton_RedBreeches.TabStop = true;
             this.radioButton_RedBreeches.Text = "Красные брюки";
             this.radioButton_RedBreeches.UseVisualStyleBackColor = true;
-            this.radioButton_RedBreeches.Click += new System.EventHandler(this.radioButton_RedBreeches_Click);
             // 
             // radioButton_BlueShorts
             // 
@@ -540,7 +532,6 @@
             this.radioButton_BlueShorts.TabStop = true;
             this.radioButton_BlueShorts.Text = "Синие шорты";
             this.radioButton_BlueShorts.UseVisualStyleBackColor = true;
-            this.radioButton_BlueShorts.Click += new System.EventHandler(this.radioButton_BlueShorts_Click);
             // 
             // radioButton_BlackShorts
             // 
@@ -552,7 +543,6 @@
             this.radioButton_BlackShorts.TabStop = true;
             this.radioButton_BlackShorts.Text = "Чёрные шорты";
             this.radioButton_BlackShorts.UseVisualStyleBackColor = true;
-            this.radioButton_BlackShorts.Click += new System.EventHandler(this.radioButton_BlackShorts_Click);
             // 
             // groupBox_Top
             // 
@@ -578,7 +568,6 @@
             this.radioButton_LeatherJacket.TabStop = true;
             this.radioButton_LeatherJacket.Text = "Кожаная куртка";
             this.radioButton_LeatherJacket.UseVisualStyleBackColor = true;
-            this.radioButton_LeatherJacket.Click += new System.EventHandler(this.radioButton_LeatherJacket_Click);
             // 
             // radioButton_BlueShirt
             // 
@@ -590,7 +579,6 @@
             this.radioButton_BlueShirt.TabStop = true;
             this.radioButton_BlueShirt.Text = "Синяя кофта";
             this.radioButton_BlueShirt.UseVisualStyleBackColor = true;
-            this.radioButton_BlueShirt.Click += new System.EventHandler(this.radioButton_BlueShirt_Click);
             // 
             // radioButton_RedShirt
             // 
@@ -602,7 +590,6 @@
             this.radioButton_RedShirt.TabStop = true;
             this.radioButton_RedShirt.Text = "Красная кофта";
             this.radioButton_RedShirt.UseVisualStyleBackColor = true;
-            this.radioButton_RedShirt.Click += new System.EventHandler(this.radioButton_RedShirt_Click);
             // 
             // radioButton_GreenTShirt
             // 
@@ -614,7 +601,6 @@
             this.radioButton_GreenTShirt.TabStop = true;
             this.radioButton_GreenTShirt.Text = "Зелёная футболка";
             this.radioButton_GreenTShirt.UseVisualStyleBackColor = true;
-            this.radioButton_GreenTShirt.Click += new System.EventHandler(this.radioButton_GreenTShirt_Click);
             // 
             // radioButton_RedTShirt
             // 
@@ -626,7 +612,6 @@
             this.radioButton_RedTShirt.TabStop = true;
             this.radioButton_RedTShirt.Text = "Красная футболка";
             this.radioButton_RedTShirt.UseVisualStyleBackColor = true;
-            this.radioButton_RedTShirt.Click += new System.EventHandler(this.radioButton_RedTShirt_Click);
             // 
             // groupBox_TextDescription
             // 

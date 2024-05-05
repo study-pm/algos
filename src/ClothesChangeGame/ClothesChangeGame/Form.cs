@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.ConstrainedExecution;
@@ -11,6 +12,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ClothesChangeGame.Properties;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Rebar;
 
 namespace ClothesChangeGame
 {
@@ -19,9 +21,116 @@ namespace ClothesChangeGame
         Person _person = new Person();
         Appearance _appearance = new Appearance();
         Surrounding _surrounding = new Surrounding();
+        Dictionary<string, dynamic> _ctrlMap = new Dictionary<string, dynamic>()
+        {
+            { "radioButton_BlueShirt", ClothesChangeGame.Top.blueShirt },
+            { "radioButton_LeatherJacket", ClothesChangeGame.Top.leatherJacket },
+            { "radioButton_GreenTShirt", ClothesChangeGame.Top.greenTShirt },
+            { "radioButton_RedShirt", ClothesChangeGame.Top.redShirt },
+            { "radioButton_RedTShirt", ClothesChangeGame.Top.redTShirt },
+            { "radioButton1", ClothesChangeGame.Top.redTShirt },
+            { "radioButton_BlackShorts", ClothesChangeGame.Bottom.blackPants },
+            { "radioButton_BlueShorts", ClothesChangeGame.Bottom.blueShorts },
+            { "radioButton_RedBreeches", ClothesChangeGame.Bottom.brownPants },
+            { "radioButton_GreenBreeches", ClothesChangeGame.Bottom.greenPants },
+            { "radioButton_Jeans", ClothesChangeGame.Bottom.bluePants },
+            { "radioButton_NoShoes", ClothesChangeGame.Shoes.none },
+            { "radioButton_Crocs", ClothesChangeGame.Shoes.crocs },
+            { "radioButton_Gumshoes", ClothesChangeGame.Shoes.gumshoes },
+            { "radioButton_Slippers", ClothesChangeGame.Shoes.slippers },
+            { "radioButton_Sneakers", ClothesChangeGame.Shoes.sneakers },
+        };
+        Dictionary<dynamic, Bitmap> _resMap = new Dictionary<dynamic, Bitmap>()
+            {
+                { ClothesChangeGame.Top.blueShirt, Resources.bluetshirt },
+                { ClothesChangeGame.Top.leatherJacket, Resources.darktshirt },
+                { ClothesChangeGame.Top.greenTShirt, Resources.greentshirt },
+                { ClothesChangeGame.Top.redShirt, Resources.redtshirt },
+                { ClothesChangeGame.Top.redTShirt, Resources.redtshirttwo },
+                { ClothesChangeGame.Bottom.blackPants, Resources.blackPants },
+                { ClothesChangeGame.Bottom.blueShorts, Resources.blueShorts },
+                { ClothesChangeGame.Bottom.brownPants, Resources.brownPants },
+                { ClothesChangeGame.Bottom.greenPants, Resources.greenPants },
+                { ClothesChangeGame.Bottom.bluePants, Resources.bluePants },
+                { ClothesChangeGame.Shoes.none, Resources.justLegs },
+                { ClothesChangeGame.Shoes.crocs, Resources.crocs },
+                { ClothesChangeGame.Shoes.gumshoes, Resources.gumshoes },
+                { ClothesChangeGame.Shoes.slippers, Resources.slippers },
+                { ClothesChangeGame.Shoes.sneakers, Resources.sneakers },
+            };
         Dictionary<Top, (RadioButton control, Bitmap image)> _topMap;
         Dictionary<Bottom, (RadioButton control, Bitmap image)> _bottomMap;
         Dictionary<Shoes, (RadioButton control, Bitmap image)> _shoesMap;
+
+        private Control GetFormatControl(object sender, ConvertEventArgs cevent)
+        {
+            Binding binding = (sender as Binding);
+            if (binding == null) return null;
+
+            Control button = binding.Control;
+
+            if (button == null || cevent.DesiredType != typeof(Boolean)) return null;
+            return button;
+        }
+        private Control GetParseControl(object sender, ConvertEventArgs cevent)
+        {
+            Binding binding = (sender as Binding);
+            if (binding == null) return null;
+
+            Control button = binding.Control;
+            bool value = (bool)cevent.Value;
+
+            if (button == null || value != true) return null;
+            return button;
+        }
+        private void FormatTop(object sender, ConvertEventArgs cevent)
+        {
+            Control button = GetFormatControl(sender, cevent);
+            if (button == null) return;
+
+            cevent.Value = _appearance.Top == _ctrlMap[button.Name];
+            SetTopImage();
+        }
+        private void ParseTop(object sender, ConvertEventArgs cevent)
+        {
+            Control button = GetParseControl(sender, cevent);
+            if (button == null) return;
+
+            _appearance.Top = _ctrlMap[button.Name];
+            SetTopImage();
+        }
+        private void FormatBottom(object sender, ConvertEventArgs cevent)
+        {
+            Control button = GetFormatControl(sender, cevent);
+            if (button == null) return;
+
+            cevent.Value = _appearance.Bottom == _ctrlMap[button.Name];
+            SetBottomImage();
+        }
+        private void ParseBottom(object sender, ConvertEventArgs cevent)
+        {
+            Control button = GetParseControl(sender, cevent);
+            if (button == null) return;
+
+            _appearance.Bottom = _ctrlMap[button.Name];
+            SetBottomImage();
+        }
+        private void FormatShoes(object sender, ConvertEventArgs cevent)
+        {
+            Control button = GetFormatControl(sender, cevent);
+            if (button == null) return;
+
+            cevent.Value = _appearance.Shoes == _ctrlMap[button.Name];
+            SetShoesImage();
+        }
+        private void ParseShoes(object sender, ConvertEventArgs cevent)
+        {
+            Control button = GetParseControl(sender, cevent);
+            if (button == null) return;
+
+            _appearance.Shoes = _ctrlMap[button.Name];
+            SetShoesImage();
+        }
         public FormMain()
         {
             InitializeComponent();
@@ -43,35 +152,27 @@ namespace ClothesChangeGame
             checkBox_Glasses.DataBindings.Add("Checked", _appearance, "HasGlassesOn", false, DataSourceUpdateMode.OnPropertyChanged);
             checkBox_Hat.DataBindings.Add("Checked", _appearance, "HasHatOn", false, DataSourceUpdateMode.OnPropertyChanged);
 
-            _topMap = new Dictionary<Top, (RadioButton, Bitmap)>()
+            foreach (Control ctrl in groupBox_Top.Controls)
             {
-                { ClothesChangeGame.Top.blueShirt, ( radioButton_BlueShirt, Resources.bluetshirt )},
-                { ClothesChangeGame.Top.leatherJacket, (radioButton_LeatherJacket , Resources.darktshirt ) },
-                { ClothesChangeGame.Top.greenTShirt, (radioButton_GreenTShirt, Resources.greentshirt ) },
-                { ClothesChangeGame.Top.redShirt, (radioButton_RedShirt, Resources.redtshirt ) },
-                { ClothesChangeGame.Top.redTShirt, (radioButton_RedTShirt, Resources.redtshirttwo ) },
-            };
-            SetTop();
-
-            _bottomMap = new Dictionary<Bottom, (RadioButton, Bitmap)>()
+                Binding binding = new Binding("Checked", _appearance, "Top", false, DataSourceUpdateMode.OnPropertyChanged);
+                binding.Format += new ConvertEventHandler(FormatTop);
+                binding.Parse += new ConvertEventHandler(ParseTop);
+                ctrl.DataBindings.Add(binding);
+            }
+            foreach (Control ctrl in groupBox_Bottom.Controls)
             {
-                { ClothesChangeGame.Bottom.blackPants, ( radioButton_BlackShorts, Resources.blackPants )},
-                { ClothesChangeGame.Bottom.blueShorts, ( radioButton_BlueShorts, Resources.blueShorts )},
-                { ClothesChangeGame.Bottom.brownPants, ( radioButton_RedBreeches, Resources.brownPants )},
-                { ClothesChangeGame.Bottom.greenPants, ( radioButton_GreenBreeches, Resources.greenPants )},
-                { ClothesChangeGame.Bottom.bluePants, ( radioButton_Jeans, Resources.bluePants )},
-            };
-            SetBottom();
-
-            _shoesMap = new Dictionary<Shoes, (RadioButton, Bitmap)>()
+                Binding binding = new Binding("Checked", _appearance, "Bottom", false, DataSourceUpdateMode.OnPropertyChanged);
+                binding.Format += new ConvertEventHandler(FormatBottom);
+                binding.Parse += new ConvertEventHandler(ParseBottom);
+                ctrl.DataBindings.Add(binding);
+            }
+            foreach (Control ctrl in groupBox_Shoes.Controls)
             {
-                { ClothesChangeGame.Shoes.none, ( radioButton_NoShoes, Resources.justLegs )},
-                { ClothesChangeGame.Shoes.crocs, ( radioButton_Crocs, Resources.crocs )},
-                { ClothesChangeGame.Shoes.gumshoes, ( radioButton_Gumshoes, Resources.gumshoes )},
-                { ClothesChangeGame.Shoes.slippers, ( radioButton_Slippers, Resources.slippers )},
-                { ClothesChangeGame.Shoes.sneakers, ( radioButton_Sneakers, Resources.sneakers )},
-            };
-            SetShoes();
+                Binding binding = new Binding("Checked", _appearance, "Shoes", false, DataSourceUpdateMode.OnPropertyChanged);
+                binding.Format += new ConvertEventHandler(FormatShoes);
+                binding.Parse += new ConvertEventHandler(ParseShoes);
+                ctrl.DataBindings.Add(binding);
+            }
         }
 
         private void checkBox_Clouds_CheckedChanged(object sender, EventArgs e)
@@ -172,44 +273,17 @@ namespace ClothesChangeGame
             _person.Mood = next;
             HandleHeadChange();
         }
-        private void SetTop()
-        {
-            SetTopControl();
-            SetTopImage();
-        }
-        private void SetTopControl()
-        {
-            _topMap[_appearance.Top].control.Checked = true;
-        }
         private void SetTopImage()
         {
-            pictureBox_Top.Image = _topMap[_appearance.Top].image;
-        }
-        private void SetBottom()
-        {
-            SetBottomControl();
-            SetBottomImage();
-        }
-        private void SetBottomControl()
-        {
-            _bottomMap[_appearance.Bottom].control.Checked = true;
+            pictureBox_Top.Image = _resMap[_appearance.Top];
         }
         private void SetBottomImage()
         {
-            pictureBox_Bottom.Image = _bottomMap[_appearance.Bottom].image;
-        }
-        private void SetShoes()
-        {
-            SetShoesControl();
-            SetShoesImage();
-        }
-        private void SetShoesControl()
-        {
-            _shoesMap[_appearance.Shoes].control.Checked = true;
+            pictureBox_Bottom.Image = _resMap[_appearance.Bottom];
         }
         private void SetShoesImage()
         {
-            pictureBox_Shoes.Image = _shoesMap[_appearance.Shoes].image;
+            pictureBox_Shoes.Image = _resMap[_appearance.Shoes];
         }
         private void button_RandomBottom_Click(object sender, EventArgs e)
         {
@@ -221,7 +295,6 @@ namespace ClothesChangeGame
             }
             while (_appearance.Bottom == next);
             _appearance.Bottom = next;
-            SetBottom();
         }
         private void button_RandomTop_Click(object sender, EventArgs e)
         {
@@ -233,7 +306,6 @@ namespace ClothesChangeGame
             }
             while (_appearance.Top == next);
             _appearance.Top = next;
-            SetTop();
         }
         private void button_RandomShoes_Click(object sender, EventArgs e)
         {
@@ -245,44 +317,11 @@ namespace ClothesChangeGame
             }
             while (_appearance.Shoes == next);
             _appearance.Shoes = next;
-            SetShoes();
         }
-        private void radioButton_RedTShirt_Click(object sender, EventArgs e)
-        {
-            _appearance.Top = ClothesChangeGame.Top.redTShirt;
-            SetTopImage();
-        }
-
-        private void radioButton_GreenTShirt_Click(object sender, EventArgs e)
-        {
-            _appearance.Top = ClothesChangeGame.Top.greenTShirt;
-            SetTopImage();
-        }
-
-        private void radioButton_RedShirt_Click(object sender, EventArgs e)
-        {
-            _appearance.Top = ClothesChangeGame.Top.redShirt;
-            SetTopImage();
-        }
-
-        private void radioButton_BlueShirt_Click(object sender, EventArgs e)
-        {
-            _appearance.Top = ClothesChangeGame.Top.blueShirt;
-            SetTopImage();
-        }
-
-        private void radioButton_LeatherJacket_Click(object sender, EventArgs e)
-        {
-            _appearance.Top = ClothesChangeGame.Top.leatherJacket;
-            SetTopImage();
-        }
-
         private void button_GreenPreset_Click(object sender, EventArgs e)
         {
             _appearance.Bottom = ClothesChangeGame.Bottom.greenPants;
             _appearance.Top = ClothesChangeGame.Top.greenTShirt;
-            SetBottom();
-            SetTop();
         }
 
         private void button_BluePreset_Click(object sender, EventArgs e)
@@ -303,65 +342,6 @@ namespace ClothesChangeGame
                 _appearance.Bottom = ClothesChangeGame.Bottom.blueShorts;
             }
             _appearance.Top = ClothesChangeGame.Top.blueShirt;
-            SetBottom();
-            SetTop();
-        }
-
-        private void radioButton_BlackShorts_Click(object sender, EventArgs e)
-        {
-            _appearance.Bottom = ClothesChangeGame.Bottom.blackPants;
-            SetBottomImage();
-        }
-
-        private void radioButton_BlueShorts_Click(object sender, EventArgs e)
-        {
-            _appearance.Bottom = ClothesChangeGame.Bottom.blueShorts;
-            SetBottomImage();
-        }
-        private void radioButton_RedBreeches_Click(object sender, EventArgs e)
-        {
-            _appearance.Bottom = ClothesChangeGame.Bottom.brownPants;
-            SetBottomImage();
-        }
-        private void radioButton_GreenBreeches_Click(object sender, EventArgs e)
-        {
-            _appearance.Bottom = ClothesChangeGame.Bottom.greenPants;
-            SetBottomImage();
-        }
-        private void radioButton_Jeans_Click(object sender, EventArgs e)
-        {
-            _appearance.Bottom = ClothesChangeGame.Bottom.bluePants;
-            SetBottomImage();
-        }
-
-        private void radioButton_Crocs_Click(object sender, EventArgs e)
-        {
-            _appearance.Shoes = ClothesChangeGame.Shoes.crocs;
-            SetShoesImage();
-        }
-
-        private void radioButton_Slippers_Click(object sender, EventArgs e)
-        {
-            _appearance.Shoes = ClothesChangeGame.Shoes.slippers;
-            SetShoesImage();
-        }
-
-        private void radioButton_Gumshoes_CheckedChanged(object sender, EventArgs e)
-        {
-            _appearance.Shoes = ClothesChangeGame.Shoes.gumshoes;
-            SetShoesImage();
-        }
-
-        private void radioButton_Sneakers_Click(object sender, EventArgs e)
-        {
-            _appearance.Shoes = ClothesChangeGame.Shoes.sneakers;
-            SetShoesImage();
-        }
-
-        private void radioButton_NoShoes_Click(object sender, EventArgs e)
-        {
-            _appearance.Shoes = ClothesChangeGame.Shoes.none;
-            SetShoesImage();
         }
     }
 }
