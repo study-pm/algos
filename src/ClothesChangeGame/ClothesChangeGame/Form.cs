@@ -173,6 +173,18 @@ namespace ClothesChangeGame
             while (_appearance.Shoes == next);
             _appearance.Shoes = next;
         }
+        private void SetTopImage()
+        {
+            pictureBox_Top.Image = _resMap[_appearance.Top];
+        }
+        private void SetBottomImage()
+        {
+            pictureBox_Bottom.Image = _resMap[_appearance.Bottom];
+        }
+        private void SetShoesImage()
+        {
+            pictureBox_Shoes.Image = _resMap[_appearance.Shoes];
+        }
         public FormMain()
         {
             InitializeComponent();
@@ -296,18 +308,6 @@ namespace ClothesChangeGame
         private void button_RandomMood_Click(object sender, EventArgs e)
         {
             RandomizeMood();
-        }
-        private void SetTopImage()
-        {
-            pictureBox_Top.Image = _resMap[_appearance.Top];
-        }
-        private void SetBottomImage()
-        {
-            pictureBox_Bottom.Image = _resMap[_appearance.Bottom];
-        }
-        private void SetShoesImage()
-        {
-            pictureBox_Shoes.Image = _resMap[_appearance.Shoes];
         }
         private void button_RandomBottom_Click(object sender, EventArgs e)
         {
