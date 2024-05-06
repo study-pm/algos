@@ -58,9 +58,6 @@ namespace ClothesChangeGame
                 { ClothesChangeGame.Shoes.slippers, Resources.slippers },
                 { ClothesChangeGame.Shoes.sneakers, Resources.sneakers },
             };
-        Dictionary<Top, (RadioButton control, Bitmap image)> _topMap;
-        Dictionary<Bottom, (RadioButton control, Bitmap image)> _bottomMap;
-        Dictionary<Shoes, (RadioButton control, Bitmap image)> _shoesMap;
 
         private Control GetFormatControl(object sender, ConvertEventArgs cevent)
         {
@@ -176,6 +173,18 @@ namespace ClothesChangeGame
             while (_appearance.Shoes == next);
             _appearance.Shoes = next;
         }
+        private void SetTopImage()
+        {
+            pictureBox_Top.Image = _resMap[_appearance.Top];
+        }
+        private void SetBottomImage()
+        {
+            pictureBox_Bottom.Image = _resMap[_appearance.Bottom];
+        }
+        private void SetShoesImage()
+        {
+            pictureBox_Shoes.Image = _resMap[_appearance.Shoes];
+        }
         public FormMain()
         {
             InitializeComponent();
@@ -229,23 +238,8 @@ namespace ClothesChangeGame
         {
             HandleCloudsTable();
         }
-
-        private void textBox_Name_TextChanged(object sender, EventArgs e)
-        {
-            // label_CharacterName.Text = textBox_Name.Text;
-            // Implemented as binding in constructor call
-        }
-
-        private void textBox_Motto_TextChanged(object sender, EventArgs e)
-        {
-            // label_Motto.Text = textBox_Motto.Text;
-            // Implemented as binding in constructor call
-        }
-
         private void checkBox_Name_CheckedChanged(object sender, EventArgs e)
         {
-            // textBox_Name.Enabled = checkBox_Name.Checked;
-            // Implemented as binding in constructor call
             if (checkBox_Name.Checked == false)
             {
                 textBox_Name.Text = "";
@@ -314,18 +308,6 @@ namespace ClothesChangeGame
         private void button_RandomMood_Click(object sender, EventArgs e)
         {
             RandomizeMood();
-        }
-        private void SetTopImage()
-        {
-            pictureBox_Top.Image = _resMap[_appearance.Top];
-        }
-        private void SetBottomImage()
-        {
-            pictureBox_Bottom.Image = _resMap[_appearance.Bottom];
-        }
-        private void SetShoesImage()
-        {
-            pictureBox_Shoes.Image = _resMap[_appearance.Shoes];
         }
         private void button_RandomBottom_Click(object sender, EventArgs e)
         {
