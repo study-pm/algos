@@ -58,7 +58,7 @@ namespace ClothesChangeGame
                 { ClothesChangeGame.Shoes.slippers, Resources.slippers },
                 { ClothesChangeGame.Shoes.sneakers, Resources.sneakers },
             };
-
+        string ph = "Placeholder-Text";
         private Control GetFormatControl(object sender, ConvertEventArgs cevent)
         {
             Binding binding = (sender as Binding);
@@ -185,6 +185,10 @@ namespace ClothesChangeGame
         {
             pictureBox_Shoes.Image = _resMap[_appearance.Shoes];
         }
+        private void FormatHair(object sender, ConvertEventArgs cevent)
+        {
+            // MessageBox.Show("Format Hair Color");
+        }
         public FormMain()
         {
             InitializeComponent();
@@ -233,7 +237,6 @@ namespace ClothesChangeGame
             RandomizeTop();
             RandomizeShoes();
         }
-
         private void checkBox_Clouds_CheckedChanged(object sender, EventArgs e)
         {
             HandleCloudsTable();
@@ -245,7 +248,6 @@ namespace ClothesChangeGame
                 textBox_Name.Text = "";
             }
         }
-
         private void checkBox_Table_CheckedChanged(object sender, EventArgs e)
         {
             HandleCloudsTable();
@@ -345,6 +347,13 @@ namespace ClothesChangeGame
                 _appearance.Bottom = ClothesChangeGame.Bottom.blueShorts;
             }
             _appearance.Top = ClothesChangeGame.Top.blueShirt;
+        }
+        private void textBox_HairColor_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter && textBox_HairColor.Text != _person.HairColor.ToString())
+            {
+                MessageBox.Show("Must be any of these values: dark, pink or white");
+            }
         }
     }
 }

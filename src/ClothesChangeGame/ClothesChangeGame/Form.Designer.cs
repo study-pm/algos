@@ -182,6 +182,7 @@
             this.textBox_HairColor.Size = new System.Drawing.Size(182, 20);
             this.textBox_HairColor.TabIndex = 1;
             this.textBox_HairColor.TextChanged += new System.EventHandler(this.textBox_HairColor_TextChanged);
+            this.textBox_HairColor.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox_HairColor_KeyDown);
             // 
             // groupBox_Motto
             // 
