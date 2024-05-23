@@ -1,11 +1,14 @@
 /archived
 /res
+# Compiled
 bin/
 obj/
+# MS Visual Studio
 /src/**/Resources
-.csproj.user
-.suo
-.vs
+*.csproj.user
+*.suo
+*.vs
+# MS Office
 *.docx
 *.xlsx
 *.vsd
