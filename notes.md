@@ -362,15 +362,15 @@ graph TD;
 
 **Блок-схема** — графическое изображение структуры алгоритма, в котором каждый этап процесса переработки данных представляется в виде геометрических фигур (блоков), имеющих определенную конфигурацию в зависимости от характера выполняемых при этом операций.
 
-![](./img/algos-block-schemes.png)
+![Flowchart items](./img/algos-block-schemes.png)
 
-![](./img/algo-block-scheme-0.png)
+![Flowchart items](./img/algo-block-scheme-0.png)
 
-![](./img/algo-block-scheme-1.png)
+![Flowchart items](./img/algo-block-scheme-1.png)
 
-![](./img/algo-block-scheme-2.png)
+![Flowchart items](./img/algo-block-scheme-2.png)
 
-![](./img/algo-block-scheme-3.png)
+![Flowchart items](./img/algo-block-scheme-3.png)
 
 #### Ход выполнения алгоритма
 
