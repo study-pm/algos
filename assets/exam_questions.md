@@ -151,15 +151,15 @@ https://otus.ru/nest/post/1778/
 
 ![Основные элементы блок-схем](../img/Screenshot_1-1801-c116d0.png)
 
-![](../img/algos-block-schemes.png)
+![Flowchart items](../img/algos-block-schemes.png)
 
-![](../img/algo-block-scheme-0.png)
+![Flowchart items](../img/algo-block-scheme-0.png)
 
-![](../img/algo-block-scheme-1.png)
+![Flowchart items](../img/algo-block-scheme-1.png)
 
-![](../img/algo-block-scheme-2.png)
+![Flowchart items](../img/algo-block-scheme-2.png)
 
-![](../img/algo-block-scheme-3.png)
+![Flowchart items](../img/algo-block-scheme-3.png)
 
 ### Решение алгоритма сортировки пузырьком
 В этом примере давайте попробуем дать описание решению алгоритма сортировки по методу пузырьком (метод сортировки вставками). Здесь применяются 2 цикла. Во вложенном цикле осуществляется попарное сравнение элементов. Если нарушается порядок, происходит перестановка. По итогу выполнения одной итерации во внутреннем цикле, наибольший элемент будет смещён в самый конец массива. Внешний цикл будет выполняться, пока полностью весь массив не отсортируется.
