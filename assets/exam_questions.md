@@ -2018,6 +2018,39 @@ static void Main()
 -2    2   2
 ```
 
+> **Задания**.
+>
+> 1. Объясните, почему в данном примере не требуется инициализация переменной `max`.
+> 2. Измените программу так, чтобы вычислялось наименьшее значение из двух
+вещественных чисел.
+
+<details>
+<summary><b>Ответы</b></summary>
+
+1. Инициализация не требуется, потому что невозможно заранее понять, какое значение должна принять переменная `max`. Она его принимает в зависимости от сравнения значений выражений `x` и `y`.
+2. Программа:
+    ```c#
+    static void Main()
+    {
+        Console.Write("x=");
+        double x = double.Parse(Console.ReadLine());
+        Console.Write("y=");
+        double y = double.Parse(Console.ReadLine());
+        double min;
+        if (x < y)
+        {
+            min = x;
+        }
+        else
+        {
+            min = y;
+        }
+        Console.WriteLine("min= {0}", min);
+    }
+    ```
+
+</details>
+
 > **Замечание**. Вычислить максимум из двух чисел можно с помощью метода `Math.Max(x,y)`.
 
 **Пример 2**. Найдем наибольшее значение из трех вещественных чисел:
@@ -2058,7 +2091,62 @@ static void Main()
  4  -1  -3   4
 ```
 
-> Данную задачу можно решитЬ, используя метод `Math.Min(x,y)`.
+> Задания.
+>
+> 1. Измените программу так, чтобы вычислялось наименьшее значение из трех
+вещественных чисел.
+> 2. Решите данную задачу используя метод `Math.Min(x,y)`.
+
+<details>
+<summary><b>Ответы</b></summary>
+
+1. Программа.
+    ```c#
+    static void Main()
+    {
+      Console.Write("x= ");
+      double x = double.Parse(Console.ReadLine());
+      Console.Write("y=");
+      double y = double.Parse(Console.ReadLine());
+      Console.Write("z=");
+      double z = double.Parse(Console.ReadLine());
+      double min;
+      if (x < y && x < z)
+      {
+          min = x;
+      }
+      else
+      {
+          if (y < z)
+          {
+              min = y;
+          }
+          else
+          {
+              min = z;
+          }
+      }
+      Console.WriteLine("min= {0}", min);
+    }
+    ```
+
+2. Программа:
+    ```c#
+    static void Main(string[] args)
+    {
+        Console.Write("x= ");
+        double x = double.Parse(Console.ReadLine());
+        Console.Write("y=");
+        double y = double.Parse(Console.ReadLine());
+        Console.Write("z=");
+        double z = double.Parse(Console.ReadLine());
+        double min = Math.Min(x, y);
+        min = Math.Min(min, z);
+        Console.WriteLine("min= {0}", min);
+    }
+    ```
+
+</details>
 
 ## 18. Оператор выбора в языке С#.
 http://smolapo.ru/sites/default/files/Prepod/Efremova/pril/13_3.pdf
