@@ -76,25 +76,32 @@ namespace _02
         }
         static void Main()
         {
-            Console.Write("Enter the A position coordinates separated by a space: ");
-            double[] A = ConvertToDouble(Console.ReadLine());
-            Console.Write("Enter the B position coordinates separated by a space: ");
-            double[] B = ConvertToDouble(Console.ReadLine());
-
-            double[] O = new double[A.Length];
-
-            double AB = GetDistance(A, B);
-            double AO = GetDistance(A, O);
-            double BO = GetDistance(B, O);
-
-            Console.WriteLine("Distance between A and B is: {0: .##}", AB);
-            if (AO == BO)
+            try
             {
-                Console.WriteLine("Both points are equally remote from the origin.");
+                Console.Write("Enter the A position coordinates separated by a space: ");
+                double[] A = ConvertToDouble(Console.ReadLine());
+                Console.Write("Enter the B position coordinates separated by a space: ");
+                double[] B = ConvertToDouble(Console.ReadLine());
+
+                double[] O = new double[A.Length];
+
+                double AB = GetDistance(A, B);
+                double AO = GetDistance(A, O);
+                double BO = GetDistance(B, O);
+
+                Console.WriteLine("Distance between A and B is: {0: .##}", AB);
+                if (AO == BO)
+                {
+                    Console.WriteLine("Both points are equally remote from the origin.");
+                }
+                else
+                {
+                    Console.WriteLine("The closest to the origin point is " + (AO < BO ? nameof(A) : nameof(B)) + ".");
+                }
             }
-            else
+            catch (Exception e)
             {
-                Console.WriteLine("The closest to the origin point is " + (AO < BO ? nameof(A) : nameof(B)) + ".");
+                Console.WriteLine("Invalid input: " + e.Message);
             }
         }
     }
