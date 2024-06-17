@@ -6,10 +6,10 @@ namespace _01
     {
         static void Main(string[] args)
         {
-            string msg = "three numbers separated by a space";
+            string msg = "real numbers separated by a space";
             try
             {
-                Console.WriteLine("Enter {0}: ", msg);
+                Console.Write("Enter {0}: ", msg);
                 string[] input = Console.ReadLine().Split();
 
                 double[] numbers = new double[input.Length];
