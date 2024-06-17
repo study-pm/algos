@@ -6,24 +6,32 @@ namespace _01
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter three numbers separated by a space: ");
-            string[] input = Console.ReadLine().Split();
-
-            double[] numbers = new double[input.Length];
-
-            for (int i = 0; i < input.Length; i++)
+            string msg = "three numbers separated by a space";
+            try
             {
-                numbers[i] = double.Parse(input[i]);
+                Console.WriteLine("Enter {0}: ", msg);
+                string[] input = Console.ReadLine().Split();
+
+                double[] numbers = new double[input.Length];
+
+                for (int i = 0; i < input.Length; i++)
+                {
+                    numbers[i] = double.Parse(input[i]);
+                }
+
+                int count = 0;
+
+                for (int i = 0; i < numbers.Length; i++)
+                {
+                    if (numbers[i] % 1 == 0) count++;
+                }
+
+                Console.WriteLine("Number of integers is: " + count);
             }
-
-            int count = 0;
-
-            for (int i = 0; i < numbers.Length; i++)
+            catch (Exception e)
             {
-                if (numbers[i] % 1 == 0) count++;
+                Console.WriteLine($"Invalid input (must be {msg}): " + e.Message);
             }
-
-            Console.WriteLine("Number of integers is: " + count);
         }
     }
 }
