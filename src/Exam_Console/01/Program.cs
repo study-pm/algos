@@ -1,6 +1,6 @@
 ﻿// Подсчитать количество целых чисел среди a, b, c.
 
-namespace _01
+namespace Console_01
 {
     internal class Program
     {

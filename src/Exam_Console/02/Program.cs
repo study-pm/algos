@@ -2,7 +2,7 @@
  * Определить, какая точка находится ближе к началу координат.
  */
 
-namespace _02
+namespace Console_02
 {
     struct Point : IComparable
     {
