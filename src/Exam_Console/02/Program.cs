@@ -64,13 +64,13 @@ namespace Console_02
             }
             return Math.Sqrt(sum);
         }
-        static double[] ConvertToDouble(string input)
+        static double[] ConvertToDouble(string val)
         {
-            string[] inputArr = input.Split(' ');
-            double[] point = new double[inputArr.Length];
-            for (int i = 0; i < inputArr.Length; i++)
+            string[] input = val.Split(' ');
+            double[] point = new double[input.Length];
+            for (int i = 0; i < input.Length; i++)
             {
-                point[i] = Convert.ToDouble(inputArr[i]);
+                point[i] = Convert.ToDouble(input[i]);
             }
             return point;
         }
