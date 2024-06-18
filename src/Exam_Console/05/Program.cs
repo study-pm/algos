@@ -6,13 +6,13 @@ namespace Console_05
 {
     internal class Program
     {
-        public static double[] ParseCoordinates(string input)
+        public static double[] ParseCoordinates(string val)
         {
-            string[] inputArr = input.Split(' ');
-            double[] point = new double[inputArr.Length];
-            for (int i = 0; i < inputArr.Length; i++)
+            string[] input = val.Split(' ');
+            double[] point = new double[input.Length];
+            for (int i = 0; i < input.Length; i++)
             {
-                point[i] = double.Parse(inputArr[i]);
+                point[i] = double.Parse(input[i]);
             }
             return point;
         }
