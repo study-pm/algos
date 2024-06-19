@@ -19,6 +19,8 @@ namespace Console_04
                 Console.Write("Enter gas price for 1 liter in roubles: ");
                 double price = double.Parse(Console.ReadLine());
 
+                if (distance < 0 || consumption < 0 || price < 0) throw new Exception("Must be a non-negative number");
+
                 double cost = distance * consumption / 100 * price * 2;
 
                 Console.WriteLine("Trip cost (hin und zurück): {0:.##}", cost);

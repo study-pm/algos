@@ -43,6 +43,8 @@ namespace Console_06
                 Console.Write("Enter weight step in grams: ");
                 double step = double.Parse(Console.ReadLine());
 
+                if (price < 0 || range[0] < 0 || range[1] < 0 || step < 0) throw new Exception("Must be a non-negative number");
+
                 Console.WriteLine(Environment.NewLine + "Weight (g) \t Price (r)");
 
                 double acc = range[0];
