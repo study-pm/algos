@@ -9,6 +9,19 @@ namespace LR5
     internal class Matrix
     {
         public int[,] Value;
+        public int ColumnCount
+        {
+            get {
+                return Value.GetLength(1);
+            }
+        }
+        public int RowCount
+        {
+            get
+            {
+                return Value.GetLength(0);
+            }
+        }
         public Matrix(int[] size)
         {
             Value = new int[size[0], size[1]];
