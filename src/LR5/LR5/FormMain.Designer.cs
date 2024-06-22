@@ -49,6 +49,7 @@
             this.label_posCountInRow = new System.Windows.Forms.Label();
             this.label_negativeCountInRow = new System.Windows.Forms.Label();
             this.label_negCountInRow = new System.Windows.Forms.Label();
+            this.button_reset = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
@@ -134,6 +135,7 @@
             this.button_tripleColumn.TabIndex = 8;
             this.button_tripleColumn.Text = "Утроенный 2-й столбец";
             this.button_tripleColumn.UseVisualStyleBackColor = true;
+            this.button_tripleColumn.Click += new System.EventHandler(this.button_tripleColumn_Click);
             // 
             // button_zeroesAboveMain
             // 
@@ -143,6 +145,7 @@
             this.button_zeroesAboveMain.TabIndex = 9;
             this.button_zeroesAboveMain.Text = "Нули выше главной";
             this.button_zeroesAboveMain.UseVisualStyleBackColor = true;
+            this.button_zeroesAboveMain.Click += new System.EventHandler(this.button_zeroesAboveMain_Click);
             // 
             // button_countInColumn
             // 
@@ -152,6 +155,7 @@
             this.button_countInColumn.TabIndex = 10;
             this.button_countInColumn.Text = "Кол-во + и - 1й столбец";
             this.button_countInColumn.UseVisualStyleBackColor = true;
+            this.button_countInColumn.Click += new System.EventHandler(this.button_countInColumn_Click);
             // 
             // dataGridView2
             // 
@@ -178,6 +182,7 @@
             this.button_countInRow.TabIndex = 13;
             this.button_countInRow.Text = "Кол-во + и - 1я строка";
             this.button_countInRow.UseVisualStyleBackColor = true;
+            this.button_countInRow.Click += new System.EventHandler(this.button_countInRow_Click);
             // 
             // label_negativeCountInColumn
             // 
@@ -242,11 +247,22 @@
             this.label_negCountInRow.TabIndex = 20;
             this.label_negCountInRow.Text = "0";
             // 
+            // button_reset
+            // 
+            this.button_reset.Location = new System.Drawing.Point(12, 217);
+            this.button_reset.Name = "button_reset";
+            this.button_reset.Size = new System.Drawing.Size(139, 23);
+            this.button_reset.TabIndex = 21;
+            this.button_reset.Text = "Очистить";
+            this.button_reset.UseVisualStyleBackColor = true;
+            this.button_reset.Click += new System.EventHandler(this.button_reset_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(734, 361);
+            this.Controls.Add(this.button_reset);
             this.Controls.Add(this.label_negCountInRow);
             this.Controls.Add(this.label_negativeCountInRow);
             this.Controls.Add(this.label_posCountInRow);
@@ -301,6 +317,7 @@
         private System.Windows.Forms.Label label_posCountInRow;
         private System.Windows.Forms.Label label_negativeCountInRow;
         private System.Windows.Forms.Label label_negCountInRow;
+        private System.Windows.Forms.Button button_reset;
     }
 }
 
