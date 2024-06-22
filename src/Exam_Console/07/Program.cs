@@ -9,13 +9,13 @@ namespace Console_07
         static void Main(string[] args)
         {
             DateTime now = DateTime.Now;
-            int k = (int)(now - now.Date).TotalSeconds;
+            uint k = (uint)(now - now.Date).TotalSeconds;
             // int k = (int)now.Subtract(now.Date).TotalSeconds;
 
             Console.WriteLine(k);
 
-            int H = k / 60 / 60;
-            int M = k % 3600 / 60;
+            uint H = k / 60 / 60;
+            uint M = k % 3600 / 60;
 
             Console.WriteLine("{0} hour and {1} minutes elapsed from the beginning of the day", H, M);
         }
