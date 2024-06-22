@@ -18,11 +18,12 @@ namespace Console_28
                 float y = float.Parse(Console.ReadLine());
 
                 // Circle equation: x^2 + y^2 = r^2
+                float c = x * x + y * y;
 
                 string position = "on the edge of";
 
-                if (x * x + y * y < 25 && y > 0) position = "inside";
-                else if (x * x + y * y > 25 || y < 0) position = "outside";
+                if (c < 25 && y > 0) position = "inside";
+                else if (c > 25 || y < 0) position = "outside";
 
                 Console.WriteLine($"Point with coordinates ({x}, {y}) is {position} the shaded region.");
             }
