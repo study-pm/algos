@@ -20,14 +20,7 @@ namespace LR5
             InitializeComponent();
 
             // надписи для вывода значения результата подсчета + и - чисел
-            label_positiveCountInColumn.Visible = false;
-            label_negativeCountInColumn.Visible = false;
-            label_positiveCountInRow.Visible = false;
-            label_negativeCountInRow.Visible = false;
-            label_posCountInCol.Visible = false;
-            label_negCountInCol.Visible = false;
-            label_posCountInRow.Visible = false;
-            label_negCountInRow.Visible = false;
+            ResetForm();
         }
 
         private void FormMain_Load(object sender, EventArgs e)
@@ -51,6 +44,9 @@ namespace LR5
             // отключаем возможность внесения пользователем своих строк, из-за этого кол-во строк установлено как n+1
             dataGridView1.AllowUserToAddRows = false;
             dataGridView2.AllowUserToAddRows = false;
+
+            dataGridView1.ScrollBars = ScrollBars.None;
+            dataGridView2.ScrollBars = ScrollBars.None;
 
 
             // dataGridView_matrixSrc.AllowUserToAddRows = false;
@@ -115,8 +111,12 @@ namespace LR5
 
         private void button_createMatrix_Click(object sender, EventArgs e)
         {
+            ClearDataGrid(dataGridView2);
+
             Matrix.CreateMatr();                // заполняем элементы матрицы сгенерированными значениями
             Matrix.PrintMatr(dataGridView1);    // выводим результат в таблицу 1
+
+            ToggleControls(true);
 
             /*
             _matrix = new Matrix(new int[] { 5, 5 });
@@ -145,6 +145,92 @@ namespace LR5
         {
             Matrix.DoubleMatr();                // удваиваем матрицу
             Matrix.PrintMatr(dataGridView2);    // выводим результат в таблицу 2
+        }
+
+        private void button_tripleColumn_Click(object sender, EventArgs e)
+        {
+            Matrix.MultiplyColumn(1, 3);
+            Matrix.PrintMatr(dataGridView2);
+        }
+
+        private void button_reset_Click(object sender, EventArgs e)
+        {
+            Matrix = new Mas();
+
+            ResetForm();
+
+            // Matrix.PrintMatr(dataGridView1);
+            /*
+            dataGridView1.Rows.Clear();
+            dataGridView1.Refresh();
+            */
+        }
+        private void ClearDataGrid(DataGridView dgv)
+        {
+            for (int i = 0; i < dgv.Rows.Count; ++i)
+            {
+                for (int j = 0; j < dgv.Columns.Count; ++j)
+                {
+                    //Значения ячеек хряняться в типе object
+                    //это позволяет хранить любые данные в таблице
+                    dgv[j, i].Value = "";
+                }
+            }
+        }
+        private void ResetForm()
+        {
+            ClearDataGrid(dataGridView1);
+            ClearDataGrid(dataGridView2);
+
+            ToggleControls(false);
+            ToggleLabels(false);
+
+        }
+        private void ToggleControls(bool isOn)
+        {
+            button_doubleMatrix.Enabled = isOn;
+            button_tripleColumn.Enabled = isOn;
+            button_zeroesAboveMain.Enabled = isOn;
+            button_countInColumn.Enabled = isOn;
+            button_countInRow.Enabled = isOn;
+        }
+        private void ToggleLabels(bool isOn)
+        {
+            label_positiveCountInColumn.Visible = isOn;
+            label_negativeCountInColumn.Visible = isOn;
+            label_positiveCountInRow.Visible = isOn;
+            label_negativeCountInRow.Visible = isOn;
+            label_posCountInCol.Visible = isOn;
+            label_negCountInCol.Visible = isOn;
+            label_posCountInRow.Visible = isOn;
+            label_negCountInRow.Visible = isOn;
+        }
+
+        private void button_zeroesAboveMain_Click(object sender, EventArgs e)
+        {
+            Matrix.SetZeroesAboveMain();
+            Matrix.PrintMatr(dataGridView2);
+        }
+        private void button_countInColumn_Click(object sender, EventArgs e)
+        {
+            int[] count = Matrix.CountElements(new int[] {0, 5}, new int[] {0, 1});
+            label_posCountInCol.Text = count[0].ToString();
+            label_negCountInCol.Text = count[1].ToString();
+            label_positiveCountInColumn.Visible = true;
+            label_posCountInCol.Visible = true;
+            label_negativeCountInColumn.Visible = true;
+            label_negCountInCol.Visible = true;
+        }
+
+        private void button_countInRow_Click(object sender, EventArgs e)
+        {
+            int[] count = Matrix.CountElements(new int[] { 0, 1 }, new int[] { 0, 5 });
+            label_posCountInRow.Text = count[0].ToString();
+            label_negCountInRow.Text = count[1].ToString();
+            label_positiveCountInRow.Visible = true;
+            label_posCountInRow.Visible = true;
+            label_negativeCountInRow.Visible = true;
+            label_negCountInRow.Visible = true;
         }
     }
 }
