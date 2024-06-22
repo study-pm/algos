@@ -141,6 +141,9 @@
   - [Работа с файлами](#работа-с-файлами)
     - [Класс `Filelnfo`](#класс-filelnfo)
     - [Класс `File`](#класс-file)
+    - [Чтение и запись текстовых файлов](#чтение-и-запись-текстовых-файлов)
+    - [Использование `StreamReader` и `StreamWriter`](#использование-streamreader-и-streamwriter)
+    - [Чтение и запись бинарных файлов](#чтение-и-запись-бинарных-файлов)
 - [30. Структуры в языке С#. Определение и инициализация структуры. Создание экземпляра структуры.](#30-структуры-в-языке-с-определение-и-инициализация-структуры-создание-экземпляра-структуры)
   - [Интерфейсы](#интерфейсы)
   - [Стандартные интерфейсы .Net](#стандартные-интерфейсы-net)
@@ -6769,6 +6772,16 @@ Console.SetOut(str);
 ## 29. Файловый ввод/вывод в С#. Функции для работы с файлами.
 https://intuit.ru/studies/courses/486/342/lecture/8241
 
+Файловый ввод/вывод (I/O) позволяет программам читать и записывать данные в файлы. В C# для работы с файлами используются классы из пространства имен `System.IO`, такие как `File`, `StreamReader`, `StreamWriter`, `FileStream`, `BinaryReader` и `BinaryWriter`.
+
+Основные функции для работы с файлами
+1. `File`: Предоставляет статические методы для создания, копирования, удаления, перемещения и открытия файлов, а также помогает в создании `FileStream` объектов.
+2. `StreamReader`: Используется для чтения символов из потока байтов в определённой кодировке.
+3. `StreamWriter`: Используется для записи символов в поток байтов в определённой кодировке.
+4. `FileStream`: Предоставляет поток для файлов, поддерживающий как синхронные, так и асинхронные операции чтения и записи.
+5. `BinaryReader`: Читает примитивные типы данных из потока байтов с использованием определённой кодировки.
+6. `BinaryWriter`: Записывает примитивные типы данных в поток байтов с использованием определённой кодировки.
+
 В пространстве имен `System.IO` предусмотрено четыре класса, которые предназначены для работы с файловой системой компьютера, т.е для создания, удаления переноса и т.д. файлов и каталогов.
 
 Первые два типа — `Directory` и `Filе` реализуют свои возможности с помощью статических методов, поэтому данные классы можно использовать без создания соответствующих объектов (экземпляров классов).
@@ -7037,6 +7050,131 @@ static void Main(string[] args)
 Имеет прямой смысл использовать статический класс `File`, когда требуется осуществить единственный вызов метода на объект. В этом случае вызов будет выполнен быстрее, поскольку .NET Framework не придется проходить через процедуру создания экземпляра нового объекта с последующим вызовом метода. Однако если приложение осуществляет несколько операций над файлом, то более разумным представляется создать экземпляр объекта `FileInfo` и использовать его методы. Это позволит сэкономить определенное время, поскольку объект будет заранее настроен на нужный файл в файловой системе, в то время как статическому классу придется каждый раз осуществлять его поиск заново.
 
 Аналогичное правило действует и при выборе между классами `Directory` и `DirectoryInfo`.
+
+#### Чтение и запись текстовых файлов
+
+*Чтение файла с использованием `File.ReadAllText` и `File.ReadAllLines`*:
+```c#
+using System;
+using System.IO;
+
+class Program
+{
+    static void Main()
+    {
+        // Чтение всего содержимого файла в одну строку
+        string content = File.ReadAllText("example.txt");
+        Console.WriteLine(content);
+
+        // Чтение всех строк файла в массив строк
+        string[] lines = File.ReadAllLines("example.txt");
+        foreach (string line in lines)
+        {
+            Console.WriteLine(line);
+        }
+    }
+}
+```
+
+*Запись в файл с использованием `File.WriteAllText` и `File.WriteAllLines`*:
+```c#
+using System;
+using System.IO;
+
+class Program
+{
+    static void Main()
+    {
+        // Запись строки в файл (если файл существует, он будет перезаписан)
+        File.WriteAllText("example.txt", "Hello, World!");
+
+        // Запись массива строк в файл
+        string[] lines = { "First line", "Second line", "Third line" };
+        File.WriteAllLines("example.txt", lines);
+    }
+}
+```
+
+#### Использование `StreamReader` и `StreamWriter`
+*Чтение файла с использованием `StreamReader`*:
+```c#
+using System;
+using System.IO;
+
+class Program
+{
+    static void Main()
+    {
+        using (StreamReader reader = new StreamReader("example.txt"))
+        {
+            string line;
+            while ((line = reader.ReadLine()) != null)
+            {
+                Console.WriteLine(line);
+            }
+        }
+    }
+}
+```
+
+*Запись в файл с использованием `StreamWriter`*:
+```c#
+using System;
+using System.IO;
+
+class Program
+{
+    static void Main()
+    {
+        using (StreamWriter writer = new StreamWriter("example.txt"))
+        {
+            writer.WriteLine("Hello, World!");
+            writer.WriteLine("This is a test.");
+        }
+    }
+}
+```
+
+#### Чтение и запись бинарных файлов
+*Чтение файла с использованием `BinaryReader`*:
+```c#
+using System;
+using System.IO;
+
+class Program
+{
+    static void Main()
+    {
+        using (BinaryReader reader = new BinaryReader(File.Open("example.bin", FileMode.Open)))
+        {
+            int intValue = reader.ReadInt32();
+            double doubleValue = reader.ReadDouble();
+            string stringValue = reader.ReadString();
+
+            Console.WriteLine($"Int: {intValue}, Double: {doubleValue}, String: {stringValue}");
+        }
+    }
+}
+```
+
+*Запись в файл с использованием `BinaryWriter`*:
+```c#
+using System;
+using System.IO;
+
+class Program
+{
+    static void Main()
+    {
+        using (BinaryWriter writer = new BinaryWriter(File.Open("example.bin", FileMode.Create)))
+        {
+            writer.Write(42);
+            writer.Write(3.14);
+            writer.Write("Hello, Binary World!");
+        }
+    }
+}
+```
 
 ## 30. Структуры в языке С#. Определение и инициализация структуры. Создание экземпляра структуры.
 
