@@ -21,20 +21,20 @@ namespace Console_21
             {
                 string msg = "Must be a valid non-negative integer";
                 Console.Write($"Enter monthly phone time limit A in minutes ({msg}): ");
-                int lmtA = int.Parse(Console.ReadLine());
+                uint lmtA = uint.Parse(Console.ReadLine());
 
                 Console.Write($"Enter rate B in roubles ({msg}): ");
-                int rateB = int.Parse(Console.ReadLine());
+                uint rateB = uint.Parse(Console.ReadLine());
 
                 Console.Write($"Enter rate C (for extra time) in roubles ({msg}): ");
-                int rateC = int.Parse(Console.ReadLine());
+                uint rateC = uint.Parse(Console.ReadLine());
 
                 Console.Write($"Enter actual monthly phone time in time format (hh:mm): ");
                 TimeSpan time = TimeSpan.Parse(Console.ReadLine());
 
-                int totalTime = (int)time.TotalMinutes;
-                int inTime;
-                int extraTime;
+                uint totalTime = (uint)time.TotalMinutes;
+                uint inTime;
+                uint extraTime;
 
                 if (totalTime < lmtA)
                 {
@@ -48,7 +48,7 @@ namespace Console_21
 
                 }
 
-                int totalCharge = inTime * rateB + extraTime * rateC;
+                uint totalCharge = inTime * rateB + extraTime * rateC;
 
                 string formatted = string.Format(cultureInfo, "{0:C2}", totalCharge);
 
