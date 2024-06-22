@@ -12,6 +12,20 @@ namespace LR5
         public const int n = 5;         // Задаем размерность матрицы с помощью константы
         int[,] Matr = new int[n, n];    // Выделяем память под элементы матрицы
 
+        public int[] CountElements(int[] rowRg, int[] colRg)
+        {
+            int[] count = new int[2];
+
+            for (int i = rowRg[0]; i < rowRg[1]; i++)
+            {
+                for (int j = colRg[0]; j < colRg[1]; j++)
+                {
+                    if (Matr[i, j] > 0) count[0]++;
+                    else if (Matr[i, j] < 0) count[1]++;
+                }
+            }
+            return count;
+        }
         // Метод генерации элементов матрицы
         public void CreateMatr()
         {
@@ -34,6 +48,25 @@ namespace LR5
                 {
                     Matr[i, j] *= 2;
                 }
+            }
+        }
+        public void MultiplyColumn(int j, int m)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                Matr[i, j] *= m;
+            }
+        }
+        public void SetZeroesAboveMain()
+        {
+            int c = 1;
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = c; j < n; j++)
+                {
+                    Matr[i, j] = 0;
+                }
+                c++;
             }
         }
         // Метод вывода матрицы в таблицу, нужно подключить пространство имен, содержащее описание DataGridView
