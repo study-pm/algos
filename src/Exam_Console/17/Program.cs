@@ -16,7 +16,7 @@ namespace Console_17
             {
                 Console.Write($"Enter number A ({msg}): ");
                 string A = Console.ReadLine();
-                int a = int.Parse(A);
+                ushort a = ushort.Parse(A);
 
                 // To handle cases with leading zeroes giving correct string length but invalid digits quantity (like "0123")
                 // https://stackoverflow.com/questions/4483886/how-can-i-get-a-count-of-the-total-number-of-digits-in-a-number
@@ -27,7 +27,7 @@ namespace Console_17
 
                 Console.Write("Enter digit M: ");
                 string B = Console.ReadLine();
-                int b = int.Parse(B);
+                byte b = byte.Parse(B);
                 if (B.Length != 1) throw new FormatException("Must be a digit");
 
                 bool contains = false;
@@ -35,7 +35,7 @@ namespace Console_17
                 if (A.Contains(B)) contains = true;
 
                 // Way 2
-                int n = a;
+                ushort n = a;
                 while (n != 0)
                 {
                     if (n % 10 == b)
