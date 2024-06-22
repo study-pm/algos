@@ -4951,7 +4951,7 @@ static void PrintArray(string line, Array a)
     // использовать для инициализации
     ```
 
-9. Форматирование строк:
+9. Композитное форматирование строк:
     ```c#
     string name = "Alice";
     string greeting = string.Format("Hello, {0}!", name);
