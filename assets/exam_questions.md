@@ -50,6 +50,7 @@
     - [Операторы безусловного перехода](#операторы-безусловного-перехода)
 - [12. Основные типы данных языка С#.](#12-основные-типы-данных-языка-с)
   - [Базовые типы](#базовые-типы)
+  - [Why is a data type suffix required?](#why-is-a-data-type-suffix-required)
   - [Преобразование типов данных](#преобразование-типов-данных)
 - [13. Объявление переменных и констант в языке С#. Инициализация переменных.](#13-объявление-переменных-и-констант-в-языке-с-инициализация-переменных)
   - [Переменные](#переменные)
@@ -988,9 +989,7 @@ http://smolapo.ru/sites/default/files/Prepod/Efremova/pril/13_2.pdf
 
 С# является языком со строгой типизацией. В нем необходимо объявлять тип всех
 создаваемых программных элементов (например, переменных, объектов, окон, кнопок и
-т.д.), что позволяет среде CLR предотвращать возникновение ошибок, следя за тем, чтобы
-объектам присваивались значения только разрешенного типа. Тип программного элемента
-сообщает компилятору о его размере (например, тип `int` показывает, что объект занимает 4 байта) и возможностях (например, кнопка может быть нарисована, нажата и т. д.).
+т.д.), что позволяет среде CLR предотвращать возникновение ошибок, следя за тем, чтобы объектам присваивались значения только разрешенного типа. Тип программного элемента сообщает компилятору о его размере (например, тип `int` показывает, что объект занимает 4 байта) и возможностях (например, кнопка может быть нарисована, нажата и т. д.).
 
 Тип данных характеризует одновременно:
 
@@ -1005,26 +1004,15 @@ http://smolapo.ru/sites/default/files/Prepod/Efremova/pril/13_2.pdf
 3. *анонимные* типы — типы, которые автоматически создаются на основе инициализаторов объектов (начиная с версии С# 3.0).
 
 Кроме того, типы С# разбиваются на две другие категории: *размерные типы* (value
-type) и *ссылочные типы* (reference type). Почти все базовые типы являются размерными
-типами. Исключение составляют типы `Object` и `String`, которые являются базовыми, но
-ссылочными типами данных. Все пользовательские типы, кроме структур, являются
-ссылочными. Дополнительно к упомянутым типам, язык С# поддерживает типы
-указателей, однако они используются только с неуправляемым кодом.
+type) и *ссылочные типы* (reference type). Почти все базовые типы являются размерными типами. Исключение составляют типы `Object` и `String`, которые являются базовыми, но ссылочными типами данных. Все пользовательские типы, кроме структур, являются ссылочными. Дополнительно к упомянутым типам, язык С# поддерживает типы указателей, однако они используются только с неуправляемым кодом.
 
 Принципиальное различие между размерными и ссылочными типами состоит в
-способе хранения их значений в памяти. В первом случае фактическое значение хранится в
-стеке (или как часть большого объекта ссылочного типа). Адрес переменной ссылочного
-типа тоже хранится в стеке, но сам объект хранится в куче.
+способе хранения их значений в памяти. В первом случае фактическое значение хранится в стеке (или как часть большого объекта ссылочного типа). Адрес переменной ссылочного типа тоже хранится в стеке, но сам объект хранится в куче.
 
-**Стек** – это структура, используемая для хранения элементов по принципу LIFO (Last
-input – first output или *первым ушел - последним пришел*). В данном случае под стеком понимается область памяти, обслуживаемая процессором, в которой хранятся значения локальных переменных. **Куча** – область памяти, используемая для хранения данных, работа с которыми реализуется через указатели и ссылки. Память для размещения таких данных выделяется программистом динамически, а освобождается сборщиком мусора.
+**Стек** – это структура, используемая для хранения элементов по принципу LIFO (Last input – first output или *первым ушел — последним пришел*). В данном случае под стеком понимается область памяти, обслуживаемая процессором, в которой хранятся значения локальных переменных. **Куча** – область памяти, используемая для хранения данных, работа с которыми реализуется через указатели и ссылки. Память для размещения таких данных выделяется программистом динамически, а освобождается сборщиком мусора.
 
 Сборщик мусора уничтожает программные элементы в стеке через некоторое время
-после того, как закончит существование раздел стека, в котором они объявлены. То есть,
-если в пределах блока (фрагмента кода, помещенного в фигурные скобки `{}`) объявлена
-локальная переменная, соответствующий программный элемент будет удален по окончании
-работы данного блока. Объект в куче подвергается сборке мусора через некоторое время
-после того, как уничтожена последняя ссылка на него.
+после того, как закончит существование раздел стека, в котором они объявлены. То есть, если в пределах блока (фрагмента кода, помещенного в фигурные скобки `{}`) объявлена локальная переменная, соответствующий программный элемент будет удален по окончании работы данного блока. Объект в куче подвергается сборке мусора через некоторое время после того, как уничтожена последняя ссылка на него.
 
 ### Базовые типы
 Базовые типы можно обобщённо разделить на следующие группы:
@@ -1044,105 +1032,235 @@ input – first output или *первым ушел - последним при
 <table>
 <thead>
 <tr>
-  <th>Тип в языке C#</th><th>Размер в байтах</th><th>Тип .NET</th><th>Описание</th>
+  <th>Тип в языке C#</th><th>Размер</th><th>Тип .NET</th><th>Диапазон значений</th><th>Описание</th><th>Пример</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-  <td colspan=4><i><b>Базовый тип</b></i></td>
+  <td colspan=6><i><b>Базовый тип</b></i></td>
 </tr>
 <tr>
-  <td>object</td><td></td><td>Object</td>
-  <td>Может хранить все что угодно, т.к. является всеобщим предком</td>
+  <td><code>object</code></td><td></td><td><code>Object</code></td>
+  <td></td>
+  <td>Базовый тип данных для всех типов данных в C#. Любой тип может быть преобразован в тип <code>object</code>. Может хранить все что угодно, т.к. является всеобщим предком</td>
+  <td><code>object obj = 42;</code></td>
 </tr>
 <tr>
-  <td colspan=4><i><b>Логический тип</b></i></td>
+  <td colspan=6><i><b>Структурный тип</b></i></td>
 </tr>
 <tr>
-  <td>bool</td><td>1</td><td>Boolean</td>
-  <td>true или false</td>
+  <td><code>tuple</code></td><td></td><td><code>Tuple</code></td>
+  <td></td>
+  <td>Кортежи позволяют группировать несколько значений разного типа в одну структуру.</td>
+  <td><code>var tuple = (1, "Hello", true);</code></td>
 </tr>
 <tr>
-  <td colspan=4><i><b>Целые типы</b></i></td>
+  <td colspan=6><i><b>Логический тип</b></i></td>
 </tr>
 <tr>
-  <td>sbyte</td><td>1</td><td>SByte</td>
-  <td>Целое со знаком (от -128 до 127)</td>
+  <td><code>bool</code></td><td>8 бит<br>1 байт</td><td><code>Boolean</code></td>
+  <td><code>false</code>, <code>true</code></td>
+  <td>Может хранить два логических значения</td>
+  <td><code>bool isTrue = true;</code></td>
 </tr>
 <tr>
-  <td>byte</td><td>1</td><td>Byte</td>
-  <td>Целое без знака (от 0 до 255)</td>
-</tr>
+  <td colspan=6><i><b>Целые (целочисленные) типы</b></i></td>
 </tr>
 <tr>
-  <td>short</td><td>2</td><td>Int16</td>
-  <td>Целое со знаком (от -32768 до 32767)</td>
-</tr>
-</tr>
-<tr>
-  <td>ushort</td><td>2</td><td>UInt16</td>
-  <td>Целое без знака (от 0 до 65535)</td>
-</tr>
+  <td><code>sbyte</code></td><td>8 бит<br>1 байт</td><td><code>SByte</code></td>
+  <td><nobr>-128</nobr> — <nobr>127</nobr></td>
+  <td>Целое со знаком</td>
+  <td><code>sbyte sb = -128;</code></td>
 </tr>
 <tr>
-  <td>int</td><td>4</td><td>Int32</td>
-  <td>Целое со знаком (от -2147483648 до 2147483647)</td>
-</tr>
-</tr>
-<tr>
-  <td>uint</td><td>4</td><td>UInt32</td>
-  <td>Целое число без знака ( от 0 до 4 294 967 295)</td>
+  <td><code>byte</code></td><td>8 бит<br>1 байт</td><td><code>Byte</code></td>
+  <td><nobr>0</nobr> — <nobr>255</nobr></td>
+  <td>Целое без знака</td>
+  <td><code>byte b = 255;</code></td>
 </tr>
 </tr>
 <tr>
-  <td>long</td><td>8</td><td>Int64</td>
-  <td>Целое со знаком (от -9223372036854775808 до 9223372036854775807)</td>
+  <td><code>short</code></td><td>16 бит<br>2 байта</td><td><code>Int16</code></td>
+  <td><nobr>-32 768</nobr> — <nobr>32 767</nobr></td>
+  <td>Целое со знаком</td>
+  <td><code>short s = -32_768;</code></td>
 </tr>
 </tr>
 <tr>
-  <td>ulong</td><td>8</td><td>UInt64</td>
+  <td><code>ushort</code></td><td>16 бит<br>2 байта</td><td><code>UInt16</code></td>
+  <td><nobr>0</nobr> — <nobr>65 535</nobr></td>
+  <td>Целое без знака</td>
+  <td><code>ushort us = 65_535;</code></td>
+</tr>
+</tr>
+<tr>
+  <td><code>int</code></td><td>32 бита<br>4 байта</td><td><code>Int32</code></td>
+  <td><nobr>-2 147 483 648</nobr> — <nobr>2 147 483 647</nobr></td>
+  <td>Целое со знаком</td>
+  <td><code>int i = -2_147_483_648;</code></td>
+</tr>
+</tr>
+<tr>
+  <td><code>uint</code></td><td>32 бита<br>4 байта</td><td><code>UInt32</code></td>
+  <td><nobr>0</nobr> — <nobr>4 294 967 295</nobr></td>
+  <td>Целое число без знака</td>
+  <td><code>uint ui = 4_294_967_295;</code></td>
+</tr>
+</tr>
+<tr>
+  <td><code>long</code></td><td>64 бита<br>8 байт</td><td><code>Int64</code></td>
+  <td><nobr>-9 223 372 036 854 775 808</nobr> — <nobr>9 223 372 036 854 775 807</nobr></td>
+  <td>Целое со знаком</td>
+  <td><code>long l = -9223372036854775808;</code></td>
+</tr>
+</tr>
+<tr>
+  <td><code>ulong<code></td><td>64 бита<br>8 байт</td><td><code>UInt64<code></td>
+  <td><nobr>0</nobr> — <nobr>18 446 744 073 709 551 615</nobr></td>
   <td>Целое без знака (от 0 до 0fffffffffffffff)</td>
+  <td><code>ulong ul = 18_446_744_073_709_551_615;</code></td>
 </tr>
 <tr>
-  <td colspan=4><i><b>Вещественные типы</b></i></td>
+  <td colspan=6><i><b>Вещественные типы (с плавающей точкой)</b></i></td>
 </tr>
 <tr>
-  <td>float</td><td>4</td><td>Single</td>
-  <td>Число с плавающей точкой двойной точности. Содержит значения приблизительно от ±1.5*10<sup>-45</sup> до ±3.4*10<sup>38</sup> c 7 значащими цифрами</td>
+  <td><code>float</code></td><td>32 бита<br>4 байта</td><td><code>Single</code></td>
+  <td><nobr>±1.5 ⋅ 10<sup>−45</sup> </nobr> — <nobr>±3.4 ⋅ 10<sup>38</nobr></td>
+  <td>Число с плавающей точкой одинарной точности. Содержит значения c 7 значащими цифрами (точность — 7 знаков) и требует суффикса <code>f</code> или <code>F</code></td>
+  <td><code>float f = 3.14f;</code></td>
 </tr>
 <tr>
-  <td>double</td><td>8</td><td>Double</td>
-  <td>Число с плавающей точкой двойной точности. Содержит значения приблизительно от ±5. 0*10<sup>-324</sup> до ±1.7*10<sup>308</sup> c 15-16 значащими цифрами </td>
+  <td><code>double</code></td><td>64 бита<br>8 байт</td><td><code>Double</code></td>
+  <td><nobr>±5 ⋅ 10<sup>−324</sup> </nobr> — <nobr>±1.7 ⋅ 10<sup>308</nobr></td>
+  <td>Число с плавающей точкой двойной точности. Содержит значения c 15-16 значащими цифрами (точность — 15-16 знаков)</td>
+  <td><code>double d = 3.141_592_653_589_793;</code></td>
 </tr>
 <tr>
-  <td colspan=4><i><b>Символьный тип</b></i></td>
+  <td><code>decimal</code></td><td>128 бит<br>16 байт</td><td><code>Decimal</code></td>
+  <td><nobr>±1 ⋅ 10<sup>-28</sup> </nobr> — <nobr>±7.9 ⋅ 10<sup>28</nobr></td>
+  <td><b><i>Финансовый</b></i> (<b><i>десятичный</b></i>) тип, хранящий число с плавающей точкой четверной точности. Число до 28 знаков с фиксированным положением десятичной точки. Обычно используется в финансовых расчетах и требует суффикса <code>m</code> или <code>М</code></td>
+  <td><code>decimal dec = 3.141_592_653_589_793_238_462_643_383_3m;</code></td>
 </tr>
 <tr>
-  <td>char</td><td>2</td><td>Char</td>
+  <td colspan=6><i><b>Символьный тип</b></i></td>
+</tr>
+<tr>
+  <td><code>char</code></td><td>16 бит<br>2 байта</td><td><code>Char</code></td>
+  <td>Любой символ Unicode (16-битный)</td>
   <td>Символ Unicode</td>
+  <td><code>char c = 'A';</code></td>
 </tr>
 </tr>
 <tr>
-  <td colspan=4><i><b>Строковый тип</b></i></td>
+  <td colspan=6><i><b>Строковый тип</b></i></td>
 </tr>
 <tr>
-  <td>string</td><td></td><td>String</td>
+  <td><code>string</code></td><td></td><td><code>String</code></td>
   <td>Строка из Unicode-символов</td>
+  <td></td>
+  <td><code>string str = "Hello, World!";</code></td>
 </tr>
 </tr>
-<tr>
-  <td colspan=4><i><b>Финансовый (десятичный) тип</b></i></td>
-</tr>
-<tr>
-  <td>decimal</td><td>12</td><td>Decimal</td>
-  <td>Число до 28 знаков с фиксированным положением десятичной точки. Обычно используется в финансовых расчетах и требует суффикса <<m>> или <<М>></td>
-</tr>
+
 </tbody>
 </table>
+
+**Классы** представляют собой типы объектов, которые могут содержать данные и методы.
+```c#
+class Person
+{
+    public string Name;
+    public int Age;
+}
+Person person = new Person();
+person.Name = "Alice";
+person.Age = 30;
+```
 
 По умолчанию вещественным константам (константам, содержащим точку) присваивается тип `double`. Для указания константы типа `float` сразу за ней записывается `f` или `F`, например `3.14f`.
 
 Вещественные константы можно записывать в полулогарифмическом виде, например `1.7е-5`.
+
+### Why is a data type suffix required?
+https://www.c-sharpcorner.com/article/data-type-suffixes-in-c-sharp/
+
+The data type suffix helps the compiler to unambiguously identify the data type of any value/literal. It also helps C# programmer to explicitly state the data type of the value/literal.
+
+In the cases when a variable is declared, using one of the `var`, `dynamic` or `object` keywords, use the data type suffix to explicitly state the data type of the value.
+
+In the case of integer literals, if you don't specify any suffix, then the integer values are evaluated to a data type, as per the sequence given below.
+
+- `int`
+- `uint`
+- `long`
+- `ulong`
+
+In case of real- value literals (those with decimal points or fractions e.g. `3.14`), if you don't specify any suffix, then a real-value literal is evaluated to a data type, as per the sequence given below.
+
+- `double`
+- `float/decimal` (based on suffix)
+
+In short, without any data type suffix, an integer literal will be evaluated to `int` and real literal will be evaluated to `double`.
+
+There are data type suffixes given below.
+
+- `L` or `l` for a `long` (`l` in small letters should be avoided as it confuses you with digit `1`
+- `D` or `d` for `double`
+- `F` or `f` for `float`
+- `M` or `m` for `decimal` (`D` is already taken for `double`, so `M` is best representation for `decimal`)
+- `U` or `u` for unsigned integer
+- `UL` or `ul` for unsigned long
+
+There are no data type suffixes for `int`, `byte`, `sbyte`, `short`, `ushort`. Previous versions of C# used to have “Y” and “S” suffixes for byte and short respectively, but they were dropped from C# specification after being found, which are not often used by the programmers.
+
+Consider these method overloads:
+```c#
+public static void TestMethod(int i)
+{
+    Console.WriteLine("You called integer version of TestMethod");
+}
+public static void TestMethod(long l)
+{
+    Console.WriteLine("You called long version of TestMethod");
+}
+public static void TestMethod(uint i)
+{
+    Console.WriteLine("You called UNSIGNED integer version of TestMethod");
+}
+public static void TestMethod(double i)
+{
+    Console.WriteLine("You called double version of TestMethod");
+}
+public static void TestMethod(float i)
+{
+    Console.WriteLine("You called float version of TestMethod");
+}
+public static void TestMethod(decimal i)
+{
+    Console.WriteLine("You called decimal version of TestMethod");
+}
+```
+
+Suffixes let specify which method overload should be used in each case:
+```c#
+TestMethod(5);    // Calls the integer version of TestMethod
+TestMethod(5L);   // Calls the long version of TestMethod
+
+var myVal1 = 429496;     // This should be an int (32-bit)
+TestMethod(myVal1);
+var myVal2 = 429496L;    // This is already a long (64-bit)
+TestMethod(myVal2);
+
+var myVal3 = 429496u;   // This initializes myVal3 as an unsigned integer (uint)
+TestMethod(myVal3);
+
+var myVal4 = 9.99;                            // This initializes myVal4 as a double
+TestMethod(myVal4);
+var myVal5 = 9999999999999999999999999999m;   // This initializes myVal5 as a decimal
+TestMethod(myVal5);
+var myVal6 = 3.145f;                          // This initializes myVal6 as a float
+TestMethod(myVal6);
+```
 
 ### Преобразование типов данных
 Тип арифметического выражения определяется типом входящих в выражение операндов.
