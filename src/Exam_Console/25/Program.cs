@@ -8,16 +8,16 @@ namespace Console_25
     {
         static void Main(string[] args)
         {
-            int divisionRate = 2; // cells
-            int divisionStep = 3; // hours
+            uint divisionRate = 2; // cells
+            uint divisionStep = 3; // hours
 
-            int initialCount = 1;
-            int timeFrame = 24;
+            uint initialCount = 1;
+            uint timeFrame = 24;
 
-            int totalCount = initialCount;
+            uint totalCount = initialCount;
 
             // Loop
-            for (int i = 3; i <= timeFrame; i += divisionStep)
+            for (uint i = 3; i <= timeFrame; i += divisionStep)
             {
                 totalCount *= 2;
                 Console.WriteLine($"Quantity after {i} h: {totalCount}");
@@ -26,7 +26,7 @@ namespace Console_25
             Console.WriteLine(Environment.NewLine);
 
             // Recursion
-            void AmoebaSplit(int frame, int step, int count, int timeLimit)
+            void AmoebaSplit(uint frame, uint step, uint count, uint timeLimit)
             {
                 count *= 2;
                 frame += step;
