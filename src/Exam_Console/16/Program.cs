@@ -10,14 +10,12 @@ namespace Console_16
         {
             try
             {
-                Console.Write("Enter natural number: ");
-                int n = int.Parse(Console.ReadLine());
-
-                if (n < 0) throw new FormatException("Must be a natural number");
+                Console.Write("Enter a natural number: ");
+                uint n = uint.Parse(Console.ReadLine());
 
                 double sum = 0;
 
-                for (int i = 1; i <= n; i++)
+                for (uint i = 1; i <= n; i++)
                 {
                     sum += 1.0/i;
                 }
