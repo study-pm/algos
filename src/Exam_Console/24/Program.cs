@@ -9,29 +9,22 @@ namespace Console_24
 {
     internal class Program
     {
-        public static string GetErrMsg(int input)
-        {
-            return $"The input string '{input}' was not in a correct format. Must be a non-negative integer number";
-        }
         static void Main(string[] args)
         {
             try
             {
                 Console.Write("Enter win matches count: ");
-                int m = int.Parse(Console.ReadLine());
-                if (m < 0) throw new FormatException(GetErrMsg(m));
+                byte m = byte.Parse(Console.ReadLine());
 
                 Console.Write("Enter lose matches count: ");
-                int n = int.Parse(Console.ReadLine());
-                if (n < 0) throw new FormatException(GetErrMsg(n));
+                byte n = byte.Parse(Console.ReadLine());
 
                 Console.Write("Enter tie matches count: ");
-                int k = int.Parse(Console.ReadLine());
-                if (k < 0) throw new FormatException(GetErrMsg(k));
+                byte k = byte.Parse(Console.ReadLine());
 
-                int loseScoreRate = 0;
-                int tieScoreRate = 1;
-                int winScoreRate = 2;
+                byte loseScoreRate = 0;
+                byte tieScoreRate = 1;
+                byte winScoreRate = 2;
 
                 int totalScore = m * winScoreRate + n * loseScoreRate + k * tieScoreRate;
 
