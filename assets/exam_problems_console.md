@@ -55,6 +55,8 @@
 
 ## 1. Подсчитать количество целых чисел среди $a$, $b$, $c$.
 
+![Flowchart](../img/fc_01.png)
+
 <details>
 <summary><b>Solution</b></summary>
 
