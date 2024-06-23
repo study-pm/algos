@@ -55,15 +55,12 @@
 
 ## 1. Подсчитать количество целых чисел среди $a$, $b$, $c$.
 
-![Flowchart](../img/fc_01.png)
-
-<details>
-<summary><b>Solution</b></summary>
+![Flowchart 01](../img/fc_01.png)
 
 ```c#
 // Подсчитать количество целых чисел среди a, b, c.
 
-namespace _01
+namespace Console_01
 {
     internal class Program
     {
@@ -99,5 +96,3 @@ namespace _01
     }
 }
 ```
-
-</details>
