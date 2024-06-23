@@ -27,10 +27,26 @@ namespace Console_01
                 }
 
                 Console.WriteLine("Number of integers is: " + count);
+
+                File.WriteAllText("result.txt", "Number of integers is: " + count);
+                Console.WriteLine(File.ReadAllText("result.txt"));
             }
-            catch (Exception e)
+            catch (Exception exc)
             {
-                Console.WriteLine($"Invalid input (must be {msg}): " + e.Message);
+                Console.WriteLine($"Invalid input (must be {msg}): " + exc.Message);
+
+                string[] errInfo = {
+                    $"Error: Invalid input (must be {msg})",
+                    "Type: " + exc.GetType().Name,
+                    "Message: " + exc.Message,
+                    "Stack trace: " + exc.StackTrace
+                };
+                File.WriteAllLines("error.txt", errInfo);
+                string[] err = File.ReadAllLines("error.txt");
+                foreach(string line in err)
+                {
+                    Console.WriteLine(line);
+                };
             }
         }
     }
