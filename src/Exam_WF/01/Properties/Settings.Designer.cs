@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace _01.Properties
+namespace WF_01.Properties
 {
 
 

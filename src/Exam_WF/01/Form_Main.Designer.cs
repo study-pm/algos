@@ -1,4 +1,4 @@
-﻿namespace _01
+﻿namespace WF_01
 {
     partial class Form_Main
     {

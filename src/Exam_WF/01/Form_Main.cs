@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace _01
+namespace WF_01
 {
     public partial class Form_Main : Form
     {
