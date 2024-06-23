@@ -1,4 +1,10 @@
-﻿using System;
+﻿/* Даны координаты двух точек A и B.
+ * Вычислить расстояние между точками.
+ * Определить, какая точка находится ближе к началу координат.
+ * Для определения расстояния между точками написать подпрограмму.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
