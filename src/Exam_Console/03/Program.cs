@@ -13,16 +13,16 @@ namespace Console_03
             // https://stackoverflow.com/questions/73218845/why-do-i-get-question-mark-in-console-instead-of-a-double-value-nan-and-what-d
             try
             {
-                Console.Write("Enter an integer number: ");
-                int n = int.Parse(Console.ReadLine());
+                Console.Write("Enter a non-negative integer number: ");
+                uint n = uint.Parse(Console.ReadLine());
 
-                int baseNumber = 2;
+                uint baseNumber = 2;
 
-                double[] degrees = new double[n + 1];
+                uint[] degrees = new uint[n + 1];
 
-                for (int i = 0; i < degrees.Length; i++)
+                for (uint i = 0; i < degrees.Length; i++)
                 {
-                    degrees[i] = Math.Pow(baseNumber, i);
+                    degrees[i] = (uint)Math.Pow(baseNumber, i);
                     Console.WriteLine($"{baseNumber}^{i} \t {degrees[i]:N0}");
                 }
             }
