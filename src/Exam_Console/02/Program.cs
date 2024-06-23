@@ -2,6 +2,8 @@
  * Определить, какая точка находится ближе к началу координат.
  */
 
+using System.IO;
+
 namespace Console_02
 {
     struct Point : IComparable
@@ -90,18 +92,71 @@ namespace Console_02
                 double BO = GetDistance(B, O);
 
                 Console.WriteLine("Distance between A and B is: {0: .##}", AB);
+
+                FileInfo f = new FileInfo("result.txt");
+                StreamWriter fOut = new StreamWriter(f.Create());
+                fOut.WriteLine("Distance between A and B is: {0: .##}", AB);
+
                 if (AO == BO)
                 {
                     Console.WriteLine("Both points are equally remote from the origin.");
+                    fOut.WriteLine("Both points are equally remote from the origin.");
                 }
                 else
                 {
                     Console.WriteLine("The closest to the origin point is " + (AO < BO ? nameof(A) : nameof(B)) + ".");
+                    fOut.WriteLine("The closest to the origin point is " + (AO < BO ? nameof(A) : nameof(B)) + ".");
                 }
+
+                fOut.Close();
+
+                Console.WriteLine("*******" + f.Name + "File Info" + "**************");
+                Console.WriteLine("File size: {0}", f.Length);
+                Console.WriteLine("Creation: {0}", f.CreationTime);
+                Console.WriteLine("Attributes: {0}", f.Attributes.ToString());
             }
-            catch (Exception e)
+            catch (Exception exc)
             {
-                Console.WriteLine("Invalid input: " + e.Message);
+                Console.WriteLine("Invalid input: " + exc.Message);
+                FileInfo f = new FileInfo("error.txt");
+                StreamWriter fOut = new StreamWriter(f.Create());
+                fOut.WriteLine("Error: Invalid input");
+                fOut.WriteLine("Type: " + exc.GetType());
+                fOut.WriteLine("Message: " + exc.Message);
+                fOut.WriteLine("Stack trace: " + exc.StackTrace);
+                fOut.Close();
+
+                // https://learn.microsoft.com/ru-ru/dotnet/api/system.io.file.appendtext?view=net-8.0
+                string path = "error.txt";
+                if (!File.Exists(path))
+                {
+                    // Create a file to write to.
+                    using (StreamWriter sw = File.CreateText(path))
+                    {
+                        sw.WriteLine("Hello");
+                        sw.WriteLine("And");
+                        sw.WriteLine("Welcome");
+                    }
+                }
+
+                // This text is always added, making the file longer over time
+                // if it is not deleted.
+                using (StreamWriter sw = File.AppendText(path))
+                {
+                    sw.WriteLine("This");
+                    sw.WriteLine("is Extra");
+                    sw.WriteLine("Text");
+                }
+
+                // Open the file to read from.
+                using (StreamReader sr = File.OpenText(path))
+                {
+                    string s = "";
+                    while ((s = sr.ReadLine()) != null)
+                    {
+                        Console.WriteLine(s);
+                    }
+                }
             }
         }
     }
