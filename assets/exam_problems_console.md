@@ -1,6 +1,7 @@
 # Экзаменационные задачи. Составить алгоритм  и консольную программу для решения задачи
 
 - [1. Подсчитать количество целых чисел среди $a$, $b$, $c$.](#1-подсчитать-количество-целых-чисел-среди-a-b-c)
+- [2. Даны координаты двух точек $A$ и $B$. Вычислить расстояние между точками.Определить, какая точка находится ближе к началу координат.](#2-даны-координаты-двух-точек-a-и-b-вычислить-расстояние-между-точкамиопределить-какая-точка-находится-ближе-к-началу-координат)
 
 
 1. Подсчитать количество целых чисел среди $a$, $b$, $c$.
@@ -95,4 +96,89 @@ namespace Console_01
         }
     }
 }
+```
+
+## 2. Даны координаты двух точек $A$ и $B$. Вычислить расстояние между точками.Определить, какая точка находится ближе к началу координат.
+
+![Flowchart 02](../img/fc_02.png)
+
+```c#
+/* Даны координаты двух точек A и B. Вычислить расстояние между точками.
+ * Определить, какая точка находится ближе к началу координат.
+ */
+
+namespace Console_02
+{
+    internal class Program
+    {
+        static double GetDistance(double[] A, double[] B)
+        {
+            double sum = 0;
+            for (int i = 0; i < A.Length; i++)
+            {
+                sum += Math.Pow(B[i] - A[i], 2);
+            }
+            return Math.Sqrt(sum);
+        }
+        static double[] ConvertToDouble(string val)
+        {
+            string[] input = val.Split(' ');
+            double[] point = new double[input.Length];
+            for (int i = 0; i < input.Length; i++)
+            {
+                point[i] = Convert.ToDouble(input[i]);
+            }
+            return point;
+        }
+        static void Main()
+        {
+            try
+            {
+                Console.Write("Enter the A position coordinates separated by a space: ");
+                double[] A = ConvertToDouble(Console.ReadLine());
+                Console.Write("Enter the B position coordinates separated by a space: ");
+                double[] B = ConvertToDouble(Console.ReadLine());
+
+                double[] O = new double[A.Length];
+
+                double AB = GetDistance(A, B);
+                double AO = GetDistance(A, O);
+                double BO = GetDistance(B, O);
+
+                Console.WriteLine("Distance between A and B is: {0: .##}", AB);
+                if (AO == BO)
+                {
+                    Console.WriteLine("Both points are equally remote from the origin.");
+                }
+                else
+                {
+                    Console.WriteLine("The closest to the origin point is " + (AO < BO ? nameof(A) : nameof(B)) + ".");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Invalid input: " + e.Message);
+            }
+        }
+    }
+}
+
+// https://ru.onlinemschool.com/math/library/analytic_geometry/point_point_length/
+/* Sample data
+ * Input: A(-1, 3) и B(6,2);
+ * Output: AB = 5√2 = 7.07; Closest is A.
+ *
+ * Input: A(2, -2) и B(0, 1)
+ * Output: AB = √13 = 3.61; Closest is B.
+ *
+ * Input: A(-1, 3, 3) и B(6, 2, -2)
+ * Output: AB = 5√3 = 8.66; Closest is A.
+ *
+ * Input: B(3, 1, 3) и B(0, -3, 3)
+ * Output: AB = 5; Closest is B.
+ *
+ * Input: A(3, 0, -4) и B(0, 0, 5)
+ * Output: AB = 9,49; Equally remote.
+ */
+
 ```
