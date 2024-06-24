@@ -20,15 +20,47 @@ namespace Console_03
 
                 uint[] degrees = new uint[n + 1];
 
+                string path = "result.txt";
+
+                File.WriteAllText(path, "=====Result=====\n");
+
                 for (uint i = 0; i < degrees.Length; i++)
                 {
                     degrees[i] = (uint)Math.Pow(baseNumber, i);
                     Console.WriteLine($"{baseNumber}^{i} \t {degrees[i]:N0}");
+                    File.AppendAllText(path, $"{baseNumber}^{i} \t {degrees[i]:N0}\n");
+                }
+
+                string[] result = File.ReadAllLines(path);
+                foreach (string line in result)
+                {
+                    Console.WriteLine(line);
                 }
             }
-            catch (Exception e)
+            catch (Exception exc)
             {
-                Console.WriteLine("Invalid input: " + e.Message);
+                Console.WriteLine("Invalid input: " + exc.Message);
+
+                string[] error =
+                {
+                    "Timestamp: " + DateTime.Now,
+                    "Error: Invalid input",
+                    "Type: " + exc.GetType().Name,
+                    "Message: " + exc.Message,
+                    "Stack trace: " + exc.StackTrace,
+                };
+                string path = "error.txt";
+                using (StreamWriter sw = File.CreateText(path))
+                {
+                    foreach (string line in error)
+                    {
+                        sw.WriteLine(line);
+                    }
+                }
+                using (StreamReader sr = File.OpenText(path))
+                {
+                    Console.WriteLine(sr.ReadToEnd());
+                }
             }
 
         }
