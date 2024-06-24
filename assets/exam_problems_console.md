@@ -2,6 +2,7 @@
 
 - [1. Подсчитать количество целых чисел среди $a$, $b$, $c$.](#1-подсчитать-количество-целых-чисел-среди-a-b-c)
 - [2. Даны координаты двух точек $A$ и $B$. Вычислить расстояние между точками.Определить, какая точка находится ближе к началу координат.](#2-даны-координаты-двух-точек-a-и-b-вычислить-расстояние-между-точкамиопределить-какая-точка-находится-ближе-к-началу-координат)
+- [3. Вывести таблицу степеней числа два от нулевой до $n$, где $n$ вводится  пользователем.](#3-вывести-таблицу-степеней-числа-два-от-нулевой-до-n-где-n-вводится--пользователем)
 
 
 1. Подсчитать количество целых чисел среди $a$, $b$, $c$.
@@ -56,7 +57,11 @@
 
 ## 1. Подсчитать количество целых чисел среди $a$, $b$, $c$.
 
+<div style="background: white; padding: 10px; text-align: center">
+
 ![Flowchart 01](../img/fc_01.png)
+
+</div>
 
 ```c#
 // Подсчитать количество целых чисел среди a, b, c.
@@ -100,7 +105,11 @@ namespace Console_01
 
 ## 2. Даны координаты двух точек $A$ и $B$. Вычислить расстояние между точками.Определить, какая точка находится ближе к началу координат.
 
+<div style="background: white; padding: 10px; text-align: center">
+
 ![Flowchart 02](../img/fc_02.png)
+
+</div>
 
 ```c#
 /* Даны координаты двух точек A и B. Вычислить расстояние между точками.
@@ -181,4 +190,83 @@ namespace Console_02
  * Output: AB = 9,49; Equally remote.
  */
 
+```
+
+## 3. Вывести таблицу степеней числа два от нулевой до $n$, где $n$ вводится  пользователем.
+
+<div style="background: white; padding: 10px; text-align: center">
+
+![Flowchart 03](../img/fc_03.png)
+
+</div>
+
+```c#
+/* Вывести таблицу степеней числа два от нулевой до n, где n вводится  пользователем */
+
+namespace Console_03
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // By default, the console uses the 850 code page or the 437 code page, which don't support that character.
+            // It's trying to display the "infinity" symbol (∞),
+            // but on your system it appears to just display ? to show that it's not a supported character.
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
+            // https://stackoverflow.com/questions/73218845/why-do-i-get-question-mark-in-console-instead-of-a-double-value-nan-and-what-d
+            try
+            {
+                Console.Write("Enter a non-negative integer number: ");
+                uint n = uint.Parse(Console.ReadLine());
+
+                uint baseNumber = 2;
+
+                uint[] degrees = new uint[n + 1];
+
+                string path = "result.txt";
+
+                File.WriteAllText(path, "=====Result=====\n");
+
+                for (uint i = 0; i < degrees.Length; i++)
+                {
+                    degrees[i] = (uint)Math.Pow(baseNumber, i);
+                    Console.WriteLine($"{baseNumber}^{i} \t {degrees[i]:N0}");
+                    File.AppendAllText(path, $"{baseNumber}^{i} \t {degrees[i]:N0}\n");
+                }
+
+                string[] result = File.ReadAllLines(path);
+                foreach (string line in result)
+                {
+                    Console.WriteLine(line);
+                }
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine("Invalid input: " + exc.Message);
+
+                string[] error =
+                {
+                    "Timestamp: " + DateTime.Now,
+                    "Error: Invalid input",
+                    "Type: " + exc.GetType().Name,
+                    "Message: " + exc.Message,
+                    "Stack trace: " + exc.StackTrace,
+                };
+                string path = "error.txt";
+                using (StreamWriter sw = File.CreateText(path))
+                {
+                    foreach (string line in error)
+                    {
+                        sw.WriteLine(line);
+                    }
+                }
+                using (StreamReader sr = File.OpenText(path))
+                {
+                    Console.WriteLine(sr.ReadToEnd());
+                }
+            }
+
+        }
+    }
+}
 ```
