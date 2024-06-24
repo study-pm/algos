@@ -4,6 +4,7 @@
 - [2. Даны координаты двух точек $A$ и $B$. Вычислить расстояние между точками.Определить, какая точка находится ближе к началу координат.](#2-даны-координаты-двух-точек-a-и-b-вычислить-расстояние-между-точкамиопределить-какая-точка-находится-ближе-к-началу-координат)
 - [3. Вывести таблицу степеней числа два от нулевой до $n$, где $n$ вводится  пользователем.](#3-вывести-таблицу-степеней-числа-два-от-нулевой-до-n-где-n-вводится--пользователем)
 - [4. Вычислить стоимость поездки на автомобиле на дачу (туда и обратно). Исходными данными являются: расстояние до дачи (км); количество бензина, которое потребляет автомобиль на 100 км пробега; цена 1 литра бензина.](#4-вычислить-стоимость-поездки-на-автомобиле-на-дачу-туда-и-обратно-исходными-данными-являются-расстояние-до-дачи-км-количество-бензина-которое-потребляет-автомобиль-на-100-км-пробега-цена-1-литра-бензина)
+- [5. Вычислить расстояние между двумя точками с координатами ($x\_1$, $y\_1$) и ($x\_2$, $y\_2$). Координаты точек должны вводиться пользователем.](#5-вычислить-расстояние-между-двумя-точками-с-координатами-x_1-y_1-и-x_2-y_2-координаты-точек-должны-вводиться-пользователем)
 
 
 1. Подсчитать количество целых чисел среди $a$, $b$, $c$.
@@ -357,4 +358,150 @@ namespace Console_04
         }
     }
 }
+```
+
+## 5. Вычислить расстояние между двумя точками с координатами ($x_1$, $y_1$) и ($x_2$, $y_2$). Координаты точек должны вводиться пользователем.
+
+<div style="background: white; padding: 10px; text-align: center">
+
+![Flowchart 05](../img/fc_05.png)
+
+</div>
+
+```c#
+/* Вычислить расстояние между двумя точками с координатами (х1, у1) и (х2, у2).
+ * Координаты точек должны вводиться пользователем.
+ */
+
+using System.Globalization;
+
+namespace Console_05
+{
+    internal struct Point
+    {
+        public double[] Coordinates = new double[2];
+        public int Rank;
+        public double OriginDistance;
+        public Point(double[] coordinates)
+        {
+            this.Coordinates = coordinates;
+            this.Rank = coordinates.Length;
+            this.OriginDistance = Point.GetDistance(coordinates, new double[] { 0, 0 });
+        }
+        public static Point Parse(string s)
+        {
+            string separator = " ";
+            if (s.Contains(",")) separator = ",";
+            else if (s.Contains(";")) separator = ";";
+
+            string[] input = s.Split(separator);
+            double[] coordinates = new double[input.Length];
+            for (uint i = 0; i < input.Length; i++)
+            {
+                coordinates[i] = double.Parse(input[i]);
+            }
+            return new Point(coordinates);
+        }
+        public static double GetDistance(double[] a, double[] b)
+        {
+            double sum = 0;
+            for (uint i = 0; i < a.Length; i++)
+            {
+                sum += Math.Pow(b[i] - a[i], 2);
+            }
+            return Math.Sqrt(sum);
+        }
+        public static double GetDistance(Point a, Point b)
+        {
+            double sum = 0;
+            for (uint i = 0; i < a.Rank; i++)
+            {
+                sum += Math.Pow(b.Coordinates[i] - a.Coordinates[i], 2);
+            }
+            return Math.Sqrt(sum);
+        }
+    }
+    internal class Program
+    {
+        public static double[] ParseCoordinates(string val)
+        {
+            string[] input = val.Split(' ');
+            double[] point = new double[input.Length];
+            for (int i = 0; i < input.Length; i++)
+            {
+                point[i] = double.Parse(input[i]);
+            }
+            return point;
+        }
+        public static double GetDistance(double[] a, double[] b)
+        {
+            double sum = 0;
+            for (int i = 0; i < a.Length; i++)
+            {
+                sum += Math.Pow(b[i] - a[i], 2);
+            }
+            return Math.Sqrt(sum);
+        }
+        static void Main(string[] args)
+        {
+            CultureInfo ci = CultureInfo.GetCultureInfo("ru-Ru");
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
+
+            string msg = "Enter the point coordinates separated by a space, colon or semicolon: ";
+            try
+            {
+                Console.Write(msg);
+                string input1 = Console.ReadLine();
+                double[] point1 = ParseCoordinates(input1);
+                Point pt1 = Point.Parse(input1);
+
+                Console.Write(msg);
+                string input2 = Console.ReadLine();
+                double[] point2 = ParseCoordinates(input2);
+                Point pt2 = Point.Parse(input2);
+
+                Console.WriteLine($"Distance between points is: {GetDistance(point1, point2): .##}");
+
+                string path = "result.txt";
+                File.WriteAllText(path, Point.GetDistance(pt1, pt2).ToString());
+                Console.WriteLine("Read from file: " + File.ReadAllText(path));
+            }
+            catch (Exception exc)
+            {
+                Console.WriteLine("Invalid input: " + exc.Message);
+
+                string path = "error.txt";
+                string[] err =
+                {
+                    "Timestamp: " + DateTime.Now.ToString(ci),
+                    "Error: Invalid input",
+                    "Type: " + exc.GetType().Name,
+                    "Message: " + exc.Message,
+                    "Stack trace: " + exc.StackTrace,
+                };
+
+                File.WriteAllLines(path, err);
+                string[] e = File.ReadAllLines(path);
+            }
+        }
+    }
+}
+
+// https://ru.onlinemschool.com/math/library/analytic_geometry/point_point_length/
+/* Sample data
+ * Input: A(-1, 3) и B(6,2);
+ * Output: AB = 5√2 = 7.07; Closest is A.
+ *
+ * Input: A(2, -2) и B(0, 1)
+ * Output: AB = √13 = 3.61; Closest is B.
+ *
+ * Input: A(-1, 3, 3) и B(6, 2, -2)
+ * Output: AB = 5√3 = 8.66; Closest is A.
+ *
+ * Input: B(3, 1, 3) и B(0, -3, 3)
+ * Output: AB = 5; Closest is B.
+ *
+ * Input: A(3, 0, -4) и B(0, 0, 5)
+ * Output: AB = 9,49; Equally remote.
+ */
 ```
