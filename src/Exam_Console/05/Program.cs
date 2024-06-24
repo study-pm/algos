@@ -2,8 +2,54 @@
  * Координаты точек должны вводиться пользователем.
  */
 
+using System.Globalization;
+
 namespace Console_05
 {
+    internal struct Point
+    {
+        public double[] Coordinates = new double[2];
+        public int Rank;
+        public double OriginDistance;
+        public Point(double[] coordinates)
+        {
+            this.Coordinates = coordinates;
+            this.Rank = coordinates.Length;
+            this.OriginDistance = Point.GetDistance(coordinates, new double[] { 0, 0 });
+        }
+        public static Point Parse(string s)
+        {
+            string separator = " ";
+            if (s.Contains(",")) separator = ",";
+            else if (s.Contains(";")) separator = ";";
+
+            string[] input = s.Split(separator);
+            double[] coordinates = new double[input.Length];
+            for (uint i = 0; i < input.Length; i++)
+            {
+                coordinates[i] = double.Parse(input[i]);
+            }
+            return new Point(coordinates);
+        }
+        public static double GetDistance(double[] a, double[] b)
+        {
+            double sum = 0;
+            for (uint i = 0; i < a.Length; i++)
+            {
+                sum += Math.Pow(b[i] - a[i], 2);
+            }
+            return Math.Sqrt(sum);
+        }
+        public static double GetDistance(Point a, Point b)
+        {
+            double sum = 0;
+            for (uint i = 0; i < a.Rank; i++)
+            {
+                sum += Math.Pow(b.Coordinates[i] - a.Coordinates[i], 2);
+            }
+            return Math.Sqrt(sum);
+        }
+    }
     internal class Program
     {
         public static double[] ParseCoordinates(string val)
@@ -27,18 +73,44 @@ namespace Console_05
         }
         static void Main(string[] args)
         {
+            CultureInfo ci = CultureInfo.GetCultureInfo("ru-Ru");
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
+
+            string msg = "Enter the point coordinates separated by a space, colon or semicolon: ";
             try
             {
-                Console.Write("Enter the first point coordinates separated by a space: ");
-                double[] point1 = ParseCoordinates(Console.ReadLine());
-                Console.Write("Enter the second point coordinates separated by a space: ");
-                double[] point2 = ParseCoordinates(Console.ReadLine());
+                Console.Write(msg);
+                string input1 = Console.ReadLine();
+                double[] point1 = ParseCoordinates(input1);
+                Point pt1 = Point.Parse(input1);
+
+                Console.Write(msg);
+                string input2 = Console.ReadLine();
+                double[] point2 = ParseCoordinates(input2);
+                Point pt2 = Point.Parse(input2);
 
                 Console.WriteLine($"Distance between points is: {GetDistance(point1, point2): .##}");
+
+                string path = "result.txt";
+                File.WriteAllText(path, Point.GetDistance(pt1, pt2).ToString());
+                Console.WriteLine("Read from file: " + File.ReadAllText(path));
             }
-            catch (Exception e)
+            catch (Exception exc)
             {
-                Console.WriteLine("Invalid input: " + e.Message);
+                Console.WriteLine("Invalid input: " + exc.Message);
+
+                string path = "error.txt";
+                string[] err =
+                {
+                    "Timestamp: " + DateTime.Now.ToString(ci),
+                    "Error: Invalid input",
+                    "Type: " + exc.GetType().Name,
+                    "Message: " + exc.Message,
+                    "Stack trace: " + exc.StackTrace,
+                };
+
+                File.WriteAllLines(path, err);
+                string[] e = File.ReadAllLines(path);
             }
         }
     }
