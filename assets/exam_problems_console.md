@@ -6,6 +6,7 @@
 - [4. Вычислить стоимость поездки на автомобиле на дачу (туда и обратно). Исходными данными являются: расстояние до дачи (км); количество бензина, которое потребляет автомобиль на 100 км пробега; цена 1 литра бензина.](#4-вычислить-стоимость-поездки-на-автомобиле-на-дачу-туда-и-обратно-исходными-данными-являются-расстояние-до-дачи-км-количество-бензина-которое-потребляет-автомобиль-на-100-км-пробега-цена-1-литра-бензина)
 - [5. Вычислить расстояние между двумя точками с координатами ($x\_1$, $y\_1$) и ($x\_2$, $y\_2$). Координаты точек должны вводиться пользователем.](#5-вычислить-расстояние-между-двумя-точками-с-координатами-x_1-y_1-и-x_2-y_2-координаты-точек-должны-вводиться-пользователем)
 - [6. Вывести таблицу стоимости (цена 1кг задается во время работы), например, яблок в диапазоне от $A$ грамм до $B$ грамм с шагом $C$ грамм.](#6-вывести-таблицу-стоимости-цена-1кг-задается-во-время-работы-например-яблок-в-диапазоне-от-a-грамм-до-b-грамм-с-шагом-c-грамм)
+- [7. Идет $k$-я секунда суток. Определить, сколько целых часов ($H$) и целых минут ($M$) прошло с начала суток.](#7-идет-k-я-секунда-суток-определить-сколько-целых-часов-h-и-целых-минут-m-прошло-с-начала-суток)
 
 
 1. Подсчитать количество целых чисел среди $a$, $b$, $c$.
@@ -613,15 +614,15 @@ namespace Console_06
                 string path = "result.txt";
                 File.WriteAllText(path, "Weight (g) \t Cost\n\n");
 
-                acc = rg[0];
+                double weight = rg[0];
                 string[] result = Array.Empty<string>();
                 do
                 {
                     Array.Resize(ref result, result.Length+1);
-                    result[result.Length - 1] = acc.ToString("N2") + "\t" + (acc * price / 1000).ToString("C", cultureInfo);
-                    acc += step;
+                    result[result.Length - 1] = weight.ToString("N2") + "\t" + (weight * price / 1000).ToString("C", cultureInfo);
+                    weight += step;
                 }
-                while (acc <= rg[1]);
+                while (weight <= rg[1]);
                 File.AppendAllLines(path, result);
 
                 string[] output = File.ReadAllLines(path);
@@ -649,6 +650,41 @@ namespace Console_06
                     }
                 }
             }
+        }
+    }
+}
+
+```
+
+## 7. Идет $k$-я секунда суток. Определить, сколько целых часов ($H$) и целых минут ($M$) прошло с начала суток.
+
+<div style="background: white; padding: 10px; text-align: center">
+
+![Flowchart 07](../img/fc_07.png)
+
+</div>
+
+```c#
+/* Идет k-я секунда суток.
+ * Определить, сколько целых часов (Н) и целых минут (М) прошло с начала суток.
+ */
+
+namespace Console_07
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            DateTime now = DateTime.Now;
+            uint k = (uint)(now - now.Date).TotalSeconds;
+            // int k = (int)now.Subtract(now.Date).TotalSeconds;
+
+            Console.WriteLine(k);
+
+            uint H = k / 60 / 60;
+            uint M = k % 3600 / 60;
+
+            Console.WriteLine("{0} hour and {1} minutes elapsed from the beginning of the day", H, M);
         }
     }
 }
