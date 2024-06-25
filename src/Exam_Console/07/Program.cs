@@ -18,6 +18,18 @@ namespace Console_07
             uint M = k % 3600 / 60;
 
             Console.WriteLine("{0} hour and {1} minutes elapsed from the beginning of the day", H, M);
+
+            string path = "result.txt";
+            FileInfo f = new FileInfo(path);
+            StreamWriter sw = new StreamWriter(f.Create());
+            sw.WriteLine($"{H} hour(s) and {M} minute(s) elapsed");
+            sw.Close();
+
+            Console.WriteLine("\nReading from file");
+
+            StreamReader sr = new StreamReader(f.Open(FileMode.Open));
+            Console.WriteLine(sr.ReadToEnd());
+            sr.Close();
         }
     }
 }
