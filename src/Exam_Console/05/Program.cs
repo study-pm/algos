@@ -8,14 +8,14 @@ namespace Console_05
 {
     internal struct Point
     {
-        public double[] Coordinates = new double[2];
+        public double[] Coordinates;
         public int Rank;
         public double OriginDistance;
         public Point(double[] coordinates)
         {
             this.Coordinates = coordinates;
             this.Rank = coordinates.Length;
-            this.OriginDistance = Point.GetDistance(coordinates, new double[] { 0, 0 });
+            this.OriginDistance = Point.GetDistance(coordinates, new double[coordinates.Length]);
         }
         public static Point Parse(string s)
         {
@@ -94,6 +94,20 @@ namespace Console_05
                 string path = "result.txt";
                 File.WriteAllText(path, Point.GetDistance(pt1, pt2).ToString());
                 Console.WriteLine("Read from file: " + File.ReadAllText(path));
+
+                StreamWriter sw = new StreamWriter(path, true, System.Text.Encoding.Unicode);
+                sw.WriteLine("Appendage");
+                sw.Close();
+
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    string? line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        Console.WriteLine($"{line}");
+                    }
+                    Console.WriteLine(sr.ReadLine());
+                }
             }
             catch (Exception exc)
             {
