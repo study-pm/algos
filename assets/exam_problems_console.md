@@ -613,15 +613,15 @@ namespace Console_06
                 string path = "result.txt";
                 File.WriteAllText(path, "Weight (g) \t Cost\n\n");
 
-                acc = rg[0];
+                double weight = rg[0];
                 string[] result = Array.Empty<string>();
                 do
                 {
                     Array.Resize(ref result, result.Length+1);
-                    result[result.Length - 1] = acc.ToString("N2") + "\t" + (acc * price / 1000).ToString("C", cultureInfo);
-                    acc += step;
+                    result[result.Length - 1] = weight.ToString("N2") + "\t" + (weight * price / 1000).ToString("C", cultureInfo);
+                    weight += step;
                 }
-                while (acc <= rg[1]);
+                while (weight <= rg[1]);
                 File.AppendAllLines(path, result);
 
                 string[] output = File.ReadAllLines(path);
