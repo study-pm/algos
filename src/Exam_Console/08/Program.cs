@@ -40,7 +40,7 @@ namespace Console_08
 
                 Console.WriteLine($"Figure square is: {s:#.##}");
 
-                string path = "result.txt";
+                string path = @"result.txt";
                 File.WriteAllText(path, s.ToString("N", ci));
 
                 Console.WriteLine("*****Read from file*****");
@@ -50,7 +50,7 @@ namespace Console_08
             {
                 Console.Error.WriteLine("Invalid input: " + exc.Message);
 
-                string path = "error.txt";
+                string path = @"error.txt";
                 using (StreamWriter sw = new StreamWriter(path, false))
                 {
                     sw.WriteLine("Timestamp: " + DateTime.Now.ToString(ci));
