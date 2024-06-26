@@ -18,17 +18,17 @@ namespace Console_03
 
                 uint baseNumber = 2;
 
-                uint[] degrees = new uint[n + 1];
+                uint[] powers = new uint[n + 1];
 
                 string path = "result.txt";
 
                 File.WriteAllText(path, "=====Result=====\n");
 
-                for (uint i = 0; i < degrees.Length; i++)
+                for (uint i = 0; i < powers.Length; i++)
                 {
-                    degrees[i] = (uint)Math.Pow(baseNumber, i);
-                    Console.WriteLine($"{baseNumber}^{i} \t {degrees[i]:N0}");
-                    File.AppendAllText(path, $"{baseNumber}^{i} \t {degrees[i]:N0}\n");
+                    powers[i] = (uint)Math.Pow(baseNumber, i);
+                    Console.WriteLine($"{baseNumber}^{i} \t {powers[i]:N0}");
+                    File.AppendAllText(path, $"{baseNumber}^{i} \t {powers[i]:N0}\n");
                 }
 
                 string[] result = File.ReadAllLines(path);
