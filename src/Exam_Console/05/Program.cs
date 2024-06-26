@@ -23,7 +23,7 @@ namespace Console_05
             if (s.Contains(",")) separator = ",";
             else if (s.Contains(";")) separator = ";";
 
-            string[] input = s.Split(separator);
+            string[] input = s.Split(separator, StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
             double[] coordinates = new double[input.Length];
             for (uint i = 0; i < input.Length; i++)
             {
@@ -54,7 +54,7 @@ namespace Console_05
     {
         public static double[] ParseCoordinates(string val)
         {
-            string[] input = val.Split(' ');
+            string[] input = val.Split(' ', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
             double[] point = new double[input.Length];
             for (int i = 0; i < input.Length; i++)
             {
