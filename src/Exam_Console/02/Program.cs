@@ -38,7 +38,7 @@ namespace Console_02
         }
         static public double[] ConvertStringToDoubleArr(string input)
         {
-            string[] inputArr = input.Split(' ');
+            string[] inputArr = input.Split(' ', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
             double[] point = new double[inputArr.Length];
             for (int i = 0; i < inputArr.Length; i++)
             {
@@ -68,7 +68,7 @@ namespace Console_02
         }
         static double[] ConvertToDouble(string val)
         {
-            string[] input = val.Split(' ');
+            string[] input = val.Split(' ', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
             double[] point = new double[input.Length];
             for (int i = 0; i < input.Length; i++)
             {
