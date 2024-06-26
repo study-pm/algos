@@ -46,7 +46,7 @@ namespace Console_06
     {
         static public double[] ParseRange(string val)
         {
-            string[] input = val.Split(' ');
+            string[] input = val.Split(' ', StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
             double[] range = new double[input.Length];
             for (int i = 0; i < input.Length; i++)
             {
