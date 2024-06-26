@@ -8,6 +8,7 @@
 - [6. Вывести таблицу стоимости (цена 1кг задается во время работы), например, яблок в диапазоне от $A$ грамм до $B$ грамм с шагом $C$ грамм.](#6-вывести-таблицу-стоимости-цена-1кг-задается-во-время-работы-например-яблок-в-диапазоне-от-a-грамм-до-b-грамм-с-шагом-c-грамм)
 - [7. Идет $k$-я секунда суток. Определить, сколько целых часов ($H$) и целых минут ($M$) прошло с начала суток.](#7-идет-k-я-секунда-суток-определить-сколько-целых-часов-h-и-целых-минут-m-прошло-с-начала-суток)
 - [8. Определить площадь заштрихованной фигуры (рисунок 1), если известна длина стороны квадрата.](#8-определить-площадь-заштрихованной-фигуры-рисунок-1-если-известна-длина-стороны-квадрата)
+- [9. Вывести значения функции $y = x^3$ при $x = 8, 7.5, …, 2$.](#9-вывести-значения-функции-y--x3-при-x--8-75--2)
 
 
 1. Подсчитать количество целых чисел среди $a$, $b$, $c$.
@@ -777,4 +778,69 @@ namespace Console_08
         }
     }
 }
+```
+
+## 9. Вывести значения функции $y = x^3$ при $x = 8, 7.5, …, 2$.
+
+<div style="background: white; padding: 10px; text-align: center">
+
+![Flowchart 09](../img/fc_09.png)
+
+</div>
+
+```c#
+/* Вывести значения функции у = х^3 при х = 8, 7.5, …, 2. */
+
+using System.Globalization;
+
+namespace Console_09
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            CultureInfo ci = CultureInfo.GetCultureInfo("ru-RU");
+            Console.OutputEncoding = System.Text.Encoding.Unicode;
+            TextWriter oldOut = Console.Out;
+
+            using StreamWriter sW = new(@"output.txt");
+            {
+                Console.SetOut(sW);
+                Console.WriteLine("Sample output");
+            }
+
+            Console.SetOut(oldOut);
+
+            double[] range = { 8, 2 };
+            double step = 0.5;
+
+            string path = @"result.txt";
+
+            Console.WriteLine("{0, 5} |\t {1, 6}", "x", "y");
+            Console.WriteLine(new string('—', 15));
+            string[] headerLines = { "x \t y", new string('—', 15) };
+            File.WriteAllLines(path, headerLines);
+
+            double[] result = Array.Empty<double>();
+
+            double x = 8;
+            while (x >= 2)
+            {
+                double y = Math.Pow(x, 3);
+                Array.Resize(ref result, result.Length+1);
+                result[result.GetUpperBound(0)] = y;
+                Console.WriteLine("{0, 5} |\t {1, 6}", string.Format("{0:N1}", x), string.Format("{0:N2}", y));
+                string res = $"{x} \t {y.ToString("N", ci)}";
+                File.AppendAllText(path, res + Environment.NewLine);
+                x -= step;
+            }
+
+            using (StreamWriter sw = new StreamWriter(path, true))
+            {
+                foreach(double val in result) sw.WriteLine(val);
+            }
+        }
+    }
+}
+
 ```
