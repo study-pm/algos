@@ -129,11 +129,34 @@ namespace Console_10
 
                 string formatted = string.Format(cultureInfo, "{0:c}", sum);
 
+                TextWriter oldOut = Console.Out;
+                using StreamWriter sw = new(@"out.txt");
+                {
+                    Console.SetOut(sw);
+                    Console.WriteLine("*****Output*****");
+                    sw.WriteLine(formatted);
+                }
+
+                Console.SetOut(oldOut);
+
                 Console.WriteLine("Amount regarding discount is: " + formatted);
             }
-            catch (Exception e)
+            catch (Exception exc)
             {
-                Console.WriteLine("Invalid input: " + e.Message + " " + e.GetType());
+                TextWriter oldErr = Console.Error;
+
+                using StreamWriter sw = new(@"error.txt");
+                {
+                    Console.SetError(sw);
+                    Console.Error.WriteLine("Timestamp: " + DateTime.Now.ToString(cultureInfo));
+                    Console.Error.WriteLine("Type: " + exc.GetType().Name);
+                    Console.Error.WriteLine("Message: " + exc.Message);
+                    Console.Error.WriteLine("Stack trace: " + exc.StackTrace);
+                }
+
+                Console.SetError(oldErr);
+
+                Console.Error.WriteLine("Invalid input. See \"error.txt\" file for further details.");
             }
         }
     }
