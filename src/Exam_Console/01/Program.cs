@@ -10,7 +10,7 @@ namespace Console_01
             try
             {
                 Console.Write("Enter {0}: ", msg);
-                string[] input = Console.ReadLine().Split();
+                string[] input = Console.ReadLine().Split(" ", StringSplitOptions.TrimEntries | StringSplitOptions.RemoveEmptyEntries);
 
                 double[] numbers = new double[input.Length];
 
