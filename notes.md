@@ -1,3 +1,5 @@
+<link href="styles.css" rel="stylesheet" />
+
 # Основы алгоритмизации и программирования
 650a23836a97eeab17de058a
 
