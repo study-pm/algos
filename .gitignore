@@ -6,6 +6,7 @@ bin/
 obj/
 # MS Visual Studio
 /src/**/Resources
+/styles.css
 *.csproj.user
 *.suo
 *.vs
