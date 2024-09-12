@@ -1,6 +1,11 @@
 # Основы алгоритмизации и программирования
 650a23836a97eeab17de058a
 
+- [Overview](#overview)
+  - [About this file](#about-this-file)
+  - [Project information](#project-information)
+  - [Project Structure](#project-structure)
+
 ## Overview
 
 ### About this file
