@@ -4,7 +4,7 @@
 650a23836a97eeab17de058a
 
 - [Общее](#общее)
-- [Алгоритмы](#алгоритмы)
+- [Лекция Алгоритмы](#лекция-алгоритмы)
   - [Введение в алгоритмы](#введение-в-алгоритмы)
     - [Этапы решения задач на ЭВМ](#этапы-решения-задач-на-эвм)
       - [I этап: Постановка задачи и её содержательный анализ](#i-этап-постановка-задачи-и-её-содержательный-анализ)
@@ -80,8 +80,8 @@
 - [Основы С#](https://e-learn.petrocollege.ru/mod/url/view.php?id=294894)
 - [C# Стиллмен](https://e-learn.petrocollege.ru/mod/resource/view.php?id=298057)
 
-## Алгоритмы
-650ae4eb6a97eeab17de059a
+## Лекция Алгоритмы
+[650ae4eb6a97eeab17de059a](https://e-learn.petrocollege.ru/course/view.php?id=6229#section-1)
 
 ### Введение в алгоритмы
 [650ae5346a97eeab17de059b](https://e-learn.petrocollege.ru/pluginfile.php/383734/mod_resource/content/1/%D0%90%D0%BB%D0%B3%D0%BE%D1%80%D0%B8%D1%82%D0%BC%D1%8B.pdf)
@@ -371,7 +371,7 @@ graph TD;
 ![Flowchart sample 4](./img/flowchart-sample-4.png))
 
 ## Практические работы на сб (16.09.2023)
-650ae9cc6a97eeab17de059f
+[650ae9cc6a97eeab17de059f](https://e-learn.petrocollege.ru/course/view.php?id=6229#section-2)
 
 ### Практическая работа 1
 [6514165b6a97eeab17de06ac](https://e-learn.petrocollege.ru/mod/assign/view.php?id=264931)
@@ -529,7 +529,7 @@ graph TD;
     8. Какой тест называют полным? неизбыточным?
 
 ## Задания для разработки алгоритма на 08.09.2022
-6516c4be6a97eeab17de06ef
+[6516c4be6a97eeab17de06ef](https://e-learn.petrocollege.ru/course/view.php?id=6229#section-3)
 
 ### Задачи
 [651a777c6a97eeab17de0789](https://e-learn.petrocollege.ru/mod/assign/view.php?id=264926)
