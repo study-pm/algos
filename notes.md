@@ -376,6 +376,10 @@ graph TD;
 ## Практические работы на сб (16.09.2023)
 [650ae9cc6a97eeab17de059f](https://e-learn.petrocollege.ru/course/view.php?id=6229#section-2)
 
+Онлайн редактор для создания блок схем
+
+- https://products.aspose.app/diagram/ru/editor
+
 ### Практическая работа 1
 [6514165b6a97eeab17de06ac](https://e-learn.petrocollege.ru/mod/assign/view.php?id=264931)
 
