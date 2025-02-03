@@ -378,13 +378,13 @@ graph TD;
 ### Примеры блок-схем
 [650c39176a97eeab17de05b5](https://e-learn.petrocollege.ru/pluginfile.php/395327/mod_resource/content/1/%D0%BF%D1%80%D0%B8%D0%BC%D0%B5%D1%80%D1%8B%20%D0%B1%D0%BB%D0%BE%D0%BA%20%D1%81%D1%85%D0%B5%D0%BC.pdf)
 
-![Flowchart sample 1](./img/flowchart-sample-1.png))
+![Flowchart sample 1](./img/flowchart-sample-1.png)
 
-![Flowchart sample 2](./img/flowchart-sample-2.png))
+![Flowchart sample 2](./img/flowchart-sample-2.png)
 
-![Flowchart sample 3](./img/flowchart-sample-3.png))
+![Flowchart sample 3](./img/flowchart-sample-3.png)
 
-![Flowchart sample 4](./img/flowchart-sample-4.png))
+![Flowchart sample 4](./img/flowchart-sample-4.png)
 
 ## Практические работы на сб (16.09.2023)
 [650ae9cc6a97eeab17de059f](https://e-learn.petrocollege.ru/course/view.php?id=6229#section-2)
